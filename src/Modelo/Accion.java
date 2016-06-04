@@ -17,6 +17,10 @@ public class Accion {
     public void mover(){
         
     }
-    public void 
+    public void UsarMagia(contador){
+        if (contador <= 0){
+            
+        }
+    } 
  
 }

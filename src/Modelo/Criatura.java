@@ -13,6 +13,7 @@ public class Criatura extends ElementosEnCampo {
     private int Nivel;
     private int Ataque;
     private int Defensa;
+    private int movimiento;
     
     //metodos//
     public String getNombre(){
@@ -34,6 +35,9 @@ public class Criatura extends ElementosEnCampo {
     public int getDefensa(){
     
         return this.Defensa;
+    }
+    public int getMovimiento(){
+        return this.movimiento;
     }
     public void Accion(){
     //pedimos las acciones posibles a la clase Accion//
