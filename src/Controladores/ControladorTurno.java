@@ -3,20 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
-
+package Controladores;
+import Modelo.Accion;
+import Modelo.Casilla;
+import Modelo.Criatura;
+import Modelo.Dado;
+import Modelo.ElementosEnCampo;
 /**
  *
- * @author Diego
+ * @author Lizweert
  */
-public class Accion {
+public class ControladorTurno {
     
-    //Atributos//
-
-    //Metodos para obtener los atributos//
-    public void mover(){
-        
-    }
-    public void 
- 
 }
