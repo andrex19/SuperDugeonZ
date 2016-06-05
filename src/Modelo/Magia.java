@@ -5,9 +5,6 @@
  */
 package Modelo;
 
-import java.lang.reflect.Array;
-import Modelo.Criatura;
-
 /**
  *
  * @author Lizweert
@@ -16,17 +13,15 @@ public class Magia {
     
     private int contadorTurnoUso = 0;
     public int puntosJugador;
-    public int MovimientosCriatura
+    public int MovimientosCriature;
     
-    public void LLuviaTorrencial(puntosJugador,Array<Criatura>,MovimientosCriatura){
+    public void LLuviaTorrencial(int puntos, int MovimientosCriature){
         while(this.contadorTurnoUso < 3){
             if(puntosJugador >= 10){
             puntosJugador = puntosJugador - 10;
-            MovimientosCriatura =2;
+            MovimientosCriature =2;
             contadorTurnoUso=contadorTurnoUso +1;
-            
+            }
         }
-        
     }
-    
 }
