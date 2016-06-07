@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package Modelo;
-import Modelo.Accion;
 
-public class Criatura extends ElementosEnCampo {
+
+public class Criatura{
     //Atributos//
     private String Nombre;
     private int puntosDeVida;

@@ -11,12 +11,12 @@ package Modelo;
  *
  * @author Lizweert
  */
-public class Trampa extends ElementosEnCampo {
+public class Trampa{
     //Atributos//
-    private String TipoDeTrampa;
-    //metodos//
-    public String geTrampa(){
-    
-        return this.TipoDeTrampa;
+    public void trampaDeOsos(String posicionCriatura, String posicionTrampa, int movimientoCriatura ){
+        if(posicionTrampa.equals(posicionCriatura)){
+            movimientoCriatura = 0;
+        }
     }
+   // public void 
 }

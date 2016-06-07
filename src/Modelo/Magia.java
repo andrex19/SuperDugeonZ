@@ -11,17 +11,19 @@ package Modelo;
  */
 public class Magia {
     
-    private int contadorTurnoUso = 0;
     public int puntosJugador;
     public int MovimientosCriature;
     
-    public void LLuviaTorrencial(int puntos, int MovimientosCriature){
-        while(this.contadorTurnoUso < 3){
-            if(puntosJugador >= 10){
-            puntosJugador = puntosJugador - 10;
-            MovimientosCriature =2;
-            contadorTurnoUso=contadorTurnoUso +1;
+    public void lluviaTorrencial(int costeMovimientosCriature){
+            costeMovimientosCriature =2;
             }
+        
+    
+    public void hierbasVenenosas(int vidaCriaturaBD, int vidaCriatura){
+            vidaCriatura = (int) (vidaCriatura - 0.2*vidaCriaturaBD);
         }
+    public void meteoritoFuego (String Posicion){
+        //Algoritmo de Busqueda de espacios de estado. Se buscara por ese metodo las criaturas mas cercanas y atacarlas 5 de radio
+        
     }
 }
