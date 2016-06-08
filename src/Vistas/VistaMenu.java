@@ -30,12 +30,10 @@ public class VistaMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnBI = new javax.swing.JButton();
         btnBE = new javax.swing.JButton();
         btnBT = new javax.swing.JButton();
         btnIC = new javax.swing.JButton();
         btnIP = new javax.swing.JButton();
-        lblboton = new javax.swing.JLabel();
         FondoMenu = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -51,16 +49,7 @@ public class VistaMenu extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBI.setBackground(new java.awt.Color(153, 0, 0));
-        btnBI.setText("Batalla individual");
-        btnBI.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                btnBIFocusGained(evt);
-            }
-        });
-        getContentPane().add(btnBI, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 52, -1, -1));
-
-        btnBE.setText("Batalla en equipos");
+        btnBE.setText("Batalla General");
         getContentPane().add(btnBE, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 81, -1, -1));
 
         btnBT.setText("Torneo");
@@ -71,9 +60,6 @@ public class VistaMenu extends javax.swing.JFrame {
 
         btnIP.setText("Información de partidas");
         getContentPane().add(btnIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
-
-        lblboton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonMenu.png"))); // NOI18N
-        getContentPane().add(lblboton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 1110, 250));
 
         FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondoMenu.png"))); // NOI18N
         getContentPane().add(FondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -118,10 +104,6 @@ public class VistaMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnBIFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnBIFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBIFocusGained
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
@@ -169,7 +151,6 @@ public class VistaMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FondoMenu;
     private javax.swing.JButton btnBE;
-    private javax.swing.JButton btnBI;
     private javax.swing.JButton btnBT;
     private javax.swing.JButton btnIC;
     private javax.swing.JButton btnIP;
@@ -182,12 +163,9 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JLabel lblboton;
     // End of variables declaration//GEN-END:variables
 
-public JButton getBtnBI(){
-    return btnBI;
-}
+
 public JButton getBtnBE(){
     return btnBE;
 } 
@@ -203,6 +181,9 @@ public JButton getBtnIP(){
 
     //AGREGAR LOS BOTONES PARA QUE ESCUCHE  EL CONTROLADOR 
     public void agregarListener(ControladorMenu controladorMenu) {
-        
+        this.btnBE.addActionListener(controladorMenu);
+        this.btnBT.addActionListener(controladorMenu);
+        this.btnIC.addActionListener(controladorMenu);
+        this.btnIP.addActionListener(controladorMenu);
     }
 }

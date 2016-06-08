@@ -6,6 +6,7 @@
 package superdugeonz_2;
 
 import Controladores.ControladorLogin;
+import Controladores.ControladorMenu;
 import Controladores.ControladorRegistro;
 import Modelo.Usuario;
 import Vistas.VistaInicio;
@@ -25,6 +26,7 @@ public class ControladorPrincipal implements ActionListener{
     public VistaInicio vistaInicio;
     public ControladorRegistro contRegistro;
     public ControladorModificacionPuzzle contMP;
+    public ControladorMenu contM;
 
     
 
@@ -52,6 +54,9 @@ public class ControladorPrincipal implements ActionListener{
             //this.vistaInicio.setVisible(false);
             this.contRegistro.verVista(this);
         } 
+    }
+    public ArrayList<Usuario> getArregloDEUsurios(){
+        return this.arreglo_usuario;
     }
     
 }

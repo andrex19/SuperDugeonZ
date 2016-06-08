@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 
 public class Usuario {
     private String usuario;
@@ -36,5 +38,5 @@ public class Usuario {
             return false;
         }
     }
-    
+
 }

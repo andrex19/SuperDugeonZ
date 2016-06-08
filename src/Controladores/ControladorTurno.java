@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package Controladores;
-import Modelo.Accion;
+
 import Modelo.Casilla;
 import Modelo.Criatura;
 import Modelo.Dado;
-import Modelo.ElementosEnCampo;
+
 /**
  *
  * @author Lizweert
