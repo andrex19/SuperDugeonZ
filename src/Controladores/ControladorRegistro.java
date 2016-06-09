@@ -6,12 +6,17 @@
 package Controladores;
 
 import Vistas.VistaRegistro;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import superdugeonz_2.ControladorPrincipal;
 import Modelo.JefeTerreno;
 import Modelo.Usuario;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import Modelo.Conexion;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class ControladorRegistro implements ActionListener {
@@ -19,6 +24,8 @@ public class ControladorRegistro implements ActionListener {
     VistaRegistro vistaRegistro;
     JefeTerreno JefeTerreno;
     ControladorMenu contMenu=new ControladorMenu();
+    Conexion conn;
+    
     
     
        
@@ -31,21 +38,24 @@ public class ControladorRegistro implements ActionListener {
     
 
     }
-    public void registrar(){
+    public void registrar() throws SQLException{
         String usuario=vistaRegistro.getUsr();
         String pwd1=vistaRegistro.getPwd1();
         String pwd2=vistaRegistro.getPwd2();
-        String jefeTerreno=vistaRegistro.getItemCboxJefeTerreno();
-        String puzzle=vistaRegistro.getItemCboxPuzzle();
-        if (usuario.equals("")==false && pwd1.equals("")==false
-                && pwd2.equals("")==false && jefeTerreno.equals("<Seleccionar>")==false
-                && puzzle.equals("<Seleccionar>")==false){
+        //String jefeTerreno=vistaRegistro.getItemCboxJefeTerreno();
+        //String puzzle=vistaRegistro.getItemCboxPuzzle();
+        if (usuario.equals("")==false && pwd1.equals("")==false && pwd2.equals("")==false){
+            conn = new Conexion();
+            boolean seConecta = conn.conectar();
+            
             if (pwd1.equals(pwd2)==true){
                 vistaRegistro.setMsjUsuario("");
                 vistaRegistro.setMsjPwd1("");
                 vistaRegistro.setMsjPwd2("");
                 vistaRegistro.setMsjJefeTerreno("");
                 vistaRegistro.setMsjPuzzle("");
+                boolean exito = conn.Registro(usuario, pwd1);
+                
                 if (Usuario.existe(usuario)==false){
                     //construir bien el usuario ! (con un metodo o nose)...
                     cp.arreglo_usuario.add(new Usuario(usuario,pwd1));
@@ -98,18 +108,18 @@ public class ControladorRegistro implements ActionListener {
             else{
                 vistaRegistro.setMsjPwd2("");
             }
-            if (jefeTerreno.equals("<Seleccionar>")==true){
+            /*if (jefeTerreno.equals("<Seleccionar>")==true){
                 vistaRegistro.setMsjJefeTerreno("Seleccione jefe de terreno");
             }
             else{
                 vistaRegistro.setMsjJefeTerreno("");
-            }
-            if (puzzle.equals("<Seleccionar>")==true){
+            }*/
+            /*if (puzzle.equals("<Seleccionar>")==true){
                 vistaRegistro.setMsjPuzzle("Seleccione puzzle");
             }
             else{
                 vistaRegistro.setMsjPuzzle("");
-            }
+            }*/
             
         }
 
@@ -120,7 +130,11 @@ public class ControladorRegistro implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (vistaRegistro.getBotonSiguiente()==e.getSource()){
-            this.registrar();
+            try {
+                this.registrar();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            }
                         
             System.out.println("Click boton registro");
             

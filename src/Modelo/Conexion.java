@@ -21,8 +21,8 @@ import java.util.logging.Logger;
  */
 public class Conexion {
     public Connection conn = null;
-    String user = "DiegoRico";
-    String password = "DiegoRico";
+    String user = "root";
+    String password = "root";
     String url = "jdbc:derby://localhost:1527/SuperDungeonZ";
     
     ResultSet rs = null;
@@ -81,7 +81,8 @@ public class Conexion {
     }
     
     public boolean Registro(String user, String pass) throws SQLException{
-        if(this.consultar("SELECT NOMBRE_USUARIO, CONTRASENIA_JUGADOR FROM USUARIO WHERE ="+user+"'")){
+        
+        if(this.consultar("SELECT NOMBRE_USUARIO, CONTRASENIA_JUGADOR FROM USUARIO WHERE ="+user)){
             System.out.println("Paso el SELECT");
             int counter = 0;
             while(rs.next()){
