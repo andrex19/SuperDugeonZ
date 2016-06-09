@@ -6,12 +6,16 @@
 package Controladores;
 
 import Modelo.Usuario;
+import Modelo.Conexion;
 import Vistas.VistaLogin;
 import Vistas.VistaMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import superdugeonz_2.ControladorPrincipal;
 import Controladores.ControladorMenu;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -23,6 +27,7 @@ public class ControladorLogin implements ActionListener {
     VistaLogin vistaLogin;
     Usuario user;
     VistaMenu vistaMenu;
+    Conexion con;
     ControladorMenu contMenu=new ControladorMenu();
      
     
@@ -30,7 +35,11 @@ public class ControladorLogin implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (vistaLogin.getBotonIngresar()==e.getSource()){
             System.out.println("Click boton Ingresar (login)");
-            this.loguear();
+            try {
+                this.loguear();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
             
         }
@@ -49,12 +58,18 @@ public class ControladorLogin implements ActionListener {
     }
     
     
-    private void loguear() {
+    private void loguear() throws SQLException {
         String usuario = this.vistaLogin.getUsr();
         String contraseña = this.vistaLogin.getPwd();
+        con = new Conexion();
+        
         if ((usuario.equals("")==false) && (contraseña.equals("")==false)){
-            if(Usuario.existe(usuario)){
-                System.out.println("Usuario si existe ");
+            con.conectar();
+            String users = con.login(usuario,contraseña);
+            if(user!=null){
+                System.out.println("Usuario existe ");
+                user = new Usuario(usuario,contraseña);
+                
                 if(Usuario.verificar(usuario,contraseña)){
                     //construir bien el usuario ! (con un metodo o nose)...
                     cp.arreglo_usuario.add( new Usuario(usuario,contraseña));
