@@ -6,6 +6,7 @@
 package Controladores;
 
 import Modelo.Usuario;
+import Modelo.Conexion;
 import Vistas.VistaLogin;
 import Vistas.VistaMenu;
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ public class ControladorLogin implements ActionListener {
     Usuario user;
     VistaMenu vistaMenu;
     ControladorMenu contMenu=new ControladorMenu();
+    Conexion conection;
      
     
     @Override
@@ -50,6 +52,7 @@ public class ControladorLogin implements ActionListener {
     
     
     private void loguear() {
+        
         String usuario = this.vistaLogin.getUsr();
         String contraseña = this.vistaLogin.getPwd();
         if ((usuario.equals("")==false) && (contraseña.equals("")==false)){

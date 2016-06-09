@@ -126,12 +126,23 @@ public class Conexion {
         return null;        
     }
     
-    public void Login(){}
+    public void close(){
+        try {
+            if(conn!=null){
+                conn.close();
+            }
+            if(rs!=null){
+                rs.close();
+            }
+            if(stm!=null){
+                stm.close();
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     
     
-    
-    
-    
-     
 }   
