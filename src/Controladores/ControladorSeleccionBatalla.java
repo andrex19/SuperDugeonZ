@@ -60,11 +60,12 @@ public class ControladorSeleccionBatalla implements ActionListener{
                 if (Jugadores.size()==2){
                     //colocar metodo de batalla (tablero)
                     System.out.println("Hay 2 jugadores");
+                    
                     break;
                 }
                 else if (Jugadores.size() < 2){
                     System.out.println("Porfavor ingresar el jugador que quiere jugar");
-                    this.Cl.verVista(cp);
+                    this.ponerLoginRegistroEnVista("Falta 1 jugador.Ingresa o registrate si no tienes cuenta");
                     break;
                 }
                 else{
@@ -79,7 +80,7 @@ public class ControladorSeleccionBatalla implements ActionListener{
                 }
                 else if (Jugadores.size() < 3){
                     System.out.println("Porfavor ingresar el jugador que quiere jugar");
-                    this.Cl.verVista(cp);
+                    this.ponerLoginRegistroEnVista("Falta 2 jugadores.Ingresa o registrate si no tienes cuenta");
                     break;
                 }
                 else{
@@ -94,18 +95,24 @@ public class ControladorSeleccionBatalla implements ActionListener{
                 }
                 else if (Jugadores.size() < 4){
                     System.out.println("Porfavor ingresar el jugador que quiere jugar");
-                    this.Cl.verVista(cp);
+                    this.ponerLoginRegistroEnVista("Falta 3 jugador.Ingresa o registrate si no tienes cuenta");
                     break;
                 }
                
     }
-    
     }
+    
+    
     
     public void ponerLoginRegistroEnVista(String Mensaje){
         this.Vsb.setMensajeInfo("");
         this.Vsb.getIngresar().setVisible(false);
         this.Vsb.getRegistrar().setVisible(false);
         //Dejamos las variables vacias para luego darles el valor segun corresponda
+        this.Vsb.setMensajeInfo(Mensaje);
+        this.Vsb.getIngresar().setVisible(true);
+        this.Vsb.getRegistrar().setVisible(true);
+         
     }
+}
 
