@@ -5,38 +5,31 @@
  */
 package Modelo;
 
-import java.beans.Statement;
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Diego
  */
 public class Conexion {
-    private String user;
-    private String password;
-    private String db;
-    private String host;
-    private String url;
-    private Connection conn = null;
-    private Statement stm;
-    private ResultSet rs;
+    public Connection conn = null;
+    String user = "DiegoRico";
+    String password = "DiegoRico";
+    String url = "jdbc:derby://localhost:1527/SuperDungeonZ";
     
-    public Conexion(){
-    this.url = "jdbc:derby://"+this.host+"/"+this.db;
-    }
+    ResultSet rs = null;
+    Statement stm = null;
     
-    public Conexion(String server, String usuario, String contraseña, String bd){
-    this.user = usuario;
-    this.password = contraseña;
-    this.db = bd;
-    this.host = server;
-    this.url = "jdbc:derby://"+this.host+"/"+this.db;
-    }
+    
+    
     
     public void connectar() throws SQLException{
      try{
@@ -50,5 +43,49 @@ public class Conexion {
      }
     
     }
+    
+    public boolean consultar(String query){
+        try{
+            stm = conn.createStatement();
+            rs = stm.executeQuery(query);
+            return true;
+        }
+        catch (SQLException e){
+            System.out.println("Exception en consultar");
+            System.err.println(e);
+            return false;
+        
+        }
+    }
+    
+    public Criatura selectCriatura(String nombre) {
+        String id = null;
+        String name = null;
+        int HP=0;
+        int atk=0;
+        int def=0;
+        int lvl=0;
+        
+        try{
+            rs = stm.executeQuery("SELECT * FROM CRIATURA WHERE NOMBRE_CRIATURA="+nombre+"");
+            rs.next();
+            id = rs.getString(1);
+            name= rs.getString(2);
+            HP = rs.getInt(3);
+            atk = rs.getInt(4);
+            def = rs.getInt(5);
+            lvl = rs.getInt(6);
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+        Criatura c = new Criatura(id,name,HP,atk,def,lvl);
+        return c;
+    }
+    
+    
+    
+    
+    
+    
      
 }   

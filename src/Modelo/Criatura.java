@@ -8,7 +8,7 @@ package Modelo;
 
 public class Criatura{
     //Atributos//
-    
+    public String Id;
     public String Nombre;
     public int puntosDeVida;
     public int Nivel;
@@ -17,7 +17,8 @@ public class Criatura{
     public int movimiento;
     //metodos//
     
-    public Criatura(String Nombre, int puntosDevida, int Nivel, int Ataque, int Defensa){
+    public Criatura(String id,String Nombre, int puntosDevida, int Ataque, int Defensa, int Nivel){
+        this.Id = id;
         this.Nombre = Nombre;
         this.Ataque = Ataque;
         this.puntosDeVida = puntosDevida;

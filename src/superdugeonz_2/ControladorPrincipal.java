@@ -39,8 +39,8 @@ public class ControladorPrincipal implements ActionListener{
         cp.contMP=new ControladorModificacionPuzzle();
         cp.vistaInicio.setVisible(true); //pongo visible la vista de inicio
         cp.vistaInicio.agregarListener(cp);
-        Criatura atacante = new Criatura("Diego",1500,1,800,100);
-        Criatura defensora = new Criatura("Tu Ano",1400,1,400,500);
+        Criatura atacante = new Criatura("1","Diego",1500,800,100,1);
+        Criatura defensora = new Criatura("2","Tu Ano",1400,400,500,1);
         
         atacante.Atacar(defensora);
        
