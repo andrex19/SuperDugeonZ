@@ -82,6 +82,25 @@ public class Conexion {
         return c;
     }
     
+    public boolean Registro(String user, String pass) throws SQLException{
+        if(this.consultar("SELECT * FROM USUARIO WHERE ="+user+"'")){
+            System.out.println("Paso el SELECT");
+            int counter = 0;
+            while(rs.next()){
+                counter++;
+            }
+            System.out.println("counter es "+counter);
+            if(counter==0){
+                return this.consultar("INSERT INTO USUARIO (NOMBRE_USUARIO,CONTRASEÑA) VALUES ("+user+","+pass+")");
+            }
+            else{
+                return false;
+            }
+        }
+        System.out.println("LLEGO A LUGAR IMPOSIBLEEE!!!! D: D: D:");
+        return false;//nunca llegara aca
+    }
+    
     
     
     
