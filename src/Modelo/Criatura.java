@@ -8,13 +8,13 @@ package Modelo;
 
 public class Criatura{
     //Atributos//
+    
     private String Nombre;
     private int puntosDeVida;
     private int Nivel;
     private int Ataque;
     private int Defensa;
     private int movimiento;
-    
     //metodos//
     public String getNombre(){
     

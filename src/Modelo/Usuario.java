@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 
 public class Usuario {
+    
+    
     private String usuario;
     private String contraseña;
     
