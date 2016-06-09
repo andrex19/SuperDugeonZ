@@ -9,13 +9,23 @@ package Modelo;
 public class Criatura{
     //Atributos//
     
-    private String Nombre;
-    private int puntosDeVida;
-    private int Nivel;
-    private int Ataque;
-    private int Defensa;
-    private int movimiento;
+    public String Nombre;
+    public int puntosDeVida;
+    public int Nivel;
+    public int Ataque;
+    public int Defensa;
+    public int movimiento;
     //metodos//
+    
+    public Criatura(String Nombre, int puntosDevida, int Nivel, int Ataque, int Defensa){
+        this.Nombre = Nombre;
+        this.Ataque = Ataque;
+        this.puntosDeVida = puntosDevida;
+        this.Defensa = Defensa;
+        this.Nivel = Nivel;
+    }
+    
+    
     public String getNombre(){
     
         return this.Nombre;
