@@ -83,7 +83,7 @@ public class Conexion {
     }
     
     public boolean Registro(String user, String pass) throws SQLException{
-        if(this.consultar("SELECT * FROM USUARIO WHERE ="+user+"'")){
+        if(this.consultar("SELECT NOMBRE_USUARIO, CONTRASENIA_JUGADOR FROM USUARIO WHERE ="+user+"'")){
             System.out.println("Paso el SELECT");
             int counter = 0;
             while(rs.next()){
@@ -91,13 +91,39 @@ public class Conexion {
             }
             System.out.println("counter es "+counter);
             if(counter==0){
-                return this.consultar("INSERT INTO USUARIO (NOMBRE_USUARIO,CONTRASEÑA) VALUES ("+user+","+pass+")");
+                return this.consultar("INSERT INTO USUARIO (NOMBRE_USUARIO,CONTRASENIA_JUGADOR) VALUES ("+user+","+pass+")");
             }
             else{
                 return false;
             }
         }
         return false;//nunca llegara aca
+    }
+    
+    public String login(String user, String pass) throws SQLException{
+        //SELECT * FROM "usuarios" WHERE "user"='uno' AND "password"='uno'
+        String usuario = null;
+        if(this.consultar("SELECT * FROM USUARIO WHERE NOMBRE_USUARIO"+user+" AND CONTRASENIA_JUGADOR"+pass+"'")){
+            System.out.println("Paso el SELECT");
+            int counter = 0;
+            
+            while(rs.next()){
+                counter++;
+                try{
+                    usuario = rs.getString("NOMBRE_USUARIO");
+                }
+                catch(SQLException e){
+                    System.err.println("Error en login");
+                    System.err.println(e);
+                    return null;
+                }
+            }
+            System.out.println("counter es "+counter);
+            if(counter==1){                
+                return usuario;                
+            }
+        }
+        return null;        
     }
     
     public void Login(){}
