@@ -7,6 +7,7 @@ package Vistas;
 
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /**
  *
@@ -33,6 +34,9 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         Jugadores2BT = new javax.swing.JButton();
         Jugadores3BT = new javax.swing.JButton();
         Jugadores4BT = new javax.swing.JButton();
+        btnIngresar = new javax.swing.JButton();
+        BtnRegistrar = new javax.swing.JButton();
+        InfomcionJugadoresLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,6 +46,12 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
 
         Jugadores4BT.setText("4 jugadores");
 
+        btnIngresar.setText("Ingresar");
+
+        BtnRegistrar.setText("Registrar");
+
+        InfomcionJugadoresLbl.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -50,21 +60,38 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Jugadores4BT, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Jugadores3BT, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                        .addComponent(Jugadores2BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(508, Short.MAX_VALUE))
+                    .addComponent(Jugadores3BT, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                    .addComponent(Jugadores2BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                        .addGap(130, 130, 130))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(InfomcionJugadoresLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(93, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addComponent(Jugadores2BT, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Jugadores3BT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Jugadores4BT, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Jugadores2BT, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(Jugadores3BT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(InfomcionJugadoresLbl)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Jugadores4BT, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                    .addComponent(BtnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         pack();
@@ -106,9 +133,12 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnRegistrar;
+    private javax.swing.JLabel InfomcionJugadoresLbl;
     private javax.swing.JButton Jugadores2BT;
     private javax.swing.JButton Jugadores3BT;
     private javax.swing.JButton Jugadores4BT;
+    private javax.swing.JButton btnIngresar;
     // End of variables declaration//GEN-END:variables
 
     
@@ -116,6 +146,8 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         this.Jugadores2BT.addActionListener(al);
         this.Jugadores3BT.addActionListener(al);
         this.Jugadores4BT.addActionListener(al);
+        this.btnIngresar.addActionListener(al);
+        this.BtnRegistrar.addActionListener(al);
     }
     
 
@@ -129,6 +161,19 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     public JButton get4Jugadores(){
         return this.Jugadores4BT;
     }
+    public JButton getIngresar(){
+        return this.btnIngresar;
+    }
+    public JButton getRegistrar(){
+        return this.BtnRegistrar;
+    }
+    public void setMensajeInfo(String texto){
+        this.InfomcionJugadoresLbl.setText(texto);
+    }
+    public JLabel getInfomcionJugadoresLbl(){
+        return this.InfomcionJugadoresLbl;
+    }
+    
 
 
 

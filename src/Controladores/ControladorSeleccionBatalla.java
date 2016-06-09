@@ -101,4 +101,11 @@ public class ControladorSeleccionBatalla implements ActionListener{
     }
     
     }
-}
+    
+    public void ponerLoginRegistroEnVista(String Mensaje){
+        this.Vsb.setMensajeInfo("");
+        this.Vsb.getIngresar().setVisible(false);
+        this.Vsb.getRegistrar().setVisible(false);
+        //Dejamos las variables vacias para luego darles el valor segun corresponda
+    }
+
