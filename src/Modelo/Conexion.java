@@ -97,9 +97,10 @@ public class Conexion {
                 return false;
             }
         }
-        System.out.println("LLEGO A LUGAR IMPOSIBLEEE!!!! D: D: D:");
         return false;//nunca llegara aca
     }
+    
+    public void Login(){}
     
     
     
