@@ -60,6 +60,7 @@ public class Criatura{
             Danno =  this.Ataque - defensora.Defensa;
             defensora.puntosDeVida = defensora.puntosDeVida - Danno;
             System.out.println(this.Nombre+" ha atacado a "+defensora.Nombre+" con "+Danno+" de daño");
+            System.out.println("A "+defensora.Nombre+" le quedan "+defensora.puntosDeVida+" puntos de vida");
           }
           
         else if (this.Ataque<defensora.Defensa){
