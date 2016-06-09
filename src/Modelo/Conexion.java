@@ -31,19 +31,17 @@ public class Conexion {
     
     
     
-    public void connectar() throws SQLException{
-     try{
-         conn = DriverManager.getConnection(url,user,password);
-         if (conn != null){
-            System.out.println("Conexión a base de datos "+url+" … Ok");
-            stm = (Statement) conn.createStatement();
-         }
-     }catch(SQLException ex){
-         System.out.println("No se pudo conectar a la base de datos");
-     }
-    
+    public boolean conectar(){
+        try{
+            this.conn = DriverManager.getConnection(url, user, password);
+            return true;
+        }
+        catch(SQLException e){
+            System.out.println("Exception en conectar");
+            return false;
+        }
     }
-    
+      
     public boolean consultar(String query){
         try{
             stm = conn.createStatement();
