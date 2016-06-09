@@ -42,4 +42,21 @@ public class Criatura{
     public void Accion(){
     //pedimos las acciones posibles a la clase Accion//
     }
+    
+    public void Atacar(Criatura defensora){
+        int Danno;
+        if (this.Ataque>defensora.Defensa){
+              
+            Danno =  this.Ataque - defensora.Defensa;
+            defensora.puntosDeVida = defensora.puntosDeVida - Danno;
+            System.out.println(this.Nombre+" ha atacado a "+defensora.Nombre);
+          }
+          
+        else if (this.Ataque<defensora.Defensa){
+            Danno = this.Ataque - this.Defensa;
+            this.puntosDeVida = this.puntosDeVida - Danno;
+            System.out.println(this.Nombre+" se quita a sí mismo");
+        }
+    
+    }
 }
