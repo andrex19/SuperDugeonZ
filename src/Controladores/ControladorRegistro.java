@@ -45,10 +45,11 @@ public class ControladorRegistro implements ActionListener {
         //String jefeTerreno=vistaRegistro.getItemCboxJefeTerreno();
         //String puzzle=vistaRegistro.getItemCboxPuzzle();
         if (usuario.equals("")==false && pwd1.equals("")==false && pwd2.equals("")==false){
-            conn = new Conexion();
-            boolean seConecta = conn.conectar();
+            
             
             if (pwd1.equals(pwd2)==true){
+                conn = new Conexion();
+                boolean seConecta = conn.conectar();
                 vistaRegistro.setMsjUsuario("");
                 vistaRegistro.setMsjPwd1("");
                 vistaRegistro.setMsjPwd2("");

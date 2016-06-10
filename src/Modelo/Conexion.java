@@ -24,6 +24,7 @@ public class Conexion {
     String user = "root";
     String password = "root";
     String url = "jdbc:derby://localhost:1527/SuperDungeonZ";
+    public static int id;
     
     ResultSet rs = null;
     Statement stm = null;
@@ -37,6 +38,7 @@ public class Conexion {
             return true;
         }
         catch(SQLException e){
+            System.out.println(e);
             System.out.println("Exception en conectar");
             return false;
         }
@@ -53,6 +55,19 @@ public class Conexion {
             System.err.println(e);
             return false;
         
+        }
+    }
+    
+    public boolean insertar(String consulta){
+        try{
+            stm = conn.createStatement();
+            stm.executeUpdate(consulta);
+            return true;
+        }
+        catch(SQLException e){
+            System.out.println("Exception en insertar");
+            System.err.println(e);
+            return false;
         }
     }
     
@@ -82,7 +97,7 @@ public class Conexion {
     
     public boolean Registro(String user, String pass) throws SQLException{
         
-        if(this.consultar("SELECT NOMBRE_USUARIO, CONTRASENIA_JUGADOR FROM USUARIO WHERE ="+user)){
+        if(this.consultar("SELECT NOMBRE_USUARIO, CONTRASENIA_USUARIO FROM USUARIO WHERE NOMBRE_USUARIO='"+user+"'")){
             System.out.println("Paso el SELECT");
             int counter = 0;
             while(rs.next()){
@@ -90,7 +105,9 @@ public class Conexion {
             }
             System.out.println("counter es "+counter);
             if(counter==0){
-                return this.consultar("INSERT INTO USUARIO (NOMBRE_USUARIO,CONTRASENIA_JUGADOR) VALUES ("+user+","+pass+")");
+                id = 1;
+                return this.insertar("INSERT INTO USUARIO (ID_USUARIO,NOMBRE_USUARIO,ESPNJ_JUGAROR,CONTRASENIA_USUARIO) VALUES ("+id+",'"+user+"',0,'"+pass+"')");
+                
             }
             else{
                 return false;
