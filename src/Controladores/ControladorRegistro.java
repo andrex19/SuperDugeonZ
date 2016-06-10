@@ -57,6 +57,7 @@ public class ControladorRegistro implements ActionListener {
                 vistaRegistro.setMsjPuzzle("");
                 boolean exito = conn.Registro(usuario, pwd1);
                 
+                
                 if (Usuario.existe(usuario)==false){
                     //construir bien el usuario ! (con un metodo o nose)...
                     cp.arreglo_usuario.add(new Usuario(usuario,pwd1));
