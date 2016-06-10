@@ -27,7 +27,6 @@ public class ControladorLogin implements ActionListener {
     VistaLogin vistaLogin;
     Usuario user;
     VistaMenu vistaMenu;
-    Conexion con;
     ControladorMenu contMenu=new ControladorMenu();
      
     
@@ -35,11 +34,8 @@ public class ControladorLogin implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (vistaLogin.getBotonIngresar()==e.getSource()){
             System.out.println("Click boton Ingresar (login)");
-            try {
-                this.loguear();
-            } catch (SQLException ex) {
-                Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            this.loguear();
+            
             
             
         }
@@ -56,17 +52,18 @@ public class ControladorLogin implements ActionListener {
         this.vistaLogin.setVisible(true);
         this.vistaLogin.agregarListener(this);
     }
+
     
     
-    private void loguear() throws SQLException {
+    private void loguear() {
         String usuario = this.vistaLogin.getUsr();
         String contraseña = this.vistaLogin.getPwd();
-        con = new Conexion();
+        
         
         if ((usuario.equals("")==false) && (contraseña.equals("")==false)){
-            con.conectar();
-            String users = con.login(usuario,contraseña);
-            if(user!=null){
+            //con.conectar();
+            //String users = con.login(usuario,contraseña);
+            if(Usuario.existe(usuario)){
                 System.out.println("Usuario existe ");
                 user = new Usuario(usuario,contraseña);
                 

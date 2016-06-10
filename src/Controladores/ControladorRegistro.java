@@ -24,7 +24,7 @@ public class ControladorRegistro implements ActionListener {
     VistaRegistro vistaRegistro;
     JefeTerreno JefeTerreno;
     ControladorMenu contMenu=new ControladorMenu();
-    Conexion conn;
+    //Conexion conn;
     
     
     
@@ -42,20 +42,17 @@ public class ControladorRegistro implements ActionListener {
         String usuario=vistaRegistro.getUsr();
         String pwd1=vistaRegistro.getPwd1();
         String pwd2=vistaRegistro.getPwd2();
-        //String jefeTerreno=vistaRegistro.getItemCboxJefeTerreno();
-        //String puzzle=vistaRegistro.getItemCboxPuzzle();
+        String jefeTerreno=vistaRegistro.getItemCboxJefeTerreno();
+        String puzzle=vistaRegistro.getItemCboxPuzzle();
         if (usuario.equals("")==false && pwd1.equals("")==false && pwd2.equals("")==false){
             
             
             if (pwd1.equals(pwd2)==true){
-                conn = new Conexion();
-                boolean seConecta = conn.conectar();
                 vistaRegistro.setMsjUsuario("");
                 vistaRegistro.setMsjPwd1("");
                 vistaRegistro.setMsjPwd2("");
                 vistaRegistro.setMsjJefeTerreno("");
                 vistaRegistro.setMsjPuzzle("");
-                boolean exito = conn.Registro(usuario, pwd1);
                 
                 
                 if (Usuario.existe(usuario)==false){
@@ -110,18 +107,18 @@ public class ControladorRegistro implements ActionListener {
             else{
                 vistaRegistro.setMsjPwd2("");
             }
-            /*if (jefeTerreno.equals("<Seleccionar>")==true){
+            if (jefeTerreno.equals("<Seleccionar>")==true){
                 vistaRegistro.setMsjJefeTerreno("Seleccione jefe de terreno");
             }
             else{
                 vistaRegistro.setMsjJefeTerreno("");
-            }*/
-            /*if (puzzle.equals("<Seleccionar>")==true){
+            }
+            if (puzzle.equals("<Seleccionar>")==true){
                 vistaRegistro.setMsjPuzzle("Seleccione puzzle");
             }
             else{
                 vistaRegistro.setMsjPuzzle("");
-            }*/
+            }
             
         }
 
