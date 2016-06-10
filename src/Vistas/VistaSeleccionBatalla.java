@@ -8,6 +8,8 @@ package Vistas;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -37,6 +39,19 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         btnIngresar = new javax.swing.JButton();
         BtnRegistrar = new javax.swing.JButton();
         InfomcionJugadoresLbl = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Jugador1TF = new javax.swing.JTextField();
+        Jugador2TF = new javax.swing.JTextField();
+        Jugador3TF = new javax.swing.JTextField();
+        PwdJugador1TF = new javax.swing.JPasswordField();
+        PwdJugador2TF = new javax.swing.JPasswordField();
+        PwdJugador3TF = new javax.swing.JPasswordField();
+        Jugador4TF = new javax.swing.JTextField();
+        PwdJugador4TF = new javax.swing.JPasswordField();
+        BotonIngresar1 = new javax.swing.JButton();
+        BotonIngresar2 = new javax.swing.JButton();
+        BotonIngresar3 = new javax.swing.JButton();
+        BotonIngresar4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +66,24 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         BtnRegistrar.setText("Registrar");
 
         InfomcionJugadoresLbl.setText("jLabel1");
+
+        jLabel1.setText("Usuarios que han ingresado:");
+
+        PwdJugador1TF.setText("jPasswordField1");
+
+        PwdJugador2TF.setText("jPasswordField2");
+
+        PwdJugador3TF.setText("jPasswordField3");
+
+        PwdJugador4TF.setText("jPasswordField4");
+
+        BotonIngresar1.setText("Ingresar");
+
+        BotonIngresar2.setText("Ingresar");
+
+        BotonIngresar3.setText("Ingresar");
+
+        BotonIngresar4.setText("Ingresar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,6 +106,35 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
                         .addGap(217, 217, 217)
                         .addComponent(InfomcionJugadoresLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(93, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(Jugador4TF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                            .addComponent(Jugador3TF, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Jugador2TF, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Jugador1TF, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(PwdJugador4TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BotonIngresar4))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(PwdJugador3TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BotonIngresar3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(PwdJugador2TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BotonIngresar2))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(PwdJugador1TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(BotonIngresar1)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,14 +146,36 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addComponent(Jugadores3BT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(InfomcionJugadoresLbl)
+                        .addComponent(InfomcionJugadoresLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Jugadores4BT, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                     .addComponent(BtnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Jugador1TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PwdJugador1TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonIngresar1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Jugador2TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PwdJugador2TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonIngresar2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Jugador3TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PwdJugador3TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonIngresar3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Jugador4TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PwdJugador4TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonIngresar4))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,12 +217,25 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonIngresar1;
+    private javax.swing.JButton BotonIngresar2;
+    private javax.swing.JButton BotonIngresar3;
+    private javax.swing.JButton BotonIngresar4;
     private javax.swing.JButton BtnRegistrar;
     private javax.swing.JLabel InfomcionJugadoresLbl;
+    private javax.swing.JTextField Jugador1TF;
+    private javax.swing.JTextField Jugador2TF;
+    private javax.swing.JTextField Jugador3TF;
+    private javax.swing.JTextField Jugador4TF;
     private javax.swing.JButton Jugadores2BT;
     private javax.swing.JButton Jugadores3BT;
     private javax.swing.JButton Jugadores4BT;
+    private javax.swing.JPasswordField PwdJugador1TF;
+    private javax.swing.JPasswordField PwdJugador2TF;
+    private javax.swing.JPasswordField PwdJugador3TF;
+    private javax.swing.JPasswordField PwdJugador4TF;
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
     
@@ -148,10 +245,78 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         this.Jugadores4BT.addActionListener(al);
         this.btnIngresar.addActionListener(al);
         this.BtnRegistrar.addActionListener(al);
+        this.BotonIngresar1.addActionListener(al);
+        this.BotonIngresar2.addActionListener(al);
+        this.BotonIngresar3.addActionListener(al);
+        this.BotonIngresar4.addActionListener(al);
+        
     }
     
 
+//metodos get de TF
+     
+     
+    public String getJugador1ST(){
+         return this.Jugador1TF.getText();
+     }
+    public String getJugador2ST(){
+         return this.Jugador2TF.getText();
+     }
+    public String getJugador3ST(){
+         return this.Jugador3TF.getText();
+     }
+    public String getJugador4ST(){
+         return this.Jugador4TF.getText();
+     }
+    
+     
+    public JTextField getJugador1TF(){
+         return this.Jugador1TF;
+     }
+    public JTextField getJugador2TF(){
+         return this.Jugador2TF;
+     }
+    public JTextField getJugador3TF(){
+         return this.Jugador3TF;
+     }
+    public JTextField getJugador4TF(){
+         return this.Jugador4TF;
+     }
+    
+    
+    
+//metodos get de las contraseñas
+    public JPasswordField getPwdJugador1TF(){
+        return this.PwdJugador1TF;
+    }
+    public JPasswordField getPwdJugador2TF(){
+        return this.PwdJugador2TF;
+    }
+    public JPasswordField getPwdJugador3TF(){
+        return this.PwdJugador3TF;
+    }
+    public JPasswordField getPwdJugador4TF(){
+        return this.PwdJugador4TF;
+    }
 
+    
+    public String getPwdJugador1ST(){
+        return this.PwdJugador1TF.getText();
+    }
+    public String getPwdJugador2ST(){
+        return this.PwdJugador2TF.getText();
+    }
+    public String getPwdJugador3ST(){
+        return this.PwdJugador3TF.getText();
+    }
+    public String getPwdJugador4ST(){
+        return this.PwdJugador4TF.getText();
+    }
+    
+    
+    
+    
+    
     public JButton get2Jugadores(){
         return this.Jugadores2BT;
     }
@@ -167,12 +332,46 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     public JButton getRegistrar(){
         return this.BtnRegistrar;
     }
-    public void setMensajeInfo(String texto){
-        this.InfomcionJugadoresLbl.setText(texto);
+    public JButton getIngresar1(){
+        return this.BotonIngresar1;
+    }
+    public JButton getIngresar2(){
+        return this.BotonIngresar2;
+    }
+    public JButton getIngresar3(){
+        return this.BotonIngresar3;
+    }
+    public JButton getIngresar4(){
+        return this.BotonIngresar4;
     }
     public JLabel getInfomcionJugadoresLbl(){
         return this.InfomcionJugadoresLbl;
     }
+    
+    
+    
+    
+    //Metodos set
+    public void setMensajeInfo(String texto){
+        this.InfomcionJugadoresLbl.setText(texto);
+    }
+    public void setTextoJugador1(String jugador){
+        this.Jugador1TF.setText(jugador);
+        this.Jugador1TF.setEditable(false);
+    }
+    public void setTextoJugador2(String jugador){
+        this.Jugador2TF.setText(jugador);
+        this.Jugador2TF.setEditable(false);
+    }
+    public void setTextoJugador3(String jugador){
+        this.Jugador3TF.setText(jugador);
+        this.Jugador3TF.setEditable(false);
+    }
+    public void setTextoJugador4(String jugador){
+        this.Jugador4TF.setText(jugador);
+        this.Jugador4TF.setEditable(false);
+    }
+
     
 
 

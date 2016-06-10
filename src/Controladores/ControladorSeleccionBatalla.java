@@ -57,54 +57,61 @@ public class ControladorSeleccionBatalla implements ActionListener{
     public void comprobacionDeJugadoresDisponibles(ArrayList<Usuario> Jugadores,int numeroAJugar){
         switch(numeroAJugar){
             case 2:
-                if (Jugadores.size()==2){
-                    //colocar metodo de batalla (tablero)
-                    System.out.println("Hay 2 jugadores");
-                    
+
+                if (Jugadores.size()< 2){
+                    this.setTodoNulo();
+                    this.Vsb.getJugador3TF().setVisible(false);
+                    this.Vsb.getPwdJugador3TF().setVisible(false);
+                    this.Vsb.getIngresar3().setVisible(false);
+                    this.Vsb.getJugador4TF().setVisible(false);
+                    this.Vsb.getPwdJugador4TF().setVisible(false);
+                    this.Vsb.getIngresar4().setVisible(false);
+                    this.Vsb.setTextoJugador1(Jugadores.toString());
+                    this.Vsb.getPwdJugador1TF().setVisible(false);
                     break;
                 }
-                else if (Jugadores.size() < 2){
-                    System.out.println("Porfavor ingresar el jugador que quiere jugar");
-                    this.ponerLoginRegistroEnVista("Falta 1 jugador.Ingresa o registrate si no tienes cuenta");
-                    break;
-                }
-                else{
-                    //metodo de elegir personas a jugar(este es el caso en que hay mas de 2 personas conectadas )
-                    break;
-                }
+
             case 3:
-                if (Jugadores.size()==3){
-                    //colocar metodo de batalla (tablero)
-                    System.out.println("Hay 3 jugadores");
-                    break;
+                    
+                if (Jugadores.size() < 3){
+                    this.setTodoNulo();
+                    this.Vsb.getJugador4TF().setVisible(false);
+                    this.Vsb.getPwdJugador4TF().setVisible(false);
+                    this.Vsb.getIngresar4().setVisible(false);
+                    this.Vsb.setTextoJugador1(Jugadores.toString());
+                    this.Vsb.getPwdJugador1TF().setVisible(false);
+
                 }
-                else if (Jugadores.size() < 3){
-                    System.out.println("Porfavor ingresar el jugador que quiere jugar");
-                    this.ponerLoginRegistroEnVista("Falta 2 jugadores.Ingresa o registrate si no tienes cuenta");
-                    break;
-                }
-                else{
-                    //metodo de elegir personas a jugar(este es el caso en que hay mas de 2 personas conectadas )
-                    break;
-                }
+
             case 4:
-                if (Jugadores.size()==4){
-                    //colocar metodo de batalla (tablero)
-                    System.out.println("Hay 4 jugadores");
-                    break;
+                if (Jugadores.size() < 4){
+                    this.setTodoNulo();
+                    this.Vsb.setTextoJugador1(Jugadores.toString());
+                    this.Vsb.getPwdJugador1TF().setVisible(false);
                 }
-                else if (Jugadores.size() < 4){
-                    System.out.println("Porfavor ingresar el jugador que quiere jugar");
-                    this.ponerLoginRegistroEnVista("Falta 3 jugador.Ingresa o registrate si no tienes cuenta");
-                    break;
-                }
-               
+ 
+        }
     }
+    public void setTodoNulo(){
+                    this.Vsb.getJugador1TF().setVisible(false);
+                    this.Vsb.getPwdJugador1TF().setVisible(false);
+                    this.Vsb.getIngresar1().setVisible(false);
+                    this.Vsb.getJugador2TF().setVisible(false);
+                    this.Vsb.getPwdJugador2TF().setVisible(false);
+                    this.Vsb.getIngresar2().setVisible(false);
+                    this.Vsb.getJugador3TF().setVisible(false);
+                    this.Vsb.getPwdJugador3TF().setVisible(false);
+                    this.Vsb.getIngresar3().setVisible(false);
+                    this.Vsb.getJugador4TF().setVisible(false);
+                    this.Vsb.getPwdJugador4TF().setVisible(false);
+                    this.Vsb.getIngresar4().setVisible(false);
+
     }
     
     
     
-    public void ponerLoginRegistroEnVista(String Mensaje){
+    
+/*    public void ponerLoginRegistroEnVista(String Mensaje){
         this.Vsb.setMensajeInfo("");
         this.Vsb.getIngresar().setVisible(false);
         this.Vsb.getRegistrar().setVisible(false);
@@ -113,6 +120,6 @@ public class ControladorSeleccionBatalla implements ActionListener{
         this.Vsb.getIngresar().setVisible(true);
         this.Vsb.getRegistrar().setVisible(true);
          
-    }
+    }*/
 }
 
