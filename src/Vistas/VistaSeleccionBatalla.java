@@ -51,8 +51,16 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         cboxRegistrados2 = new javax.swing.JComboBox<>();
         cboxRegistrados1 = new javax.swing.JComboBox<>();
         cboxRegistrados4 = new javax.swing.JComboBox<>();
-        radioJugador = new javax.swing.JRadioButton();
-        radioPnj = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        radioJugador1 = new javax.swing.JRadioButton();
+        radioPNJ1 = new javax.swing.JRadioButton();
+        radioJugador2 = new javax.swing.JRadioButton();
+        radioPNJ2 = new javax.swing.JRadioButton();
+        radioJugador3 = new javax.swing.JRadioButton();
+        radioPNJ3 = new javax.swing.JRadioButton();
+        radioJugador4 = new javax.swing.JRadioButton();
+        radioPNJ4 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,14 +88,9 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
 
         cboxRegistrados4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
 
-        radioJugador.setText("Jugador");
+        jLabel2.setText("Jugador");
 
-        radioPnj.setText("PNJ");
-        radioPnj.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioPnjActionPerformed(evt);
-            }
-        });
+        jLabel3.setText("PNJ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,47 +100,64 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnVolver)
+                        .addGap(47, 47, 47)
+                        .addComponent(BtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(btnJugar)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(cboxRegistrados3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(pwd3, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(cboxRegistrados4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(pwd4))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(pwd2))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(radioJugador)
-                                .addGap(18, 18, 18)
-                                .addComponent(radioPnj))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(pwd1)
-                                .addGap(480, 480, 480))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cboxRegistrados3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(pwd3, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cboxRegistrados4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(pwd4))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(pwd2)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(72, 72, 72)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnIngresar2)
-                                    .addComponent(btnIngresar3)
-                                    .addComponent(btnIngresar4)
-                                    .addComponent(btnIngresar1)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(radioJugador4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                                        .addComponent(btnIngresar4))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(radioJugador3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnIngresar3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(radioJugador2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnIngresar2))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(radioJugador1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnIngresar1)))
+                                .addGap(194, 194, 194))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnVolver)
+                                .addGap(56, 56, 56)
+                                .addComponent(jLabel2)
                                 .addGap(47, 47, 47)
-                                .addComponent(BtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
-                                .addComponent(btnJugar)))
-                        .addGap(362, 362, 362))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(radioPNJ1)
+                                    .addComponent(jLabel3)
+                                    .addComponent(radioPNJ2)
+                                    .addComponent(radioPNJ3)
+                                    .addComponent(radioPNJ4))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,28 +165,39 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(radioJugador)
-                    .addComponent(radioPnj))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIngresar1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnIngresar1)
+                        .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(radioJugador1))
+                    .addComponent(radioPNJ1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pwd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIngresar2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pwd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnIngresar2)
+                        .addComponent(radioJugador2))
+                    .addComponent(radioPNJ2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboxRegistrados3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pwd3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIngresar3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(radioPNJ3)
+                    .addComponent(radioJugador3)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cboxRegistrados3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pwd3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnIngresar3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboxRegistrados4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pwd4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIngresar4))
+                    .addComponent(btnIngresar4)
+                    .addComponent(radioJugador4)
+                    .addComponent(radioPNJ4))
                 .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnVolver)
@@ -178,10 +209,6 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void radioPnjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPnjActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioPnjActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,12 +258,20 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cboxRegistrados3;
     private javax.swing.JComboBox<String> cboxRegistrados4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField pwd1;
     private javax.swing.JPasswordField pwd2;
     private javax.swing.JPasswordField pwd3;
     private javax.swing.JPasswordField pwd4;
-    private javax.swing.JRadioButton radioJugador;
-    private javax.swing.JRadioButton radioPnj;
+    private javax.swing.JRadioButton radioJugador1;
+    private javax.swing.JRadioButton radioJugador2;
+    private javax.swing.JRadioButton radioJugador3;
+    private javax.swing.JRadioButton radioJugador4;
+    private javax.swing.JRadioButton radioPNJ1;
+    private javax.swing.JRadioButton radioPNJ2;
+    private javax.swing.JRadioButton radioPNJ3;
+    private javax.swing.JRadioButton radioPNJ4;
     // End of variables declaration//GEN-END:variables
 
     
@@ -253,8 +288,14 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         this.cboxRegistrados4.addActionListener(al);
         this.btnVolver.addActionListener(al);
         this.btnJugar.addActionListener(al);
-        this.radioJugador.addActionListener(al);
-        this.radioPnj.addActionListener(al);
+        this.radioJugador1.addActionListener(al);
+        this.radioJugador2.addActionListener(al);
+        this.radioJugador3.addActionListener(al);
+        this.radioJugador4.addActionListener(al);
+        this.radioPNJ1.addActionListener(al);
+        this.radioPNJ2.addActionListener(al);
+        this.radioPNJ3.addActionListener(al);
+        this.radioPNJ4.addActionListener(al);
         
     }
     
@@ -340,11 +381,29 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     }
     
     
-    public JRadioButton getRadioJugador(){
-        return this.radioJugador;
+    public JRadioButton getRadioJugador1(){
+        return this.radioJugador1;
     }
-    public JRadioButton getRadioPNJ(){
-        return this.radioPnj;
+    public JRadioButton getRadioJugador2(){
+        return this.radioJugador2;
+    }
+    public JRadioButton getRadioJugador3(){
+        return this.radioJugador3;
+    }
+    public JRadioButton getRadioJugador4(){
+        return this.radioJugador4;
+    }
+    public JRadioButton getRadioPNJ1(){
+        return this.radioPNJ1;
+    }
+    public JRadioButton getRadioPNJ2(){
+        return this.radioPNJ2;
+    }
+    public JRadioButton getRadioPNJ3(){
+        return this.radioPNJ3;
+    }
+    public JRadioButton getRadioPNJ4(){
+        return this.radioPNJ4;
     }
     public void setPwd1(){
     }

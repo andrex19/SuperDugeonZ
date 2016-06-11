@@ -74,14 +74,14 @@ public class ControladorBatallaTodos implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (Vsb.getRadioJugador()==e.getSource()){
+        if (Vsb.getRadioJugador1()==e.getSource()){
             System.out.println("Presiono Radio Jugador");
-            //Vsb.getCboxRegistrados1().removeAllItems();
+            Vsb.getCboxRegistrados1().removeAllItems();
+            Vsb.getCboxRegistrados1().addItem("<Seleccionar>");
+            Vsb.getRadioPNJ1().setEnabled(false);
             for(int i=0;i<jugadoresRegistrados.size();i++){
                 Vsb.getCboxRegistrados1().addItem(jugadoresRegistrados.get(i).usuario);
-                Vsb.getCboxRegistrados2().addItem(jugadoresRegistrados.get(i).usuario);
-                Vsb.getCboxRegistrados3().addItem(jugadoresRegistrados.get(i).usuario);
-                Vsb.getCboxRegistrados4().addItem(jugadoresRegistrados.get(i).usuario);
+                
             }
         }
         if(Vsb.getBtnIngresar1()==e.getSource()){

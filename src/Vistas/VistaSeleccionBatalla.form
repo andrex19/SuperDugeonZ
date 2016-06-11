@@ -26,61 +26,81 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cboxRegistrados1" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="radioJugador" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="radioPnj" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="pwd1" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="480" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="BtnRegistrar" min="-2" pref="140" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="btnJugar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="cboxRegistrados1" min="-2" pref="140" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="pwd1" min="-2" pref="87" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="cboxRegistrados3" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="pwd3" pref="87" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="cboxRegistrados4" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="pwd4" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="cboxRegistrados2" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="pwd2" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="cboxRegistrados3" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="pwd3" pref="87" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="cboxRegistrados4" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="pwd4" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="cboxRegistrados2" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="pwd2" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnIngresar2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnIngresar3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnIngresar4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnIngresar1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="radioJugador4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="122" max="32767" attributes="0"/>
+                                      <Component id="btnIngresar4" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="radioJugador3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnIngresar3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="radioJugador2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnIngresar2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="radioJugador1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnIngresar1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
+                              <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="BtnRegistrar" min="-2" pref="140" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="btnJugar" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="radioPNJ1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioPNJ2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioPNJ3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioPNJ4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="362" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -92,32 +112,46 @@
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="radioJugador" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="radioPnj" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cboxRegistrados1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="pwd1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnIngresar1" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cboxRegistrados1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnIngresar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pwd1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="radioJugador1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="radioPNJ1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cboxRegistrados2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="pwd2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnIngresar2" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cboxRegistrados2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pwd2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnIngresar2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="radioJugador2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="radioPNJ2" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cboxRegistrados3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="pwd3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnIngresar3" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="radioPNJ3" min="-2" max="-2" attributes="0"/>
+                  <Component id="radioJugador3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cboxRegistrados3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pwd3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnIngresar3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cboxRegistrados4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="pwd4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnIngresar4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="radioJugador4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="radioPNJ4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -229,18 +263,31 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="radioJugador">
+    <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Jugador"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="radioPnj">
+    <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="text" type="java.lang.String" value="PNJ"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioPnjActionPerformed"/>
-      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioJugador1">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioPNJ1">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioJugador2">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioPNJ2">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioJugador3">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioPNJ3">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioJugador4">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioPNJ4">
     </Component>
   </SubComponents>
 </Form>
