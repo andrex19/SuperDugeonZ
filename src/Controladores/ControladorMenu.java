@@ -9,7 +9,7 @@ import Vistas.VistaMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import superdugeonz_2.ControladorPrincipal;
-import Controladores.ControladorSeleccionBatalla;
+import Controladores.ControladorBatallaTodos;
 
 /**
  *
@@ -18,14 +18,14 @@ import Controladores.ControladorSeleccionBatalla;
 public class ControladorMenu implements ActionListener{
     public ControladorPrincipal cp;
     public VistaMenu vistaMenu;    
-    public ControladorSeleccionBatalla Csb;
+    public ControladorBatallaTodos contBatallaTodos;
     
     public void verVista(ControladorPrincipal cp) {
         this.cp=cp;
         this.vistaMenu=new VistaMenu();
         this.vistaMenu.setVisible(true);
         this.vistaMenu.agregarListener(this);
-        this.Csb = new ControladorSeleccionBatalla();
+        this.contBatallaTodos = new ControladorBatallaTodos();
 
     }
 
@@ -34,7 +34,7 @@ public class ControladorMenu implements ActionListener{
        
         if (vistaMenu.getBtnBE()==e.getSource()){
             System.out.println("Click boton Batalla en General");   
-            Csb.verVista();
+            contBatallaTodos.verVista(cp);
         }
         if (vistaMenu.getBtnBT()==e.getSource()){
             System.out.println("Click boton Torneo");            

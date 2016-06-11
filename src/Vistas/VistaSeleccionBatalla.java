@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 /**
@@ -34,143 +35,159 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Jugadores2BT = new javax.swing.JButton();
-        Jugadores3BT = new javax.swing.JButton();
-        Jugadores4BT = new javax.swing.JButton();
         BtnRegistrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        Jugador1TF = new javax.swing.JTextField();
-        Jugador2TF = new javax.swing.JTextField();
-        Jugador3TF = new javax.swing.JTextField();
-        PwdJugador1TF = new javax.swing.JPasswordField();
-        PwdJugador2TF = new javax.swing.JPasswordField();
-        PwdJugador3TF = new javax.swing.JPasswordField();
-        Jugador4TF = new javax.swing.JTextField();
-        PwdJugador4TF = new javax.swing.JPasswordField();
-        BotonIngresar1 = new javax.swing.JButton();
-        BotonIngresar2 = new javax.swing.JButton();
-        BotonIngresar3 = new javax.swing.JButton();
-        BotonIngresar4 = new javax.swing.JButton();
-        JugadoresIngresadoCB = new javax.swing.JComboBox<>();
+        pwd1 = new javax.swing.JPasswordField();
+        pwd2 = new javax.swing.JPasswordField();
+        pwd3 = new javax.swing.JPasswordField();
+        pwd4 = new javax.swing.JPasswordField();
+        btnIngresar1 = new javax.swing.JButton();
+        btnIngresar2 = new javax.swing.JButton();
+        btnIngresar3 = new javax.swing.JButton();
+        btnIngresar4 = new javax.swing.JButton();
+        cboxRegistrados3 = new javax.swing.JComboBox<>();
+        btnJugar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
+        cboxRegistrados2 = new javax.swing.JComboBox<>();
+        cboxRegistrados1 = new javax.swing.JComboBox<>();
+        cboxRegistrados4 = new javax.swing.JComboBox<>();
+        radioJugador = new javax.swing.JRadioButton();
+        radioPnj = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Jugadores2BT.setText("2 jugadores");
-
-        Jugadores3BT.setText("3 Jugadores");
-
-        Jugadores4BT.setText("4 jugadores");
-
         BtnRegistrar.setText("Registrar");
 
-        jLabel1.setText("Usuarios que han ingresado:");
+        jLabel1.setText("Seleccionar jugadores:");
 
-        PwdJugador1TF.setText("jPasswordField1");
+        pwd1.setText("jPasswordField1");
 
-        PwdJugador2TF.setText("jPasswordField2");
+        pwd2.setText("jPasswordField2");
 
-        PwdJugador3TF.setText("jPasswordField3");
+        pwd3.setText("jPasswordField3");
 
-        PwdJugador4TF.setText("jPasswordField4");
+        pwd4.setText("jPasswordField4");
 
-        BotonIngresar1.setText("Ingresar");
+        btnIngresar1.setText("Ingresar");
 
-        BotonIngresar2.setText("Ingresar");
+        btnIngresar2.setText("Ingresar");
 
-        BotonIngresar3.setText("Ingresar");
+        btnIngresar3.setText("Ingresar");
 
-        BotonIngresar4.setText("Ingresar");
+        btnIngresar4.setText("Ingresar");
 
-        JugadoresIngresadoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+        cboxRegistrados3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+
+        btnJugar.setText("Jugar!");
+
+        btnVolver.setText("Volver");
+
+        cboxRegistrados2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+
+        cboxRegistrados1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+
+        cboxRegistrados4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+
+        radioJugador.setText("Jugador");
+
+        radioPnj.setText("PNJ");
+        radioPnj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioPnjActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Jugador4TF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                            .addComponent(Jugador3TF, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Jugador2TF, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Jugador1TF, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(PwdJugador4TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BotonIngresar4))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(PwdJugador3TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BotonIngresar3))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(PwdJugador2TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BotonIngresar2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(PwdJugador1TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(BotonIngresar1)))
-                        .addGap(0, 365, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Jugadores4BT, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                                    .addComponent(Jugadores3BT, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                                    .addComponent(Jugadores2BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(JugadoresIngresadoCB, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cboxRegistrados3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pwd3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(82, 82, 82))))
+                                .addComponent(cboxRegistrados4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pwd4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pwd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnIngresar2)
+                            .addComponent(btnIngresar3)
+                            .addComponent(btnIngresar4)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnVolver)
+                        .addGap(47, 47, 47)
+                        .addComponent(BtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(btnJugar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(radioJugador)
+                                .addGap(18, 18, 18)
+                                .addComponent(radioPnj))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnIngresar1)))))
+                .addContainerGap(362, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jugadores2BT, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JugadoresIngresadoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addComponent(Jugadores3BT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Jugadores4BT, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(BtnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jugador1TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PwdJugador1TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonIngresar1))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radioJugador)
+                    .addComponent(radioPnj))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jugador2TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PwdJugador2TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonIngresar2))
+                    .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIngresar1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jugador3TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PwdJugador3TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonIngresar3))
+                    .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIngresar2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jugador4TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PwdJugador4TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonIngresar4))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(cboxRegistrados3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwd3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIngresar3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboxRegistrados4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwd4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIngresar4))
+                .addGap(71, 71, 71)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVolver)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnJugar)
+                        .addComponent(BtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void radioPnjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPnjActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioPnjActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,37 +225,39 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonIngresar1;
-    private javax.swing.JButton BotonIngresar2;
-    private javax.swing.JButton BotonIngresar3;
-    private javax.swing.JButton BotonIngresar4;
     private javax.swing.JButton BtnRegistrar;
-    private javax.swing.JTextField Jugador1TF;
-    private javax.swing.JTextField Jugador2TF;
-    private javax.swing.JTextField Jugador3TF;
-    private javax.swing.JTextField Jugador4TF;
-    private javax.swing.JButton Jugadores2BT;
-    private javax.swing.JButton Jugadores3BT;
-    private javax.swing.JButton Jugadores4BT;
-    private javax.swing.JComboBox<String> JugadoresIngresadoCB;
-    private javax.swing.JPasswordField PwdJugador1TF;
-    private javax.swing.JPasswordField PwdJugador2TF;
-    private javax.swing.JPasswordField PwdJugador3TF;
-    private javax.swing.JPasswordField PwdJugador4TF;
+    private javax.swing.JButton btnIngresar1;
+    private javax.swing.JButton btnIngresar2;
+    private javax.swing.JButton btnIngresar3;
+    private javax.swing.JButton btnIngresar4;
+    private javax.swing.JButton btnJugar;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JComboBox<String> cboxRegistrados1;
+    private javax.swing.JComboBox<String> cboxRegistrados2;
+    private javax.swing.JComboBox<String> cboxRegistrados3;
+    private javax.swing.JComboBox<String> cboxRegistrados4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPasswordField pwd1;
+    private javax.swing.JPasswordField pwd2;
+    private javax.swing.JPasswordField pwd3;
+    private javax.swing.JPasswordField pwd4;
+    private javax.swing.JRadioButton radioJugador;
+    private javax.swing.JRadioButton radioPnj;
     // End of variables declaration//GEN-END:variables
 
     
      public void agregarListener(ActionListener al){
-        this.Jugadores2BT.addActionListener(al);
-        this.Jugadores3BT.addActionListener(al);
-        this.Jugadores4BT.addActionListener(al);
+
         this.BtnRegistrar.addActionListener(al);
-        this.BotonIngresar1.addActionListener(al);
-        this.BotonIngresar2.addActionListener(al);
-        this.BotonIngresar3.addActionListener(al);
-        this.BotonIngresar4.addActionListener(al);
-        this.JugadoresIngresadoCB.addActionListener(al);
+        this.btnIngresar1.addActionListener(al);
+        this.btnIngresar2.addActionListener(al);
+        this.btnIngresar3.addActionListener(al);
+        this.btnIngresar4.addActionListener(al);
+        this.cboxRegistrados1.addActionListener(al);
+        this.btnVolver.addActionListener(al);
+        this.btnJugar.addActionListener(al);
+        this.radioJugador.addActionListener(al);
+        this.radioPnj.addActionListener(al);
         
     }
     
@@ -246,124 +265,61 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
 //metodos get de TF
      
      
-    public String getJugador1ST(){
-         return this.Jugador1TF.getText();
-     }
-    public String getJugador2ST(){
-         return this.Jugador2TF.getText();
-     }
-    public String getJugador3ST(){
-         return this.Jugador3TF.getText();
-     }
-    public String getJugador4ST(){
-         return this.Jugador4TF.getText();
-     }
-    
-     
-    public JTextField getJugador1TF(){
-         return this.Jugador1TF;
-     }
-    public JTextField getJugador2TF(){
-         return this.Jugador2TF;
-     }
-    public JTextField getJugador3TF(){
-         return this.Jugador3TF;
-     }
-    public JTextField getJugador4TF(){
-         return this.Jugador4TF;
-     }
-    
-    
+
+  
     
 //metodos get de las contraseñas
-    public JPasswordField getPwdJugador1TF(){
-        return this.PwdJugador1TF;
-    }
-    public JPasswordField getPwdJugador2TF(){
-        return this.PwdJugador2TF;
-    }
-    public JPasswordField getPwdJugador3TF(){
-        return this.PwdJugador3TF;
-    }
-    public JPasswordField getPwdJugador4TF(){
-        return this.PwdJugador4TF;
-    }
+
 
     
     public String getPwdJugador1ST(){
-        return this.PwdJugador1TF.getText();
+        return this.pwd1.getText();
     }
     public String getPwdJugador2ST(){
-        return this.PwdJugador2TF.getText();
+        return this.pwd2.getText();
     }
     public String getPwdJugador3ST(){
-        return this.PwdJugador3TF.getText();
+        return this.pwd3.getText();
     }
     public String getPwdJugador4ST(){
-        return this.PwdJugador4TF.getText();
+        return this.pwd4.getText();
     }
     
     
     
     
-    
-    public JButton get2Jugadores(){
-        return this.Jugadores2BT;
-    }
-    public JButton get3Jugadores(){
-        return this.Jugadores3BT;
-    }
-    public JButton get4Jugadores(){
-        return this.Jugadores4BT;
-    }
 
     public JButton getRegistrar(){
         return this.BtnRegistrar;
     }
     public JButton getIngresar1(){
-        return this.BotonIngresar1;
+        return this.btnIngresar1;
     }
     public JButton getIngresar2(){
-        return this.BotonIngresar2;
+        return this.btnIngresar2;
     }
     public JButton getIngresar3(){
-        return this.BotonIngresar3;
+        return this.btnIngresar3;
     }
     public JButton getIngresar4(){
-        return this.BotonIngresar4;
+        return this.btnIngresar4;
     }
-    public String getjugadoresCB(){
-        return this.JugadoresIngresadoCB.toString();
+    public String getItemCboxRegistrados1(){
+        return this.cboxRegistrados1.toString();
     }
-
+    public String getItemCboxRegistrados2(){
+       return this.cboxRegistrados1.getSelectedItem().toString();
+    }
+    public JRadioButton getRadioJugador(){
+        return this.radioJugador;
+    }
+    public JRadioButton getRadioPNJ(){
+        return this.radioPnj;
+    }
     
+    //falta agregar los combobox!!!"#!"#
     
-    
-    
-    //Metodos set
-    public void addJugadorCB(String texto){
-        this.JugadoresIngresadoCB.addItem(texto);
-    }
-    public void setTextoJugador1(String jugador){
-        this.Jugador1TF.setText(jugador);
-        this.Jugador1TF.setEditable(false);
-    }
-    public void setTextoJugador2(String jugador){
-        this.Jugador2TF.setText(jugador);
-        this.Jugador2TF.setEditable(false);
-    }
-    public void setTextoJugador3(String jugador){
-        this.Jugador3TF.setText(jugador);
-        this.Jugador3TF.setEditable(false);
-    }
-    public void setTextoJugador4(String jugador){
-        this.Jugador4TF.setText(jugador);
-        this.Jugador4TF.setEditable(false);
-    }
-
-    
-
-
+   
 
 
 

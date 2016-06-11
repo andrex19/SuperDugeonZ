@@ -20,15 +20,17 @@ import Modelo.Jugador;
  *
  * @author Lizweert
  */
-public class ControladorSeleccionBatalla implements ActionListener{
+public class ControladorBatallaTodos implements ActionListener{
     ControladorMenu Cm;
     VistaSeleccionBatalla Vsb;
     ControladorLogin Cl;
     ControladorPrincipal cp;
     VistaLogin vl;
+    ArrayList<Jugador> jugadoresRegistrados;
     
     
-        public void verVista() {
+    public void verVista(ControladorPrincipal cp) {
+        this.jugadoresRegistrados=(ArrayList<Jugador>) cp.arreglo_usuarios_registrados.clone();
         this.Vsb=new VistaSeleccionBatalla();
         this.Vsb.setVisible(true);
         this.Vsb.agregarListener(this);

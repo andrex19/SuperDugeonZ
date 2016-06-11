@@ -24,126 +24,111 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="Jugador4TF" alignment="0" pref="95" max="32767" attributes="0"/>
-                          <Component id="Jugador3TF" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Jugador2TF" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Jugador1TF" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="PwdJugador4TF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BotonIngresar4" min="-2" max="-2" attributes="0"/>
+                              <Component id="cboxRegistrados3" min="-2" pref="140" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="pwd3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="PwdJugador3TF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BotonIngresar3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="cboxRegistrados4" min="-2" pref="140" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="pwd4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="PwdJugador2TF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BotonIngresar2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="PwdJugador1TF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="BotonIngresar1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="0" pref="365" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="Jugadores4BT" pref="197" max="32767" attributes="0"/>
-                                  <Component id="Jugadores3BT" pref="197" max="32767" attributes="0"/>
-                                  <Component id="Jugadores2BT" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="JugadoresIngresadoCB" min="-2" pref="140" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BtnRegistrar" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="cboxRegistrados2" min="-2" pref="140" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="pwd2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnIngresar2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresar3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresar4" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="BtnRegistrar" min="-2" pref="140" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="btnJugar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cboxRegistrados1" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="radioJugador" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="radioPnj" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="pwd1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnIngresar1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace pref="362" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Jugadores2BT" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="JugadoresIngresadoCB" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Component id="Jugadores3BT" min="-2" pref="54" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="Jugadores4BT" min="-2" pref="51" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BtnRegistrar" alignment="3" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Jugador1TF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="PwdJugador1TF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BotonIngresar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="radioJugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="radioPnj" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Jugador2TF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="PwdJugador2TF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BotonIngresar2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboxRegistrados1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pwd1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnIngresar1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Jugador3TF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="PwdJugador3TF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BotonIngresar3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboxRegistrados2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pwd2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnIngresar2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Jugador4TF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="PwdJugador4TF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BotonIngresar4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboxRegistrados3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pwd3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnIngresar3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cboxRegistrados4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pwd4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnIngresar4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="btnJugar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnRegistrar" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Jugadores2BT">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="2 jugadores"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="Jugadores3BT">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="3 Jugadores"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="Jugadores4BT">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="4 jugadores"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="BtnRegistrar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar"/>
@@ -151,58 +136,50 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Usuarios que han ingresado:"/>
+        <Property name="text" type="java.lang.String" value="Seleccionar jugadores:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="Jugador1TF">
-    </Component>
-    <Component class="javax.swing.JTextField" name="Jugador2TF">
-    </Component>
-    <Component class="javax.swing.JTextField" name="Jugador3TF">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="PwdJugador1TF">
+    <Component class="javax.swing.JPasswordField" name="pwd1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="PwdJugador2TF">
+    <Component class="javax.swing.JPasswordField" name="pwd2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="PwdJugador3TF">
+    <Component class="javax.swing.JPasswordField" name="pwd3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="Jugador4TF">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="PwdJugador4TF">
+    <Component class="javax.swing.JPasswordField" name="pwd4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField4"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonIngresar1">
+    <Component class="javax.swing.JButton" name="btnIngresar1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonIngresar2">
+    <Component class="javax.swing.JButton" name="btnIngresar2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonIngresar3">
+    <Component class="javax.swing.JButton" name="btnIngresar3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BotonIngresar4">
+    <Component class="javax.swing.JButton" name="btnIngresar4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="JugadoresIngresadoCB">
+    <Component class="javax.swing.JComboBox" name="cboxRegistrados3">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
@@ -213,6 +190,65 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnJugar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jugar!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnVolver">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Volver"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboxRegistrados2">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="&lt;Seleccionar&gt;"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboxRegistrados1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="&lt;Seleccionar&gt;"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboxRegistrados4">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="&lt;Seleccionar&gt;"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioJugador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jugador"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radioPnj">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PNJ"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioPnjActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
