@@ -29,7 +29,7 @@ public class PuzzleDados {
         for(int i=0;i<2;i++){
             puzzle[i+12]=new Dado(new Criatura(3));
         }
-        puzzle[14]=new Dado(new Criatura(4))
+        puzzle[14]=new Dado(new Criatura(4));
     }
  
     
