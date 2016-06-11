@@ -68,7 +68,7 @@ public class ControladorRegistro implements ActionListener {
                 
                 if ((Jugador.existe(usuario))==false){
                     
-                    cp.arreglo_usuario.add(new Jugador(usuario,pwd1));
+                    //cp.arreglo_usuario.add(new Jugador(usuario,pwd1));
                     //agregar a la base de datos ...
                     if (cp.arreglo_usuario.size()==1){
                             contMenu.verVista(cp);

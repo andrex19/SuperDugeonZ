@@ -65,11 +65,11 @@ public class ControladorLogin implements ActionListener {
             //String users = con.login(usuario,contraseña);
             if(Jugador.existe(usuario)){
                 System.out.println("Usuario existe ");
-                user = new Jugador(usuario,contraseña);
+                //user = new Jugador(usuario,contraseña);
                 
                 if(Jugador.verificar(usuario,contraseña)){
                     //construir bien el usuario ! (con un metodo o nose)...
-                    cp.arreglo_usuario.add(new Jugador(usuario,contraseña));
+                    //cp.arreglo_usuario.add(new Jugador(usuario,contraseña));
                     System.out.println("Usuario logueado!");
                     if (cp.arreglo_usuario.size()==1){
                         contMenu.verVista(cp);
