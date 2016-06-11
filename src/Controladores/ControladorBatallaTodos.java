@@ -34,9 +34,10 @@ public class ControladorBatallaTodos implements ActionListener{
         this.Vsb=new VistaSeleccionBatalla();
         this.Vsb.setVisible(true);
         this.Vsb.agregarListener(this);
+        System.out.println(jugadoresRegistrados.get(0).usuario);
     }
     
-
+    /*
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Vsb.get2Jugadores()==e.getSource()){
@@ -123,5 +124,11 @@ public class ControladorBatallaTodos implements ActionListener{
         this.Vsb.getRegistrar().setVisible(true);
          
     }*/
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
 
