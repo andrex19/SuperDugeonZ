@@ -55,9 +55,11 @@ public class ControladorRegistro implements ActionListener {
             if (pwd1.equals(pwd2)==true){
                 seConecta=conn.Registro(usuario, pwd1);
                 if(seConecta==true){
-                System.out.println("Registra al usuario");
+                    System.out.println("Registra al usuario");
+                }//ESTA ES LA COMPROBACION IMPORTANTE!!!!!!!!!
+                //DENTRO DE ESTE IF IRÍA LA COMPROBACIÓN DE TODO
                 registrado = new Usuario(usuario,pwd1);
-                }
+                
                 vistaRegistro.setMsjUsuario("");
                 vistaRegistro.setMsjPwd1("");
                 vistaRegistro.setMsjPwd2("");
@@ -65,7 +67,7 @@ public class ControladorRegistro implements ActionListener {
                 vistaRegistro.setMsjPuzzle("");
                 
                 
-                if (Usuario.existe(usuario)==false){
+                if (registrado.existe(usuario)==false){
                     //construir bien el usuario ! (con un metodo o nose)...
                     cp.arreglo_usuario.add(new Usuario(usuario,pwd1));
                     //agregar a la base de datos ...
