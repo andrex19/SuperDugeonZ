@@ -248,6 +248,9 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         this.btnIngresar3.addActionListener(al);
         this.btnIngresar4.addActionListener(al);
         this.cboxRegistrados1.addActionListener(al);
+        this.cboxRegistrados2.addActionListener(al);
+        this.cboxRegistrados3.addActionListener(al);
+        this.cboxRegistrados4.addActionListener(al);
         this.btnVolver.addActionListener(al);
         this.btnJugar.addActionListener(al);
         this.radioJugador.addActionListener(al);
@@ -278,6 +281,18 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     public String getPwdJugador4ST(){
         return this.pwd4.getText();
     }
+    public JPasswordField getPwdField1(){
+        return this.pwd1;
+    }
+    public JPasswordField getPwdField2(){
+        return this.pwd2;
+    }
+    public JPasswordField getPwdField3(){
+        return this.pwd3;
+    }
+    public JPasswordField getPwdField4(){
+        return this.pwd4;
+    }
     
     
     
@@ -286,27 +301,45 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     public JButton getRegistrar(){
         return this.BtnRegistrar;
     }
-    public JButton getIngresar1(){
+    public JButton getBtnIngresar1(){
         return this.btnIngresar1;
     }
-    public JButton getIngresar2(){
+    public JButton getBtnIngresar2(){
         return this.btnIngresar2;
     }
-    public JButton getIngresar3(){
+    public JButton getBtnIngresar3(){
         return this.btnIngresar3;
     }
-    public JButton getIngresar4(){
+    public JButton getBtnIngresar4(){
         return this.btnIngresar4;
+    }
+    
+    public JComboBox getCboxRegistrados1(){
+        return this.cboxRegistrados1;
+    }
+    public JComboBox getCboxRegistrados2(){
+        return this.cboxRegistrados2;
+    }
+    public JComboBox getCboxRegistrados3(){
+        return this.cboxRegistrados3;
+    }
+    public JComboBox getCboxRegistrados4(){
+        return this.cboxRegistrados4;
     }
     public String getItemCboxRegistrados1(){
         return this.cboxRegistrados1.toString();
     }
-    public JComboBox getCboxRegistrados1(){
-        return this.cboxRegistrados1;
-    }
     public String getItemCboxRegistrados2(){
-       return this.cboxRegistrados1.getSelectedItem().toString();
+        return this.cboxRegistrados2.toString();
     }
+    public String getItemCboxRegistrados3(){
+        return this.cboxRegistrados3.toString();
+    }
+    public String getItemCboxRegistrados4(){
+        return this.cboxRegistrados4.toString();
+    }
+    
+    
     public JRadioButton getRadioJugador(){
         return this.radioJugador;
     }
