@@ -24,7 +24,8 @@ public class ControladorRegistro implements ActionListener {
     VistaRegistro vistaRegistro;
     JefeTerreno JefeTerreno;
     ControladorMenu contMenu=new ControladorMenu();
-    //Conexion conn;
+    
+    Conexion conn;
     
     
     
@@ -44,10 +45,19 @@ public class ControladorRegistro implements ActionListener {
         String pwd2=vistaRegistro.getPwd2();
         String jefeTerreno=vistaRegistro.getItemCboxJefeTerreno();
         String puzzle=vistaRegistro.getItemCboxPuzzle();
+        Usuario registrado;
+        boolean seConecta;
         if (usuario.equals("")==false && pwd1.equals("")==false && pwd2.equals("")==false){
-            
+            conn = new Conexion();
+            conn.conectar();
+            System.out.println("Base de datos conectada!!");
             
             if (pwd1.equals(pwd2)==true){
+                seConecta=conn.Registro(usuario, pwd1);
+                if(seConecta==true){
+                System.out.println("Registra al usuario");
+                registrado = new Usuario(usuario,pwd1);
+                }
                 vistaRegistro.setMsjUsuario("");
                 vistaRegistro.setMsjPwd1("");
                 vistaRegistro.setMsjPwd2("");

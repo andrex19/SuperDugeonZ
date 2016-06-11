@@ -106,7 +106,7 @@ public class Conexion {
             System.out.println("counter es "+counter);
             if(counter==0){
                 id = 1;
-                return this.insertar("INSERT INTO USUARIO (ID_USUARIO,NOMBRE_USUARIO,ESPNJ_JUGAROR,CONTRASENIA_USUARIO) VALUES ("+id+",'"+user+"',0,'"+pass+"')");
+                return this.insertar("INSERT INTO USUARIO (NOMBRE_USUARIO,CONTRASENIA_USUARIO) VALUES ('"+user+"','"+pass+"')");
                 
             }
             else{
