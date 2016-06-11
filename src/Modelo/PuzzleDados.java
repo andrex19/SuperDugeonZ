@@ -19,5 +19,6 @@ public class PuzzleDados {
     public PuzzleDados(Dado[] puzzle){
         this.puzzle=puzzle;
     }
+ 
     
 }

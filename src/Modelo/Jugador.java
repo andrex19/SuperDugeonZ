@@ -45,13 +45,18 @@ public class Jugador {
         return false;   
     }
 
-    public  static boolean verificar(String username, String password){
+    public  static boolean verificar(String usuario, String password ,ArrayList<Jugador> arreglo_usuarios_registrados ){
         
-        if(username.equals("Andres") && password.equals("holA")){
-            return true;
-        }else{
-            return false;
+        for (int i=0;i<arreglo_usuarios_registrados.size();i++){
+            if(arreglo_usuarios_registrados.get(i).usuario.equals(usuario)){
+                if(arreglo_usuarios_registrados.get(i).contraseña.equals(password)){
+                    return true;
+                    
+                }
+            }
+    
         }
+        return false;
     }
 
 }

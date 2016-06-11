@@ -26,7 +26,7 @@ public class ControladorMenu implements ActionListener{
         this.vistaMenu.setVisible(true);
         this.vistaMenu.agregarListener(this);
         this.Csb = new ControladorSeleccionBatalla();
-        ControladorMenu ControladorMenu = new ControladorMenu();
+
     }
 
     @Override

@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import javax.swing.ImageIcon;
+
 
 
 /**
@@ -12,23 +14,26 @@ package Modelo;
  * @author Samsung
  */
 public class JefeTerreno {
-    String nombre;
-    int vida;
-    String nombre_habilidad;
+    public String nombre;
+    public int vida;
+    public String nombre_habilidad;
+    public ImageIcon imagen;
     
-    public JefeTerreno(String nombre){
-        this.nombre=nombre;
-        //Construir de forma diferente para el nombre que se entrega
-        if (nombre.equals("Goku")){ 
+    
+    
+    public JefeTerreno(int numero){
+        if (numero==1){
+            this.imagen = new ImageIcon(this.getClass().getResource("/Imagenes/goku.png"));
         }
-        else if (nombre.equals("Vegeta")){
+        else if (numero==2){
+            this.imagen = new ImageIcon(this.getClass().getResource("/Imagenes/Kaio-Sama.png"));
         }
-        else if (nombre.equals("Zolezzi")){
+        else if (numero==3){
+            this.imagen = new ImageIcon(this.getClass().getResource("/Imagenes/goku.png"));
         }
-        else if (nombre.equals("Mr.Satan")){
-
+        else if (numero==4){
+            this.imagen = new ImageIcon(this.getClass().getResource("/Imagenes/goku.png"));
         }
-
     }
     
     

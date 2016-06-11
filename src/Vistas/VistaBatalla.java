@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vistas;
+package Vista;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
@@ -15,12 +19,24 @@ import javax.swing.JPanel;
 public class VistaBatalla extends javax.swing.JFrame {
 
     /**
-     * Creates new form VistaBatalla
+     * Creates new form VistaTerreno2
      */
     public VistaBatalla() {
         initComponents();
+        
+        
+        this.panelTerreno.setLayout(new GridLayout(15,15));
+        for (int i=0;i<15;i++){
+            for (int j=0;j<15;j++){
+                botones [i][j]= new JButton();
+                botones [i][j].setIcon(null);
+                botones [i][j].setBorderPainted(true);
+                this.panelTerreno.add(botones[i][j]); 
+            }
+        
+        }
+        
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,38 +46,128 @@ public class VistaBatalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelTablero = new javax.swing.JPanel();
+        panelTerreno = new javax.swing.JPanel();
+        btnInvocar = new javax.swing.JButton();
+        btnFinalizar = new javax.swing.JButton();
+        btnMover = new javax.swing.JButton();
+        btnLanzar = new javax.swing.JButton();
+        btnMagia = new javax.swing.JButton();
+        btnTrampa = new javax.swing.JButton();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jProgressBar2 = new javax.swing.JProgressBar();
+        jProgressBar3 = new javax.swing.JProgressBar();
+        jProgressBar4 = new javax.swing.JProgressBar();
+        jLabel2 = new javax.swing.JLabel();
+        btnAtacar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout panelTableroLayout = new javax.swing.GroupLayout(panelTablero);
-        panelTablero.setLayout(panelTableroLayout);
-        panelTableroLayout.setHorizontalGroup(
-            panelTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
-        );
-        panelTableroLayout.setVerticalGroup(
-            panelTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
-        );
+        panelTerreno.setEnabled(false);
+        panelTerreno.setLayout(new java.awt.GridLayout(1, 0));
+
+        btnInvocar.setText("Invocar criatura");
+        btnInvocar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInvocarActionPerformed(evt);
+            }
+        });
+
+        btnFinalizar.setText("Finalizar turno");
+
+        btnMover.setText("Mover criatura");
+
+        btnLanzar.setText("Lanzar dado");
+
+        btnMagia.setText("Activar magia");
+
+        btnTrampa.setText("Poner Trampa");
+
+        btnAtacar.setText("Atacar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelTablero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 288, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(panelTerreno, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(btnInvocar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnLanzar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnMagia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnMover, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(27, 27, 27)
+                                                .addComponent(btnTrampa, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnAtacar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(104, 104, 104)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jProgressBar3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jProgressBar2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jProgressBar4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(57, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelTablero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 141, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(panelTerreno, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProgressBar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(jLabel2)
+                .addGap(31, 31, 31)
+                .addComponent(btnFinalizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnInvocar)
+                    .addComponent(btnLanzar))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMover)
+                    .addComponent(btnAtacar))
+                .addGap(93, 93, 93)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMagia)
+                    .addComponent(btnTrampa))
+                .addGap(103, 103, 103))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInvocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvocarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInvocarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +195,7 @@ public class VistaBatalla extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VistaBatalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -99,15 +206,76 @@ public class VistaBatalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel panelTablero;
+    private javax.swing.JButton btnAtacar;
+    private javax.swing.JButton btnFinalizar;
+    private javax.swing.JButton btnInvocar;
+    private javax.swing.JButton btnLanzar;
+    private javax.swing.JButton btnMagia;
+    private javax.swing.JButton btnMover;
+    private javax.swing.JButton btnTrampa;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JProgressBar jProgressBar3;
+    private javax.swing.JProgressBar jProgressBar4;
+    private javax.swing.JPanel panelTerreno;
     // End of variables declaration//GEN-END:variables
-    public JPanel getTablero(){
-        return panelTablero;    
-    }
+    
+    public JButton[][] botones = new JButton[15][15];
     
     
-    public void agregarListener(ActionListener al){
-        
+    public void agregarListener(ActionListener al,MouseAdapter ml,KeyListener kl){
+        for (int i=0;i<15;i++){
+            for (int j=0;j<15;j++){
+                this.botones[i][j].addActionListener(al);
+                this.botones[i][j].addMouseListener(ml);
                 
+            }
+        }
+        this.panelTerreno.addMouseWheelListener(ml);
+        this.btnInvocar.addActionListener(al);
+        this.btnFinalizar.addActionListener(al);
+        this.btnLanzar.addActionListener(al);
+        this.btnMagia.addActionListener(al);
+        this.btnMover.addActionListener(al);
+        this.btnTrampa.addActionListener(al);
+        this.btnAtacar.addActionListener(al);
+        this.addKeyListener(kl);
+        //this.setFocusable(true);
+        
+        
+        
+        
     }
+    public JButton getBtnInvocar(){
+        return this.btnInvocar;
+    }
+    public JButton[][] getBotonesTerreno(){
+        return this.botones;
+    }
+    public JPanel getPanelTerreno(){
+        return this.panelTerreno;
+    }
+    public JButton getBtnFinalizar(){
+        return this.btnFinalizar;
+    }
+    public JButton getBtnLanzar(){
+        return this.btnLanzar;
+    }
+    public JButton getBtnMagia(){
+        return this.btnMagia;
+    }
+    public JButton getBtnMover(){
+        return this.btnMover;
+    }
+    public JButton getBtnTrampa(){
+        return this.btnTrampa;
+    }
+    public JButton getBtnAtacar(){
+        return this.btnAtacar;
+    }
+    
+    
+    
+       
 }

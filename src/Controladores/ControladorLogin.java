@@ -13,6 +13,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import superdugeonz_2.ControladorPrincipal;
 import Controladores.ControladorMenu;
+import Modelo.Criatura;
+import Modelo.Dado;
+import Modelo.JefeTerreno;
+import Modelo.PuzzleDados;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,13 +67,24 @@ public class ControladorLogin implements ActionListener {
         if ((usuario.equals("")==false) && (contraseña.equals("")==false)){
             //con.conectar();
             //String users = con.login(usuario,contraseña);
+
             if(Jugador.existe(cp.arreglo_usuarios_registrados,usuario)){
                 System.out.println("Usuario existe ");
                 //user = new Jugador(usuario,contraseña);
                 
-                if(Jugador.verificar(usuario,contraseña)){
-                    //construir bien el usuario ! (con un metodo o nose)...
-                    //cp.arreglo_usuario.add(new Jugador(usuario,contraseña));
+                if(Jugador.verificar(usuario,contraseña,cp.arreglo_usuarios_registrados)){
+                    Jugador jugador = null;
+                    for (int i=0;i<cp.arreglo_usuarios_registrados.size();i++){
+                        if(cp.arreglo_usuarios_registrados.get(i).usuario.equals(usuario)){
+                            jugador=cp.arreglo_usuarios_registrados.get(i);
+                        }
+                    }
+                    if (jugador==null){
+                        System.out.println("jugador es nuloooooo");
+                    }                
+    
+        
+                    cp.arreglo_usuario.add(jugador);
                     System.out.println("Usuario logueado!");
                     if (cp.arreglo_usuario.size()==1){
                         contMenu.verVista(cp);
