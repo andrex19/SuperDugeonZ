@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import Vistas.VistaLogin;
 import Controladores.ControladorLogin;
 import superdugeonz_2.ControladorPrincipal;
-import Modelo.Usuario;
+import Modelo.Jugador;
 
 /**
  *
@@ -54,7 +54,7 @@ public class ControladorSeleccionBatalla implements ActionListener{
         }
 
     }
-    public void comprobacionDeJugadoresDisponibles(ArrayList<Usuario> Jugadores,int numeroAJugar){
+    public void comprobacionDeJugadoresDisponibles(ArrayList<Jugador> Jugadores,int numeroAJugar){
         switch(numeroAJugar){
             case 2:
 

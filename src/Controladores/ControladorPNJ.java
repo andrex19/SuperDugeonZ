@@ -6,7 +6,7 @@
 package Controladores;
 
 
-import Modelo.Usuario;
+import Modelo.Jugador;
 import Vistas.VistaLogin;
 import Vistas.VistaMenu;
 import java.awt.event.ActionEvent;

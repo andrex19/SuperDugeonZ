@@ -8,7 +8,7 @@ package Controladores;
 import Vistas.VistaRegistro;
 import superdugeonz_2.ControladorPrincipal;
 import Modelo.JefeTerreno;
-import Modelo.Usuario;
+import Modelo.Jugador;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,7 +25,7 @@ public class ControladorRegistro implements ActionListener {
     JefeTerreno JefeTerreno;
     ControladorMenu contMenu=new ControladorMenu();
     
-    Conexion conn;
+    //Conexion conn;
     
     
     
@@ -39,26 +39,25 @@ public class ControladorRegistro implements ActionListener {
     
 
     }
-    public void registrar() throws SQLException{
+    public void registrar(){
         String usuario=vistaRegistro.getUsr();
         String pwd1=vistaRegistro.getPwd1();
         String pwd2=vistaRegistro.getPwd2();
         String jefeTerreno=vistaRegistro.getItemCboxJefeTerreno();
         String puzzle=vistaRegistro.getItemCboxPuzzle();
-        Usuario registrado;
-        boolean seConecta;
-        if (usuario.equals("")==false && pwd1.equals("")==false && pwd2.equals("")==false){
-            conn = new Conexion();
-            conn.conectar();
-            System.out.println("Base de datos conectada!!");
+        //boolean seConecta;
+        if (usuario.equals("")==false && pwd1.equals("")==false && pwd2.equals("")==false 
+            && jefeTerreno.equals("<Seleccionar>")==false && puzzle.equals("<Seleccionar>")==false){
+            //conn = new Conexion();
+            //conn.conectar();
+            //System.out.println("Base de datos conectada!!");
             
             if (pwd1.equals(pwd2)==true){
-                seConecta=conn.Registro(usuario, pwd1);
-                if(seConecta==true){
-                    System.out.println("Registra al usuario");
-                }//ESTA ES LA COMPROBACION IMPORTANTE!!!!!!!!!
+                //seConecta=conn.Registro(usuario, pwd1);
+                //if(seConecta==true){
+                    //System.out.println("Registra al usuario");
+                //ESTA ES LA COMPROBACION IMPORTANTE!!!!!!!!!
                 //DENTRO DE ESTE IF IRÍA LA COMPROBACIÓN DE TODO
-                registrado = new Usuario(usuario,pwd1);
                 
                 vistaRegistro.setMsjUsuario("");
                 vistaRegistro.setMsjPwd1("");
@@ -67,9 +66,9 @@ public class ControladorRegistro implements ActionListener {
                 vistaRegistro.setMsjPuzzle("");
                 
                 
-                if (registrado.existe(usuario)==false){
-                    //construir bien el usuario ! (con un metodo o nose)...
-                    cp.arreglo_usuario.add(new Usuario(usuario,pwd1));
+                if ((Jugador.existe(usuario))==false){
+                    
+                    cp.arreglo_usuario.add(new Jugador(usuario,pwd1));
                     //agregar a la base de datos ...
                     if (cp.arreglo_usuario.size()==1){
                             contMenu.verVista(cp);
@@ -141,12 +140,7 @@ public class ControladorRegistro implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (vistaRegistro.getBotonSiguiente()==e.getSource()){
-            try {
-                this.registrar();
-            } catch (SQLException ex) {
-                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                        
+                this.registrar();          
             System.out.println("Click boton registro");
             
         }

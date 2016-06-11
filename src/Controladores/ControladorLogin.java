@@ -5,7 +5,7 @@
  */
 package Controladores;
 
-import Modelo.Usuario;
+import Modelo.Jugador;
 import Modelo.Conexion;
 import Vistas.VistaLogin;
 import Vistas.VistaMenu;
@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 public class ControladorLogin implements ActionListener {
     ControladorPrincipal cp;
     VistaLogin vistaLogin;
-    Usuario user;
+    Jugador user;
     VistaMenu vistaMenu;
     ControladorMenu contMenu=new ControladorMenu();
      
@@ -63,13 +63,13 @@ public class ControladorLogin implements ActionListener {
         if ((usuario.equals("")==false) && (contraseña.equals("")==false)){
             //con.conectar();
             //String users = con.login(usuario,contraseña);
-            if(Usuario.existe(usuario)){
+            if(Jugador.existe(usuario)){
                 System.out.println("Usuario existe ");
-                user = new Usuario(usuario,contraseña);
+                user = new Jugador(usuario,contraseña);
                 
-                if(Usuario.verificar(usuario,contraseña)){
+                if(Jugador.verificar(usuario,contraseña)){
                     //construir bien el usuario ! (con un metodo o nose)...
-                    cp.arreglo_usuario.add( new Usuario(usuario,contraseña));
+                    cp.arreglo_usuario.add(new Jugador(usuario,contraseña));
                     System.out.println("Usuario logueado!");
                     if (cp.arreglo_usuario.size()==1){
                         contMenu.verVista(cp);

@@ -8,7 +8,7 @@ package superdugeonz_2;
 import Controladores.ControladorLogin;
 import Controladores.ControladorMenu;
 import Controladores.ControladorRegistro;
-import Modelo.Usuario;
+import Modelo.Jugador;
 import Vistas.VistaInicio;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,7 +22,7 @@ import Modelo.Criatura;
  */
 public class ControladorPrincipal implements ActionListener{
     
-    public ArrayList<Usuario> arreglo_usuario = new ArrayList<Usuario>();
+    public ArrayList<Jugador> arreglo_usuario = new ArrayList<Jugador>();
     public ControladorLogin contLogin;
     public VistaInicio vistaInicio;
     public ControladorRegistro contRegistro;
@@ -62,7 +62,7 @@ public class ControladorPrincipal implements ActionListener{
             this.contRegistro.verVista(this);
         } 
     }
-    public ArrayList<Usuario> getArregloDEUsurios(){
+    public ArrayList<Jugador> getArregloDEUsurios(){
         return this.arreglo_usuario;
     }
     
