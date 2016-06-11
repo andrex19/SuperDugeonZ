@@ -6,69 +6,38 @@
 package Modelo;
 
 
-public class Criatura{
-    //Atributos//
-    public String Id;
-    public String Nombre;
+public class Criatura {
+        //Atributos//
+    public String nombre;
     public int puntosDeVida;
-    public int Nivel;
-    public int Ataque;
-    public int Defensa;
+    public int nivel;
+    public int ataque;
+    public int defensa;
     public int movimiento;
-    //metodos//
+    public static int numero;
     
-    public Criatura(String id,String Nombre, int puntosDevida, int Ataque, int Defensa, int Nivel){
-        this.Id = id;
-        this.Nombre = Nombre;
-        this.Ataque = Ataque;
-        this.puntosDeVida = puntosDevida;
-        this.Defensa = Defensa;
-        this.Nivel = Nivel;
-    }
-    
-    
-    public String getNombre(){
-    
-        return this.Nombre;
-    }
-    public int getVida(){
-    
-        return this.puntosDeVida;
-    }
-    public int getNivel(){
-    
-        return this.Nivel;
-    }
-    public int getAtaque(){
-    
-        return this.Ataque;
-    }
-    public int getDefensa(){
-    
-        return this.Defensa;
-    }
-    public int getMovimiento(){
-        return this.movimiento;
-    }
-    public void Accion(){
-    //pedimos las acciones posibles a la clase Accion//
-    }
-    
+    public Criatura(int nivel, String nombre, int vida, int ataque, int defensa ){
+        this.nombre=nombre + numero;
+        this.puntosDeVida=vida;
+        this.nivel=nivel;
+        this.ataque=ataque;
+        this.defensa=defensa;
+        this.movimiento=1;
+        numero=numero+1;
+    }   
     public void Atacar(Criatura defensora){
-        int Danno;
-        if (this.Ataque>defensora.Defensa){
-              
-            Danno =  this.Ataque - defensora.Defensa;
-            defensora.puntosDeVida = defensora.puntosDeVida - Danno;
-            System.out.println(this.Nombre+" ha atacado a "+defensora.Nombre+" con "+Danno+" de daño");
-            System.out.println("A "+defensora.Nombre+" le quedan "+defensora.puntosDeVida+" puntos de vida");
+        int Daño;
+        if (this.ataque>defensora.defensa){
+
+            Daño =  this.ataque - defensora.defensa;
+            defensora.puntosDeVida = defensora.puntosDeVida - Daño;
+            System.out.println(this.nombre+" ha atacado a "+defensora.nombre);
           }
-          
-        else if (this.Ataque<defensora.Defensa){
-            Danno = this.Ataque - this.Defensa;
-            this.puntosDeVida = this.puntosDeVida - Danno;
-            System.out.println(this.Nombre+" se quita a sí mismo");
+
+        else if (this.ataque<defensora.defensa){
+            Daño = this.ataque - this.defensa;
+            this.puntosDeVida = this.puntosDeVida - Daño;
+            System.out.println(this.nombre+" se quita a sí mismo");
         }
-    
     }
 }

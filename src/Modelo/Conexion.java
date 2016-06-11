@@ -71,7 +71,7 @@ public class Conexion {
         }
     }
     
-    public Criatura selectCriatura(String nombre) {
+    /*public Criatura selectCriatura(String nombre) {
         String id = null;
         String name = null;
         int HP=0;
@@ -93,7 +93,7 @@ public class Conexion {
         }
         Criatura c = new Criatura(id,name,HP,atk,def,lvl);
         return c;
-    }
+    }*/
     
     public boolean Registro(String user, String pass) throws SQLException{
         

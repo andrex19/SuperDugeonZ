@@ -63,7 +63,7 @@ public class ControladorLogin implements ActionListener {
         if ((usuario.equals("")==false) && (contraseña.equals("")==false)){
             //con.conectar();
             //String users = con.login(usuario,contraseña);
-            if(Jugador.existe(usuario)){
+            if(Jugador.existe(cp.arreglo_usuarios_registrados,usuario)){
                 System.out.println("Usuario existe ");
                 //user = new Jugador(usuario,contraseña);
                 

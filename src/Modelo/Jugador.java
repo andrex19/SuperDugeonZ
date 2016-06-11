@@ -11,12 +11,12 @@ import java.util.ArrayList;
 public class Jugador {
     public String usuario;
     public String contraseña;
-    public PuzzleDeDados puzle;
+    public PuzzleDados puzle;
     public JefeTerreno jefeTerreno;
     public int[] puntos;
 
     
-    public Jugador(String usuario, String contraseña, PuzzleDeDados puzle, JefeTerreno jefeTerreno){
+    public Jugador(String usuario, String contraseña, PuzzleDados puzle, JefeTerreno jefeTerreno){
         this.usuario=usuario;
         this.contraseña=contraseña;
         this.puzle=puzle;
@@ -28,14 +28,21 @@ public class Jugador {
     
     
     //METODOS PARA VALIDAR USUARIO... ACTUALIZAR CUANDO SE TENGA LA BASE DE DATOS
-    public static boolean existe(String username){
+    public static boolean existe(ArrayList<Jugador> arreglo_usuarios_registrados,String usuario){
+
         //Modificar funcion y ver si existe en la base de datos
         // en el caso de que exista retornar true en caso contrario false
-        if(username.equals("Andres")){
-            return true;
-        }else{
-            return false;
+        for (int i=0;i<arreglo_usuarios_registrados.size();i++){
+            if(arreglo_usuarios_registrados.get(i).usuario.equals(usuario)){
+                return true;
+            }
+            else{
+                return false;
+            }
+            
         }
+        
+        return false;   
     }
 
     public  static boolean verificar(String username, String password){

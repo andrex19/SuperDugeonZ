@@ -23,11 +23,11 @@ import Modelo.Criatura;
 public class ControladorPrincipal implements ActionListener{
     
     public ArrayList<Jugador> arreglo_usuario = new ArrayList<Jugador>();
+    public ArrayList<Jugador> arreglo_usuarios_registrados = new ArrayList<Jugador>();
     public ControladorLogin contLogin;
     public VistaInicio vistaInicio;
     public ControladorRegistro contRegistro;
-    public ControladorModificacionPuzzle contMP;
-    public ControladorMenu contM;
+
 
     
 
@@ -36,13 +36,9 @@ public class ControladorPrincipal implements ActionListener{
         cp.contLogin = new ControladorLogin(); // instancio el controlador del login
         cp.contRegistro=new ControladorRegistro();
         cp.vistaInicio=new VistaInicio(); // instancio la vista de inicio
-        cp.contMP=new ControladorModificacionPuzzle();
         cp.vistaInicio.setVisible(true); //pongo visible la vista de inicio
         cp.vistaInicio.agregarListener(cp);
-        Criatura atacante = new Criatura("1","Diego",1500,800,100,1);
-        Criatura defensora = new Criatura("2","Tu Ano",1400,400,500,1);
-        
-        atacante.Atacar(defensora);
+
        
 // hago que la vista sea escuchada por el controlador principal
         

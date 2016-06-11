@@ -13,6 +13,11 @@ import Modelo.Dado;
  * @author Lizweert/*
  * To change this license header, choose License Headers in Project Properties.
  */
-public class PuzzleDeDados extends Dado {
+public class PuzzleDados {
+    public Dado[] puzzle=new Dado[15];
+    
+    public PuzzleDados(Dado[] puzzle){
+        this.puzzle=puzzle;
+    }
     
 }

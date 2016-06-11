@@ -66,8 +66,8 @@ public class ControladorRegistro implements ActionListener {
                 vistaRegistro.setMsjPuzzle("");
                 
                 
-                if ((Jugador.existe(usuario))==false){
-                    
+                if (Jugador.existe(cp.arreglo_usuarios_registrados, usuario)==false){
+
                     //cp.arreglo_usuario.add(new Jugador(usuario,pwd1));
                     //agregar a la base de datos ...
                     if (cp.arreglo_usuario.size()==1){

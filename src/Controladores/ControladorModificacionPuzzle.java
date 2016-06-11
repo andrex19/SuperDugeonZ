@@ -9,14 +9,14 @@ package Controladores;
 import Vistas.VistaModificacionPuzzle;
 import java.awt.event.ActionListener;
 import superdugeonz_2.ControladorPrincipal;
-import Modelo.PuzzleDeDados;
+import Modelo.PuzzleDados;
 import java.awt.event.ActionEvent;
 
 
 
 public class ControladorModificacionPuzzle implements ActionListener{
     VistaModificacionPuzzle Vm;
-    PuzzleDeDados Pd;
+    PuzzleDados Pd;
     ControladorPrincipal Cp;
     
     
