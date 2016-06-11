@@ -7,6 +7,7 @@ package Vistas;
 
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -232,12 +233,12 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         this.Jugadores2BT.addActionListener(al);
         this.Jugadores3BT.addActionListener(al);
         this.Jugadores4BT.addActionListener(al);
-        this.btnIngresar.addActionListener(al);
         this.BtnRegistrar.addActionListener(al);
         this.BotonIngresar1.addActionListener(al);
         this.BotonIngresar2.addActionListener(al);
         this.BotonIngresar3.addActionListener(al);
         this.BotonIngresar4.addActionListener(al);
+        this.JugadoresIngresadoCB.addActionListener(al);
         
     }
     
@@ -315,9 +316,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     public JButton get4Jugadores(){
         return this.Jugadores4BT;
     }
-    public JButton getIngresar(){
-        return this.btnIngresar;
-    }
+
     public JButton getRegistrar(){
         return this.BtnRegistrar;
     }
@@ -333,16 +332,17 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     public JButton getIngresar4(){
         return this.BotonIngresar4;
     }
-    public JLabel getInfomcionJugadoresLbl(){
-        return this.InfomcionJugadoresLbl;
+    public String getjugadoresCB(){
+        return this.JugadoresIngresadoCB.toString();
     }
+
     
     
     
     
     //Metodos set
-    public void setMensajeInfo(String texto){
-        this.JugadoresIngresadoCB.add(texto);
+    public void addJugadorCB(String texto){
+        this.JugadoresIngresadoCB.addItem(texto);
     }
     public void setTextoJugador1(String jugador){
         this.Jugador1TF.setText(jugador);

@@ -36,4 +36,8 @@ public class ControladorBatalla implements ActionListener  {
     public void actionPerformed(ActionEvent e) {
     }
     
+    
+    
+    
+    
 }
