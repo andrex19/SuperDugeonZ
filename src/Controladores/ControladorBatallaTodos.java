@@ -37,7 +37,25 @@ public class ControladorBatallaTodos implements ActionListener{
         System.out.println(jugadoresRegistrados.get(0).usuario);
     }
     
-    /*
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (Vsb.getRadioJugador()==e.getSource()){
+            Vsb.getCboxRegistrados1().removeAllItems();
+            for(int i=0;i<jugadoresRegistrados.size();i++){
+                Vsb.getCboxRegistrados1().addItem(jugadoresRegistrados.get(i).usuario);    
+            }
+            if (Vsb.getPwdJugador1ST().equals("")==false){
+                
+            
+            }
+            
+            
+        
+        }
+    }
+        /*
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Vsb.get2Jugadores()==e.getSource()){
@@ -124,11 +142,6 @@ public class ControladorBatallaTodos implements ActionListener{
         this.Vsb.getRegistrar().setVisible(true);
          
     }*/
-
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
 

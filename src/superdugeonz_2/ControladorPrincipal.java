@@ -43,9 +43,9 @@ public class ControladorPrincipal implements ActionListener{
         cp.vistaInicio.agregarListener(cp);
         Dado[] aux1;
         aux1= new Dado[15];
-            for (int i=0; i<15; i++){
+            /*for (int i=0; i<15; i++){
                 aux1[i]=new Dado(1, new Criatura(1, "Pinky", 1000, 400, 200 ));
-            }
+            }*/
         Jugador jugador0;
         jugador0=new Jugador("andres","hola",new PuzzleDados(aux1),new JefeTerreno(1));
         //construir bien el usuario ! (con un metodo o nose)...
