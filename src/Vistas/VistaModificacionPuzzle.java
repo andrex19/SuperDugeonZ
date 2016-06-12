@@ -20,6 +20,7 @@ public class VistaModificacionPuzzle extends javax.swing.JFrame {
      */
     public VistaModificacionPuzzle() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

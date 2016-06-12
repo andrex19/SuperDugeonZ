@@ -147,7 +147,7 @@ public class ControladorRegistro implements ActionListener {
         if (vistaRegistro.getBotonCancelar()==e.getSource()){
             System.out.println("Click boton Cancelar (registro)");
             this.vistaRegistro.dispose(); //cierra la vista login
-            this.cp.vistaInicio.setVisible(true); //muestra la vista Inicio
+            //this.cp.vistaInicio.setVisible(true); //muestra la vista Inicio
         }
             
         if (vistaRegistro.getCboxJefeTerreno()==e.getSource()){ //camibiar las imagenes!!!

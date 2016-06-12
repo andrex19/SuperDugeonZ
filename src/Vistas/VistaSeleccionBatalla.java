@@ -36,7 +36,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BtnRegistrar = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         pwd1 = new javax.swing.JPasswordField();
         pwd2 = new javax.swing.JPasswordField();
@@ -65,7 +65,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        BtnRegistrar.setText("Registrar");
+        btnRegistrar.setText("Registrar");
 
         jLabel1.setText("Seleccionar jugadores:");
 
@@ -80,6 +80,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         cboxRegistrados3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
 
         btnJugar.setText("Jugar!");
+        btnJugar.setEnabled(false);
 
         btnVolver.setText("Volver");
 
@@ -103,7 +104,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnVolver)
                         .addGap(47, 47, 47)
-                        .addComponent(BtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
                         .addComponent(btnJugar)
                         .addContainerGap())
@@ -204,7 +205,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
                     .addComponent(btnVolver)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnJugar)
-                        .addComponent(BtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -247,12 +248,12 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnRegistrar;
     private javax.swing.JButton btnIngresar1;
     private javax.swing.JButton btnIngresar2;
     private javax.swing.JButton btnIngresar3;
     private javax.swing.JButton btnIngresar4;
     private javax.swing.JButton btnJugar;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JComboBox<String> cboxRegistrados1;
     private javax.swing.JComboBox<String> cboxRegistrados2;
@@ -278,7 +279,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     
      public void agregarListener(ActionListener al){
 
-        this.BtnRegistrar.addActionListener(al);
+        this.btnRegistrar.addActionListener(al);
         this.btnIngresar1.addActionListener(al);
         this.btnIngresar2.addActionListener(al);
         this.btnIngresar3.addActionListener(al);
@@ -337,11 +338,16 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     }
     
     
+    public JButton getBtnJugar(){
+        return this.btnJugar;
+    }
+    public JButton getBtnVolver(){
+        return this.btnVolver;
+    }
     
     
-
-    public JButton getRegistrar(){
-        return this.BtnRegistrar;
+    public JButton getBtnRegistrar(){
+        return this.btnRegistrar;
     }
     public JButton getBtnIngresar1(){
         return this.btnIngresar1;

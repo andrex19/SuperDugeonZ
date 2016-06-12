@@ -26,9 +26,13 @@ public class ControladorBatallaTodos implements ActionListener{
     ControladorPrincipal cp;
     ArrayList<Jugador> jugadoresRegistrados;
     ArrayList<Jugador> jugadoresReady=new ArrayList<Jugador>();
+    ControladorBatalla contBatalla=new ControladorBatalla();
+    ControladorRegistro contRegistro=new ControladorRegistro();
+    ControladorMenu contMenu;
     
-    public void verVista(ControladorPrincipal cp) {
+    public void verVista(ControladorPrincipal cp,ControladorMenu contMenu) {
         this.cp = cp;
+        this.contMenu=contMenu;
         this.jugadoresRegistrados=(ArrayList<Jugador>) cp.arreglo_usuarios_registrados.clone();
         this.Vsb=new VistaSeleccionBatalla();
         this.Vsb.setVisible(true);
@@ -85,6 +89,7 @@ public class ControladorBatallaTodos implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
         if (Vsb.getRadioJugador1()==e.getSource()){
             System.out.println("Presiono Radio Jugador");
             Vsb.getCboxRegistrados1().removeAllItems();
@@ -196,7 +201,28 @@ public class ControladorBatallaTodos implements ActionListener{
                 Vsb.getRadioPNJ4().setEnabled(false);
             }
         }
+        if(Vsb.getBtnJugar()==e.getSource()){
+            System.out.println("Presiona Jugar");
+            System.out.println( "lago de jugadores ready: " + jugadoresReady.size());
+            contBatalla.verVista(cp,jugadoresReady);
+            
+
+        }
+        if(Vsb.getBtnRegistrar()==e.getSource()){
+            contRegistro.verVista(cp);
+        }
+        if (Vsb.getBtnVolver()==e.getSource()){
+            Vsb.dispose();
+            this.contMenu.vistaMenu.setVisible(true);
+        }
+        
+        
+        //PARA QUE SE HABILITE EL BOTON DE JUGAR!
+        /*if(jugadoresReady.size()>=2){
+            Vsb.getBtnJugar().setEnabled(true);
+        }*/
     }
+}
     
         /*
     @Override
@@ -286,5 +312,5 @@ public class ControladorBatallaTodos implements ActionListener{
          
     }*/
     
-}
+
 

@@ -23,6 +23,7 @@ public class VistaBatalla extends javax.swing.JFrame {
      */
     public VistaBatalla() {
         initComponents();
+        setLocationRelativeTo(null);
         
         
         this.panelTerreno.setLayout(new GridLayout(15,15));

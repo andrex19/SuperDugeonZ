@@ -34,7 +34,8 @@ public class ControladorMenu implements ActionListener{
        
         if (vistaMenu.getBtnBE()==e.getSource()){
             System.out.println("Click boton Batalla en General");   
-            contBatallaTodos.verVista(cp);
+            contBatallaTodos.verVista(cp,this);
+            this.vistaMenu.setVisible(false);
         }
         if (vistaMenu.getBtnBT()==e.getSource()){
             System.out.println("Click boton Torneo");            

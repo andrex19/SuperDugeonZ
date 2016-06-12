@@ -65,9 +65,11 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         Random random= new Random();
         int aleatorio;
         ArrayList <Integer> aux = new ArrayList<Integer>();
+        System.out.println(this.arregloJugadores.size());
         while (aux.size()<this.arregloJugadores.size()){
-            aleatorio=random.nextInt(4);
+            aleatorio=random.nextInt(this.arregloJugadores.size());
             if (aux.contains(aleatorio)==false){
+                System.out.println("agregar este aleatorio: " + aleatorio);
                 aux.add(aleatorio);
             }
         }
@@ -76,10 +78,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         //System.out.println(this.ordenTurnos);  
     }
      
-    public void verVista(ControladorPrincipal cp) {
+    public void verVista(ControladorPrincipal cp,ArrayList<Jugador> jugadoresReady) {
     
         this.cp=cp;
-        this.arregloJugadores= (ArrayList<Jugador>) cp.arreglo_usuario.clone();
+        this.arregloJugadores= (ArrayList<Jugador>) jugadoresReady.clone();
         this.vistaTerreno=new VistaBatalla();
         this.vistaTerreno.setVisible(true);
         this.vistaTerreno.agregarListener(this,this,this); 

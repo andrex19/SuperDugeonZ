@@ -20,6 +20,7 @@ public class VistaLogin extends javax.swing.JFrame {
      */
     public VistaLogin() {
         initComponents();
+        setLocationRelativeTo(null);
         
     }
 

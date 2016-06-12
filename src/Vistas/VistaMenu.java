@@ -19,6 +19,7 @@ public class VistaMenu extends javax.swing.JFrame {
      */
     public VistaMenu() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
