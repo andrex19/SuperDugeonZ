@@ -24,6 +24,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
      */
     public VistaSeleccionBatalla() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

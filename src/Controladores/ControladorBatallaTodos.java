@@ -89,11 +89,59 @@ public class ControladorBatallaTodos implements ActionListener{
             System.out.println("Presiono Radio Jugador");
             Vsb.getCboxRegistrados1().removeAllItems();
             Vsb.getCboxRegistrados1().addItem("<Seleccionar>");
-            Vsb.getRadioPNJ1().setEnabled(false);
+            Vsb.getRadioPNJ1().setSelected(false);
             for(int i=0;i<jugadoresRegistrados.size();i++){
                 Vsb.getCboxRegistrados1().addItem(jugadoresRegistrados.get(i).usuario);
                 
             }
+        }
+        if (Vsb.getRadioJugador2()==e.getSource()){
+            System.out.println("Presiono Radio Jugador 2");
+            Vsb.getCboxRegistrados2().removeAllItems();
+            Vsb.getCboxRegistrados2().addItem("<Seleccionar>");
+            Vsb.getRadioPNJ2().setSelected(false);
+            for(int i=0;i<jugadoresRegistrados.size();i++){
+                Vsb.getCboxRegistrados2().addItem(jugadoresRegistrados.get(i).usuario);
+                
+            }
+        }
+        if (Vsb.getRadioJugador3()==e.getSource()){
+            System.out.println("Presiono Radio Jugador 3");
+            Vsb.getCboxRegistrados3().removeAllItems();
+            Vsb.getCboxRegistrados3().addItem("<Seleccionar>");
+            Vsb.getRadioPNJ3().setSelected(false);
+            for(int i=0;i<jugadoresRegistrados.size();i++){
+                Vsb.getCboxRegistrados3().addItem(jugadoresRegistrados.get(i).usuario);
+                
+            }
+        }
+        
+        if (Vsb.getRadioJugador4()==e.getSource()){
+            System.out.println("Presiono Radio Jugador 4");
+            Vsb.getCboxRegistrados4().removeAllItems();
+            Vsb.getCboxRegistrados4().addItem("<Seleccionar>");
+            Vsb.getRadioPNJ4().setSelected(false);
+            for(int i=0;i<jugadoresRegistrados.size();i++){
+                Vsb.getCboxRegistrados4().addItem(jugadoresRegistrados.get(i).usuario);
+                
+            }
+        }
+        if(Vsb.getRadioPNJ1()==e.getSource()){
+            System.out.println("Presiono Radio PNJ 1");
+            Vsb.getRadioJugador1().setSelected(false);
+        
+        }
+        if(Vsb.getRadioPNJ2()==e.getSource()){
+            System.out.println("Presiono Radio PNJ 2");
+            Vsb.getRadioJugador2().setSelected(false);
+        }
+        if(Vsb.getRadioPNJ3()==e.getSource()){
+            System.out.println("Presiono Radio PNJ 3");
+            Vsb.getRadioJugador3().setSelected(false);
+        }
+        if(Vsb.getRadioPNJ4()==e.getSource()){
+            System.out.println("Presiono Radio PNJ 4");
+            Vsb.getRadioJugador4().setSelected(false);
         }
         if(Vsb.getBtnIngresar1()==e.getSource()){
             System.out.println("Presiona Ingresar 1");
@@ -104,6 +152,9 @@ public class ControladorBatallaTodos implements ActionListener{
                 System.out.println("Se loguea!");
                 Vsb.getCboxRegistrados1().setEnabled(false);
                 Vsb.getPwdField1().setEnabled(false);
+                Vsb.getRadioJugador1().setEnabled(false);
+                Vsb.getRadioPNJ1().setEnabled(false);
+                
             }
         }
         if(Vsb.getBtnIngresar2()==e.getSource()){
@@ -112,9 +163,11 @@ public class ControladorBatallaTodos implements ActionListener{
             String pwd = Vsb.getPwdJugador2ST();
             if(usuario.equals("<Seleccionar>")==false && pwd.equals("")==false){
                 this.loguearBatalla(usuario, pwd);
-                System.out.println("Se loguea!");
+                System.out.println("Se loguea 2!");
                 Vsb.getCboxRegistrados2().setEnabled(false);
                 Vsb.getPwdField2().setEnabled(false);
+                Vsb.getRadioJugador2().setEnabled(false);
+                Vsb.getRadioPNJ2().setEnabled(false);
             }
         }
         if(Vsb.getBtnIngresar3()==e.getSource()){
@@ -123,10 +176,11 @@ public class ControladorBatallaTodos implements ActionListener{
             String pwd = Vsb.getPwdJugador3ST();
             if(usuario.equals("<Seleccionar>")==false && pwd.equals("")==false){
                 this.loguearBatalla(usuario, pwd);
-                System.out.println("Se loguea!");
+                System.out.println("Se loguea 3!");
                 Vsb.getCboxRegistrados3().setEnabled(false);
                 Vsb.getPwdField3().setEnabled(false);
-                System.out.println("hola soy: " + jugadoresReady.get(0).usuario);
+                Vsb.getRadioJugador3().setEnabled(false);
+                Vsb.getRadioPNJ3().setEnabled(false);
             }
         }
         if(Vsb.getBtnIngresar4()==e.getSource()){
@@ -138,6 +192,8 @@ public class ControladorBatallaTodos implements ActionListener{
                 System.out.println("Se loguea!");
                 Vsb.getCboxRegistrados4().setEnabled(false);
                 Vsb.getPwdField4().setEnabled(false);
+                Vsb.getRadioJugador4().setEnabled(false);
+                Vsb.getRadioPNJ4().setEnabled(false);
             }
         }
     }
