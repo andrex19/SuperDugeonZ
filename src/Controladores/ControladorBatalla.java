@@ -32,7 +32,7 @@ import superdugeonz_2.ControladorPrincipal;
 public class ControladorBatalla extends MouseAdapter implements ActionListener, KeyListener{
     ControladorPrincipal cp;
     //ControladorElegirDados controladorElegirDados;
-    VistaBatalla vistaTerreno;
+    VistaBatalla vistaBatalla;
     ImageIcon goku,rojo,verde,azul,kaio;
     Dado dado;
     public int[][] carasDado;
@@ -48,6 +48,11 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     //para atacar!
     Criatura criaturaAtk = null;
     Criatura criaturaDef = null ;
+    
+    //para moverme!
+    Criatura criaturaMov = null;
+    int posicionInicialI;
+    int posicionInicialJ;
     
 
     public ControladorBatalla() {
@@ -82,9 +87,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     
         this.cp=cp;
         this.arregloJugadores= (ArrayList<Jugador>) jugadoresReady.clone();
-        this.vistaTerreno=new VistaBatalla();
-        this.vistaTerreno.setVisible(true);
-        this.vistaTerreno.agregarListener(this,this,this); 
+        this.vistaBatalla=new VistaBatalla();
+        this.vistaBatalla.setVisible(true);
+        this.vistaBatalla.agregarListener(this,this,this); 
         ponerJefesTerreno(arregloJugadores);
         generarTurnos();
         System.out.print("orden de turno en esta fase: ");
@@ -100,27 +105,27 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         if (arregloJugadores.size()==2){
             tablero.infoCasillas[0][7].terreno=arregloJugadores.get(0).usuario;
             tablero.infoCasillas[7][0].terreno=arregloJugadores.get(1).usuario;
-            vistaTerreno.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
-            vistaTerreno.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
+            vistaBatalla.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
+            vistaBatalla.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
             
         }
         else if (arregloJugadores.size()==3){
             tablero.infoCasillas[0][7].terreno=arregloJugadores.get(0).usuario;
             tablero.infoCasillas[7][0].terreno=arregloJugadores.get(1).usuario;
             tablero.infoCasillas[14][7].terreno=arregloJugadores.get(2).usuario;
-            vistaTerreno.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
-            vistaTerreno.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
-            vistaTerreno.botones[14][7].setIcon(arregloJugadores.get(2).jefeTerreno.imagen);
+            vistaBatalla.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
+            vistaBatalla.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
+            vistaBatalla.botones[14][7].setIcon(arregloJugadores.get(2).jefeTerreno.imagen);
         }
         else if (arregloJugadores.size()==4){
             tablero.infoCasillas[0][7].terreno=arregloJugadores.get(0).usuario;
             tablero.infoCasillas[7][0].terreno=arregloJugadores.get(1).usuario;
             tablero.infoCasillas[14][7].terreno=arregloJugadores.get(2).usuario;
             tablero.infoCasillas[7][14].terreno=arregloJugadores.get(3).usuario;
-            vistaTerreno.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
-            vistaTerreno.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
-            vistaTerreno.botones[14][7].setIcon(arregloJugadores.get(2).jefeTerreno.imagen);
-            vistaTerreno.botones[7][14].setIcon(arregloJugadores.get(3).jefeTerreno.imagen);
+            vistaBatalla.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
+            vistaBatalla.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
+            vistaBatalla.botones[14][7].setIcon(arregloJugadores.get(2).jefeTerreno.imagen);
+            vistaBatalla.botones[7][14].setIcon(arregloJugadores.get(3).jefeTerreno.imagen);
             /*System.out.println(tablero.infoCasillas[0][7].terreno+ " terreno puesto en poner terreno");
             System.out.println(tablero.infoCasillas[7][0].terreno+ " terreno puesto en poner terreno");
             System.out.println(tablero.infoCasillas[14][7].terreno+ " terreno puesto en poner terreno");
@@ -132,7 +137,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     public void ponerFiguraDado(int[][] carasDado,String jefe1, ImageIcon imagen){
                       
         for (int[]fila:carasDado){
-            vistaTerreno.botones[fila[0]][fila[1]].setIcon(imagen);
+            vistaBatalla.botones[fila[0]][fila[1]].setIcon(imagen);
             tablero.infoCasillas[fila[0]][fila[1]].terreno=jefe1;
         }
         
@@ -142,7 +147,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         int x = carasDado[n][0];
         int y = carasDado[n][1];
                 
-        vistaTerreno.botones[x][y].setIcon(azul);
+        vistaBatalla.botones[x][y].setIcon(azul);
         tablero.infoCasillas[x][y].criatura=criatura;
         tablero.infoCasillas[x][y].ocupadoPor=jugadorActual.usuario;
     }
@@ -151,7 +156,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         for (int i=0;i<15;i++){
             for (int j=0;j<15;j++){
                 if (tablero.infoCasillas[i][j].terreno.equals("")){
-                    vistaTerreno.botones[i][j].setIcon(null);
+                    vistaBatalla.botones[i][j].setIcon(null);
                 }
                 
             }
@@ -165,7 +170,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                 for (int[]cara:carasDado){
                     if ((cara[0]>=0 && cara[0]<15 && cara[1]>=0 && cara[1]<15)){           
                         if (tablero.infoCasillas[cara[0]][cara[1]].terreno.equals("")){
-                            vistaTerreno.botones[cara[0]][cara[1]].setIcon(verde);     
+                            vistaBatalla.botones[cara[0]][cara[1]].setIcon(verde);     
                         }
                     }
                 }
@@ -175,7 +180,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                 for (int[]cara:carasDado){
                     if ((cara[0]>=0 && cara[0]<15 && cara[1]>=0 && cara[1]<15)){           
                         if (tablero.infoCasillas[cara[0]][cara[1]].terreno.equals("")){
-                            vistaTerreno.botones[cara[0]][cara[1]].setIcon(rojo);     
+                            vistaBatalla.botones[cara[0]][cara[1]].setIcon(rojo);     
                         }
                     }
                 }
@@ -191,14 +196,14 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (vistaTerreno.getBtnInvocar()==e.getSource()){ //invocar = boton 1
+        if (vistaBatalla.getBtnInvocar()==e.getSource()){ //invocar = boton 1
             System.out.println("click en boton invocar criatura");          
             ultimo_boton=1; //habilitar la funcionliadad para invocar 
         }
         if (ultimo_boton==1){
             for (int i=0;i<15;i++){
                 for (int j=0;j<15;j++){
-                   if (vistaTerreno.botones[i][j]==e.getSource()){
+                   if (vistaBatalla.botones[i][j]==e.getSource()){
                         //System.out.println(" haz presionado el boton !("+i+","+j+")" );
                         System.out.println("jugador Actual " + jugadorActual.usuario);
                         dado=jugadorActual.puzle.puzzle[1];
@@ -219,7 +224,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             }
         }
         
-        if (vistaTerreno.getBtnMagia()==e.getSource()){
+        if (vistaBatalla.getBtnMagia()==e.getSource()){
             ultimo_boton=2;
             System.out.println("click en boton magia");
             
@@ -229,42 +234,92 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         }
         
         
-        if (vistaTerreno.getBtnMover()==e.getSource()){
+        if (vistaBatalla.getBtnMover()==e.getSource()){
             ultimo_boton=3;
             
             System.out.println("click en boton mover");
         }
         if (ultimo_boton==3){
-            //if (jugadorActual.puntos[1]>0){
+            if(criaturaMov==null){
                 for (int i=0;i<15;i++){
                     for (int j=0;j<15;j++){
-                        if (tablero.infoCasillas[i][j].criatura!=null){//si esque hay una criatura en el campo
-                            if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)){
-                                System.out.println(tablero.infoCasillas[i][j].criatura.nombre);
-                                System.out.println("esta criatura puedo mover");
-                            }    
+                        if (vistaBatalla.botones[i][j]==e.getSource()){
+                            if (tablero.infoCasillas[i][j].criatura!=null){
+                                if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)){
+                                    System.out.println("esta criatura me pertencese!!");
+                                    criaturaMov=tablero.infoCasillas[i][j].criatura;
+                                    posicionInicialI=i;
+                                    posicionInicialJ=j;
+                                    
+                                    System.out.println("se ha seleccionado la criatura para moverla");
+                                }
+                                else{
+                                    System.out.println("esta criatura no me pertenece!");
+                                }
+                                //System.out.println(" haz presionado el boton !("+i+","+j+")" );
+                                //System.out.println(tablero.infoCasillas[i][j].criatura.nombre);
+                                //System.out.println(tablero.infoCasillas[i][j].ocupadoPor);
+                            }
                         }
-
-
-                           //if (Criatura.verificarCriatura())
-
-
                     }
                 }
-                
-            //}
-            
-            
-            
+            }
+            if(criaturaMov!=null){
+                for (int i=0;i<15;i++){
+                    for (int j=0;j<15;j++){
+                        if (vistaBatalla.botones[i][j]==e.getSource()){
+                            
+                                if(tablero.infoCasillas[i][j].ocupadoPor.equals("")){
+                                    
+
+                                    //hay que ver lo de cuanto se puede mover la criatura!!! 
+                                    System.out.println("prinholamundo");
+                                    if (tablero.verificarAdyacenteCriatura(posicionInicialI, posicionInicialJ, i, j)){
+                                        System.out.println("la criatura se puede mover");
+                                        //Borrando informacion de la casilla anterior
+                                        tablero.infoCasillas[posicionInicialI][posicionInicialJ].criatura=null;
+                                        tablero.infoCasillas[posicionInicialI][posicionInicialJ].ocupadoPor="";
+                                        ImageIcon imagenPosicionInicial=null;//capturar bien la imagen 
+                                        //ya que no es la imagen del jefe de terreno la que hay que poner! si no que la de terreno propio
+                                        for (int d=0;d<arregloJugadores.size();d++){
+                                            if (arregloJugadores.get(d).usuario.equals(
+                                                 tablero.infoCasillas[posicionInicialI][posicionInicialJ].terreno)){
+                                                imagenPosicionInicial=arregloJugadores.get(d).jefeTerreno.imagen;
+                                            }
+                                        }
+                                        vistaBatalla.botones[posicionInicialI][posicionInicialJ].setIcon(imagenPosicionInicial);
+                                        //insertando la informacion en la nueva casilla
+                                        tablero.infoCasillas[i][j].criatura=criaturaMov;
+                                        tablero.infoCasillas[i][j].ocupadoPor=jugadorActual.usuario;
+                                        vistaBatalla.botones[posicionInicialI][posicionInicialJ].setIcon(azul);
+                                        
+                                        criaturaMov=null;
+
+                                        ultimo_boton=0;
+                                    }
+                                    else {
+                                        System.out.println(" la criatura no se puede mover ");
+                                    }
+
+
+                                }    
+                            
+                        }
+                    }
+                }
+            }
+            else{
+                System.out.println("tiene que seleccionaar una criatura atacante");
+            }  
         }
-        if (vistaTerreno.getBtnTrampa()==e.getSource()){
+        if (vistaBatalla.getBtnTrampa()==e.getSource()){
             ultimo_boton=4;
             System.out.println("click en boton trampa");
         }
         if (ultimo_boton==4){
             
         }
-         if (vistaTerreno.getBtnLanzar()==e.getSource()){ //lanzar = boton 5
+         if (vistaBatalla.getBtnLanzar()==e.getSource()){ //lanzar = boton 5
             ultimo_boton=5;
             System.out.println("click en boton lanzar");
             //this.controladorElegirDados.verVista(jugadorActual.puzle);
@@ -278,63 +333,77 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             }
             System.out.println("");
         }
-        if (ultimo_boton==5){
-            
-        }
-        if (vistaTerreno.getBtnAtacar()==e.getSource()){
+        /*if (ultimo_boton==5){
+                nose si se ocupara estoooo asi que lo comento1 :ASd :D By Andres! :z el Bellakilo  5Letras!
+        }*/
+        if (vistaBatalla.getBtnAtacar()==e.getSource()){
             ultimo_boton=6;
             System.out.println("click en boton Atacar");
         }
         if (ultimo_boton==6){
             if(criaturaAtk==null){
-            for (int i=0;i<15;i++){
-                for (int j=0;j<15;j++){
-                    if (vistaTerreno.botones[i][j]==e.getSource()){
-                        if (tablero.infoCasillas[i][j].criatura!=null){
-                            if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)){
-                                System.out.println("esta criatura me pertencese!!");
-                                criaturaAtk=tablero.infoCasillas[i][j].criatura;
-                                System.out.println("se ha seleccionado la criatura para atacar");
+                for (int i=0;i<15;i++){
+                    for (int j=0;j<15;j++){
+                        if (vistaBatalla.botones[i][j]==e.getSource()){
+                            if (tablero.infoCasillas[i][j].criatura!=null){
+                                if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)){
+                                    System.out.println("esta criatura me pertencese!!");
+                                    criaturaAtk=tablero.infoCasillas[i][j].criatura;
+                                    posicionInicialI=i;
+                                    posicionInicialJ=j;
+                                    System.out.println("se ha seleccionado la criatura para atacar");
+                                }
+                                else{
+                                    System.out.println("esta criatura no me pertenece!");
+                                }
+                                //System.out.println(" haz presionado el boton !("+i+","+j+")" );
+                                //System.out.println(tablero.infoCasillas[i][j].criatura.nombre);
+                                //System.out.println(tablero.infoCasillas[i][j].ocupadoPor);
                             }
-                            else{
-                                System.out.println("esta criatura no me pertenece!");
-                            }
-                            //System.out.println(" haz presionado el boton !("+i+","+j+")" );
-                            //System.out.println(tablero.infoCasillas[i][j].criatura.nombre);
-                            //System.out.println(tablero.infoCasillas[i][j].ocupadoPor);
                         }
                     }
                 }
             }
-            }
             if(criaturaAtk!=null){
-            for (int i=0;i<15;i++){
-                for (int j=0;j<15;j++){
-                            if (vistaTerreno.botones[i][j]==e.getSource()){
-                                if (tablero.infoCasillas[i][j].criatura!=null){
-                                    if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)==false){
-                                        System.out.println("esta criatura no me pertencese!!criatura defensora");
-                                        criaturaDef=tablero.infoCasillas[i][j].criatura;
-                                        System.out.println("puntos de vida antes: " + criaturaDef.puntosDeVida);
+                for (int i=0;i<15;i++){
+                    for (int j=0;j<15;j++){
+                        if (vistaBatalla.botones[i][j]==e.getSource()){
+                            if (tablero.infoCasillas[i][j].criatura!=null){
+                                if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)==false){
+                                    System.out.println("esta criatura no me pertencese!!criatura defensora");
+                                    criaturaDef=tablero.infoCasillas[i][j].criatura;
+                                    System.out.println("puntos de vida antes: " + criaturaDef.puntosDeVida);
+                                    int[][] posicionCriatura=new int[1][2];
+                                    posicionCriatura[0][0]=i;
+                                    posicionCriatura[0][0]=j;
+
+                                    if (tablero.verificarAdyacente(posicionCriatura,jugadorActual.usuario, tablero)){
+                                        System.out.println("se puede atacar a la criatura");
                                         criaturaAtk.Atacar(criaturaDef);
                                         System.out.println("se ha seeccionado la criatura para defender");
                                         System.out.println("puntos de vida despues: " + criaturaDef.puntosDeVida);
                                         criaturaAtk=null;
                                         criaturaDef=null;
+                                        ultimo_boton=0;
+                                    }
+                                    else {
+                                        System.out.println(" criatura fuera del rango posible de ataque...");
+                                    }
 
-                                    }    
-                                }
+
+                                }    
                             }
+                        }
+                    }
                 }
-            }
             }
             else{
                 System.out.println("tiene que seleccionaar una criatura atacante");
             }
             
-           
+            
         }
-        if (vistaTerreno.getBtnFinalizar()==e.getSource()){
+        if (vistaBatalla.getBtnFinalizar()==e.getSource()){
             System.out.println("click en boton finalizar turno");
             turno+=1;
             if (turno==arregloJugadores.size()){
@@ -395,7 +464,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         if(ultimo_boton == 1){
             for (int i=0;i<15;i++){
                 for (int j=0;j<15;j++){
-                   if (vistaTerreno.botones[i][j]==e.getSource()){
+                   if (vistaBatalla.botones[i][j]==e.getSource()){
                         //System.out.println(" mouse sobre el boton!("+i+","+j+")" );
                         //vistaTerreno.botones[i][j].setIcon(pasto);
                         //System.out.println(carasDado);
@@ -415,7 +484,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         if(ultimo_boton == 1){
             for (int i=0;i<15;i++){
                 for (int j=0;j<15;j++){
-                   if (vistaTerreno.botones[i][j]==e.getSource()){
+                   if (vistaBatalla.botones[i][j]==e.getSource()){
                         //System.out.println(" mouse sobre el boton!("+i+","+j+")" );
                         //vistaTerreno.botones[i][j].setIcon(pasto);
                         carasDado=jugadorActual.puzle.puzzle[0].generarTerreno(i,j,numeroFiguraDado,rotacion);

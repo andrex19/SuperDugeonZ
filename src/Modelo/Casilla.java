@@ -14,5 +14,6 @@ public class Casilla{
 
     public Casilla() {
         this.terreno = "";
+        this.ocupadoPor="";
     }
 }
