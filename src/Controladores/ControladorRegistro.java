@@ -153,6 +153,19 @@ public class ControladorRegistro implements ActionListener {
             
         if (vistaRegistro.getCboxJefeTerreno()==e.getSource()){ //camibiar las imagenes!!!
             vistaRegistro.setImagenJefeTerreno(vistaRegistro.getItemCboxJefeTerreno());
+            if(vistaRegistro.getItemCboxJefeTerreno().equals("Goku")){
+                this.JefeTerreno = new JefeTerreno(1);
+            }
+            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Vegeta")){
+                this.JefeTerreno = new JefeTerreno(2);
+            }
+            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Zolezzi")){
+                this.JefeTerreno = new JefeTerreno(3);
+            }
+            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Mr.Satan")){
+                this.JefeTerreno = new JefeTerreno(4);
+            }
+            
             
         }    
         if (vistaRegistro.getCboxPuzzle()==e.getSource()){
