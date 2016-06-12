@@ -117,21 +117,21 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="radioJugador1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cboxRegistrados1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnIngresar1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="pwd1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="radioJugador1" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="radioPNJ1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="radioJugador2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cboxRegistrados2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="pwd2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnIngresar2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="radioJugador2" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="radioPNJ2" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>

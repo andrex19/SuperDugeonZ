@@ -169,19 +169,19 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(radioJugador1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnIngresar1)
-                        .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(radioJugador1))
+                        .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(radioPNJ1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(radioJugador2)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(pwd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnIngresar2)
-                        .addComponent(radioJugador2))
+                        .addComponent(btnIngresar2))
                     .addComponent(radioPNJ2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,16 +368,16 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         return this.cboxRegistrados4;
     }
     public String getItemCboxRegistrados1(){
-        return this.cboxRegistrados1.toString();
+        return this.cboxRegistrados1.getSelectedItem().toString();
     }
     public String getItemCboxRegistrados2(){
-        return this.cboxRegistrados2.toString();
+        return this.cboxRegistrados2.getSelectedItem().toString();
     }
     public String getItemCboxRegistrados3(){
-        return this.cboxRegistrados3.toString();
+        return this.cboxRegistrados3.getSelectedItem().toString();
     }
     public String getItemCboxRegistrados4(){
-        return this.cboxRegistrados4.toString();
+        return this.cboxRegistrados4.getSelectedItem().toString();
     }
     
     

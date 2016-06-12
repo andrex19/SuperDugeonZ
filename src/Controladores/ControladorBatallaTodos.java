@@ -25,7 +25,7 @@ public class ControladorBatallaTodos implements ActionListener{
     VistaSeleccionBatalla Vsb;
     ControladorPrincipal cp;
     ArrayList<Jugador> jugadoresRegistrados;
-    ArrayList<Jugador> jugadoresReady;
+    ArrayList<Jugador> jugadoresReady=new ArrayList<Jugador>();
     
     public void verVista(ControladorPrincipal cp) {
         this.cp = cp;
@@ -38,18 +38,23 @@ public class ControladorBatallaTodos implements ActionListener{
     
     private void loguearBatalla(String usuario, String contraseña) {
         
-        
+        System.out.println("entre al metodo loguear batalla");
         if ((usuario.equals("")==false) && (contraseña.equals("")==false)){
-
+            System.out.println("entre al primer if");
+            System.out.println(usuario);
+            System.out.println(cp.arreglo_usuarios_registrados.get(0).usuario);
             if(Jugador.existe(cp.arreglo_usuarios_registrados,usuario)){
                 System.out.println("Usuario existe ");
                 
-                
+
                 if(Jugador.verificar(usuario,contraseña,cp.arreglo_usuarios_registrados)){
+                    System.out.println("estoy dentro del segundo if");
                     Jugador jugador = null;
                     for (int i=0;i<cp.arreglo_usuarios_registrados.size();i++){
+                        System.out.println(cp.arreglo_usuarios_registrados.get(i).usuario);
                         if(cp.arreglo_usuarios_registrados.get(i).usuario.equals(usuario)){
                             jugador=cp.arreglo_usuarios_registrados.get(i);
+                            System.out.println("hola soy : " + jugador.usuario);
                         }
                     }
                     if (jugador==null){
@@ -59,6 +64,12 @@ public class ControladorBatallaTodos implements ActionListener{
         
                     this.jugadoresReady.add(jugador);
                     System.out.println("Usuario logueado!");
+                    for (int i=0;i<jugadoresRegistrados.size();i++){
+                        if(jugadoresRegistrados.get(i).usuario.equals(jugador.usuario)){
+                            System.out.println("se removio: " +jugadoresRegistrados.get(i).usuario );
+                            jugadoresRegistrados.remove(i);
+                        }
+                    }
                         
                     }
                     //vistaLogin.bienvenida(usuario);
@@ -115,6 +126,7 @@ public class ControladorBatallaTodos implements ActionListener{
                 System.out.println("Se loguea!");
                 Vsb.getCboxRegistrados3().setEnabled(false);
                 Vsb.getPwdField3().setEnabled(false);
+                System.out.println("hola soy: " + jugadoresReady.get(0).usuario);
             }
         }
         if(Vsb.getBtnIngresar4()==e.getSource()){
