@@ -348,6 +348,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         }*/
         if (vistaBatalla.getBtnAtacar()==e.getSource()){
             ultimo_boton=6;
+            criaturaAtk=null;
+            criaturaDef=null;
+            posicionInicialI=0;
+            posicionInicialJ=0;
             System.out.println("click en boton Atacar");
         }
         if (ultimo_boton==6){

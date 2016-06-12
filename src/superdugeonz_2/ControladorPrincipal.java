@@ -41,10 +41,12 @@ public class ControladorPrincipal implements ActionListener{
         cp.vistaInicio=new VistaInicio(); // instancio la vista de inicio
         cp.vistaInicio.setVisible(true); //pongo visible la vista de inicio
         cp.vistaInicio.agregarListener(cp);
-        PuzzleDados puzzleDados = new PuzzleDados();
+        PuzzleDados puzzleDados1 = new PuzzleDados();
         Jugador jugador0,jugador1;
-        jugador0=new Jugador("andres","hola",puzzleDados,new JefeTerreno(1));
-        jugador1=new Jugador("cesar","asd",puzzleDados,new JefeTerreno(2));
+        PuzzleDados puzzleDados2 = new PuzzleDados();
+        
+        jugador0=new Jugador("andres","hola",puzzleDados1,new JefeTerreno(1));
+        jugador1=new Jugador("cesar","asd",puzzleDados2,new JefeTerreno(2));
         //construir bien el usuario ! (con un metodo o nose)...
         cp.arreglo_usuarios_registrados.add(jugador0);
         cp.arreglo_usuarios_registrados.add(jugador1);
