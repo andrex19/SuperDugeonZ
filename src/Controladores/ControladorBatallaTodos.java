@@ -89,6 +89,7 @@ public class ControladorBatallaTodos implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        this.jugadoresRegistrados=(ArrayList<Jugador>) cp.arreglo_usuarios_registrados.clone();
         
         if (Vsb.getRadioJugador1()==e.getSource()){
             System.out.println("Presiono Radio Jugador");
@@ -96,8 +97,13 @@ public class ControladorBatallaTodos implements ActionListener{
             Vsb.getCboxRegistrados1().addItem("<Seleccionar>");
             Vsb.getRadioPNJ1().setSelected(false);
             for(int i=0;i<jugadoresRegistrados.size();i++){
-                Vsb.getCboxRegistrados1().addItem(jugadoresRegistrados.get(i).usuario);
-                
+                if (Vsb.getItemCboxRegistrados1().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados2().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados3().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados4().equals(jugadoresRegistrados.get(i).usuario)==false){
+                        
+                        Vsb.getCboxRegistrados1().addItem(jugadoresRegistrados.get(i).usuario);
+                }
             }
         }
         if (Vsb.getRadioJugador2()==e.getSource()){
@@ -106,8 +112,13 @@ public class ControladorBatallaTodos implements ActionListener{
             Vsb.getCboxRegistrados2().addItem("<Seleccionar>");
             Vsb.getRadioPNJ2().setSelected(false);
             for(int i=0;i<jugadoresRegistrados.size();i++){
-                Vsb.getCboxRegistrados2().addItem(jugadoresRegistrados.get(i).usuario);
-                
+                if (Vsb.getItemCboxRegistrados1().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados2().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados3().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados4().equals(jugadoresRegistrados.get(i).usuario)==false){
+                        
+                        Vsb.getCboxRegistrados2().addItem(jugadoresRegistrados.get(i).usuario);
+                }
             }
         }
         if (Vsb.getRadioJugador3()==e.getSource()){
@@ -116,8 +127,13 @@ public class ControladorBatallaTodos implements ActionListener{
             Vsb.getCboxRegistrados3().addItem("<Seleccionar>");
             Vsb.getRadioPNJ3().setSelected(false);
             for(int i=0;i<jugadoresRegistrados.size();i++){
-                Vsb.getCboxRegistrados3().addItem(jugadoresRegistrados.get(i).usuario);
-                
+                if (Vsb.getItemCboxRegistrados1().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados2().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados3().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados4().equals(jugadoresRegistrados.get(i).usuario)==false){
+                        
+                        Vsb.getCboxRegistrados3().addItem(jugadoresRegistrados.get(i).usuario);
+                }
             }
         }
         
@@ -127,8 +143,13 @@ public class ControladorBatallaTodos implements ActionListener{
             Vsb.getCboxRegistrados4().addItem("<Seleccionar>");
             Vsb.getRadioPNJ4().setSelected(false);
             for(int i=0;i<jugadoresRegistrados.size();i++){
-                Vsb.getCboxRegistrados4().addItem(jugadoresRegistrados.get(i).usuario);
-                
+                if (Vsb.getItemCboxRegistrados1().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados2().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados3().equals(jugadoresRegistrados.get(i).usuario)==false &&
+                    Vsb.getItemCboxRegistrados4().equals(jugadoresRegistrados.get(i).usuario)==false){
+                        
+                        Vsb.getCboxRegistrados4().addItem(jugadoresRegistrados.get(i).usuario);
+                }
             }
         }
         if(Vsb.getRadioPNJ1()==e.getSource()){

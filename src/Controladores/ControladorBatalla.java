@@ -36,7 +36,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     ImageIcon goku,rojo,verde,azul,kaio;
     Dado dado;
     public int[][] carasDado;
-    public static int figura=0;
+    public static int numeroFiguraDado=0;
     public static int rotacion=0;
     public ArrayList <Integer> ordenTurnos;
     private int ultimo_boton;
@@ -203,7 +203,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                         System.out.println("jugador Actual " + jugadorActual.usuario);
                         dado=jugadorActual.puzle.puzzle[1];
                         //HAY QUE ELEGIR EL DADO QUE SE NECESITA INVOCARR!!! (ASI COMO ESTA... INVOCA UNA CRIATURA DE UN DADO EN ESPECIFICO)
-                        carasDado=dado.generarTerreno(i,j,figura,rotacion);
+                        carasDado=dado.generarTerreno(i,j,numeroFiguraDado,rotacion);
                         if (tablero.verificarTerreno(carasDado,jugadorActual.usuario,tablero)){
                             ponerFiguraDado(carasDado,jugadorActual.usuario,jugadorActual.jefeTerreno.imagen);
                             invocarCriatura(carasDado,dado.criatura);
@@ -357,16 +357,16 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     public void mouseWheelMoved(MouseWheelEvent e){
         if (ultimo_boton==1){
             if (e.getWheelRotation()==1){
-                System.out.println(" Cambiar a figura " + figura);
-                if (figura>0){
-                    figura-=1;
+                System.out.println(" Cambiar a figura " + numeroFiguraDado);
+                if (numeroFiguraDado>0){
+                    numeroFiguraDado-=1;
                 }
                 limpiar();
             }
             else if(e.getWheelRotation()==-1){
-                System.out.println(" cambiar a figura: "+ figura);
-                if (figura<10){
-                    figura+=1;
+                System.out.println(" cambiar a figura: "+ numeroFiguraDado);
+                if (numeroFiguraDado<10){
+                    numeroFiguraDado+=1;
                 } 
                 limpiar();
             }
@@ -400,7 +400,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                         //vistaTerreno.botones[i][j].setIcon(pasto);
                         //System.out.println(carasDado);
                         //System.out.println(jugadorActual.puzle.puzzle[0]);
-                        carasDado=jugadorActual.puzle.puzzle[0].generarTerreno(i,j,figura,rotacion);
+                        carasDado=jugadorActual.puzle.puzzle[0].generarTerreno(i,j,numeroFiguraDado,rotacion);
                         //CAMBIAR ARREGLAR LO DEL METODO GENNERAR TERRENO !!!"#!"#SALKDFJALSDKFJQWR1"#!#
                         pintarTerrenoValido(carasDado,true);
 
@@ -418,7 +418,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                    if (vistaTerreno.botones[i][j]==e.getSource()){
                         //System.out.println(" mouse sobre el boton!("+i+","+j+")" );
                         //vistaTerreno.botones[i][j].setIcon(pasto);
-                        carasDado=jugadorActual.puzle.puzzle[0].generarTerreno(i,j,figura,rotacion);
+                        carasDado=jugadorActual.puzle.puzzle[0].generarTerreno(i,j,numeroFiguraDado,rotacion);
                         //CAMBIAR ARREGLAR LO DEL METODO GENNERAR TERRENO !!!"#!"#SALKDFJALSDKFJQWR1"#!#
                         pintarTerrenoValido(carasDado,false);
                     }

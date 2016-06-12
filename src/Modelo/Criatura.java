@@ -66,4 +66,5 @@ public class Criatura {
             System.out.println(this.nombre+" se quita a sí mismo");
         }
     }
+    
 }
