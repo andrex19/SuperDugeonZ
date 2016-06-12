@@ -245,6 +245,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                     for (int j=0;j<15;j++){
                         if (vistaBatalla.botones[i][j]==e.getSource()){
                             if (tablero.infoCasillas[i][j].criatura!=null){
+                                System.out.println("existe una criatura en esta posicion");
                                 if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)){
                                     System.out.println("esta criatura me pertencese!!");
                                     criaturaMov=tablero.infoCasillas[i][j].criatura;
@@ -261,6 +262,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                 //System.out.println(tablero.infoCasillas[i][j].ocupadoPor);
                             }
                         }
+                        else{
+                            System.out.println("no existe una criatura en esta posicion");
+                        }
                     }
                 }
             }
@@ -269,13 +273,15 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                     for (int j=0;j<15;j++){
                         if (vistaBatalla.botones[i][j]==e.getSource()){
                             
-                                if(tablero.infoCasillas[i][j].ocupadoPor.equals("")){
-                                    
+                                if(tablero.infoCasillas[i][j].ocupadoPor.equals("") &&tablero.infoCasillas[i][j].terreno.equals("")==false ){
+                                    System.out.println("casilla no ocupada y con terreno");
 
                                     //hay que ver lo de cuanto se puede mover la criatura!!! 
-                                    System.out.println("prinholamundo");
+                                    
                                     if (tablero.verificarAdyacenteCriatura(posicionInicialI, posicionInicialJ, i, j)){
                                         System.out.println("la criatura se puede mover");
+                                        System.out.println(posicionInicialI+" "+ posicionInicialJ);
+                                        System.out.println(i+" "+ j);
                                         //Borrando informacion de la casilla anterior
                                         tablero.infoCasillas[posicionInicialI][posicionInicialJ].criatura=null;
                                         tablero.infoCasillas[posicionInicialI][posicionInicialJ].ocupadoPor="";
@@ -291,10 +297,11 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         //insertando la informacion en la nueva casilla
                                         tablero.infoCasillas[i][j].criatura=criaturaMov;
                                         tablero.infoCasillas[i][j].ocupadoPor=jugadorActual.usuario;
-                                        vistaBatalla.botones[posicionInicialI][posicionInicialJ].setIcon(azul);
+                                        vistaBatalla.botones[i][j].setIcon(azul);
                                         
+                                        
+                                        //reiniciando valeres del controlador
                                         criaturaMov=null;
-
                                         ultimo_boton=0;
                                     }
                                     else {
@@ -302,14 +309,17 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                     }
 
 
-                                }    
+                                }
+                                else{
+                                    System.out.println("casilla ocupada o sin terreno");
+                                }
                             
                         }
                     }
                 }
             }
             else{
-                System.out.println("tiene que seleccionaar una criatura atacante");
+                System.out.println("tiene que seleccionar una criatura para mover");
             }  
         }
         if (vistaBatalla.getBtnTrampa()==e.getSource()){
@@ -351,14 +361,17 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                     criaturaAtk=tablero.infoCasillas[i][j].criatura;
                                     posicionInicialI=i;
                                     posicionInicialJ=j;
-                                    System.out.println("se ha seleccionado la criatura para atacar");
+                                    System.out.println("se ha seleccionado la criatura para atacar debe serleccionar una criatura objetivo");
                                 }
                                 else{
-                                    System.out.println("esta criatura no me pertenece!");
+                                    System.out.println("esta criatura no pertenece al jugador");
                                 }
                                 //System.out.println(" haz presionado el boton !("+i+","+j+")" );
                                 //System.out.println(tablero.infoCasillas[i][j].criatura.nombre);
                                 //System.out.println(tablero.infoCasillas[i][j].ocupadoPor);
+                            }
+                            else{
+                                System.out.println("no existe una criatura en esta posicion");
                             }
                         }
                     }
@@ -373,11 +386,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                     System.out.println("esta criatura no me pertencese!!criatura defensora");
                                     criaturaDef=tablero.infoCasillas[i][j].criatura;
                                     System.out.println("puntos de vida antes: " + criaturaDef.puntosDeVida);
-                                    int[][] posicionCriatura=new int[1][2];
-                                    posicionCriatura[0][0]=i;
-                                    posicionCriatura[0][0]=j;
 
-                                    if (tablero.verificarAdyacente(posicionCriatura,jugadorActual.usuario, tablero)){
+                                    System.out.println(tablero.verificarAdyacenteCriatura(posicionInicialI, posicionInicialJ, i, j));
+                                    if (tablero.verificarAdyacenteCriatura(posicionInicialI, posicionInicialJ, i, j)){
                                         System.out.println("se puede atacar a la criatura");
                                         criaturaAtk.Atacar(criaturaDef);
                                         System.out.println("se ha seeccionado la criatura para defender");
@@ -390,8 +401,14 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         System.out.println(" criatura fuera del rango posible de ataque...");
                                     }
 
-
-                                }    
+                                    
+                                }
+                                else {
+                                    System.out.println("criatura objetiva es del mismo jugador");
+                                }
+                            }
+                            else { 
+                                System.out.println("no existe una criatura en esta posicion");
                             }
                         }
                     }

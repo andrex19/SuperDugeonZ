@@ -248,6 +248,7 @@ public class ControladorBatallaTodos implements ActionListener{
         if(Vsb.getBtnJugar()==e.getSource()){
             System.out.println("Presiona Jugar");
             System.out.println( "lago de jugadores ready: " + jugadoresReady.size());
+            Vsb.dispose();
             contBatalla.verVista(cp,jugadoresReady);
             
 
