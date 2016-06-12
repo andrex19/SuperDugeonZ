@@ -218,9 +218,9 @@ public class ControladorBatallaTodos implements ActionListener{
         
         
         //PARA QUE SE HABILITE EL BOTON DE JUGAR!
-        /*if(jugadoresReady.size()>=2){
+        if(jugadoresReady.size()>=2){
             Vsb.getBtnJugar().setEnabled(true);
-        }*/
+        }
     }
 }
     

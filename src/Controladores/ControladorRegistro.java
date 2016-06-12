@@ -69,13 +69,9 @@ public class ControladorRegistro implements ActionListener {
                 if (Jugador.existe(cp.arreglo_usuarios_registrados, usuario)==false){
                     Jugador jugador;
                     jugador=new Jugador(usuario,pwd1,new PuzzleDados(),this.JefeTerreno);
-                    cp.arreglo_usuario.add(jugador);
+                    cp.arreglo_usuarios_registrados.add(jugador);
                     //agregar a la base de datos ...
-                    if (cp.arreglo_usuario.size()==1){
-                            contMenu.verVista(cp);
-                            cp.vistaInicio.setVisible(false);
 
-                        }
                     vistaRegistro.dispose();
                     System.out.println("usuario registrado");
                 }
