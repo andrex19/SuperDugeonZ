@@ -31,7 +31,7 @@ import superdugeonz_2.ControladorPrincipal;
  */
 public class ControladorBatalla extends MouseAdapter implements ActionListener, KeyListener{
     ControladorPrincipal cp;
-    //ControladorElegirDados controladorElegirDados;
+    ControladorSeleccionDados controladorSeleccionDados = new ControladorSeleccionDados();
     VistaBatalla vistaBatalla;
     ImageIcon goku,rojo,verde,azul,kaio;
     Dado dado;
@@ -332,7 +332,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
          if (vistaBatalla.getBtnLanzar()==e.getSource()){ //lanzar = boton 5
             ultimo_boton=5;
             System.out.println("click en boton lanzar");
-            //this.controladorElegirDados.verVista(jugadorActual.puzle);
+            this.controladorSeleccionDados.verVista(this);
             String []caras=jugadorActual.puzle.puzzle[0].caras; 
             int[] puntos= jugadorActual.puntos;
             jugadorActual.puzle.puzzle[0].lanzarDado(caras, puntos);
