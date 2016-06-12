@@ -137,7 +137,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             }
             if(vistaSD.getCheckDado2().isSelected()==true){
                 String resultado2;
-                resultado2 = generarTombola(vistaSD.getItemCboxDado1());
+                resultado2 = generarTombola(vistaSD.getItemCboxDado2());
                 for(int i=0;i<dadosPuzzle.size();i++){
                     if(vistaSD.getItemCboxDado2().equals(dadosPuzzle.get(i).criatura.nombre)){
                         this.dadosSeleccionados.add(dadosPuzzle.get(i));
@@ -148,7 +148,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             }
             if(vistaSD.getCheckDado3().isSelected()==true){
                 String resultado3;
-                resultado3 = generarTombola(vistaSD.getItemCboxDado1());
+                resultado3 = generarTombola(vistaSD.getItemCboxDado3());
                 for(int i=0;i<dadosPuzzle.size();i++){
                     if(vistaSD.getItemCboxDado3().equals(dadosPuzzle.get(i).criatura.nombre)){
                         this.dadosSeleccionados.add(dadosPuzzle.get(i));
@@ -159,7 +159,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             }
             if(vistaSD.getCheckDado4().isSelected()==true){
                 String resultado4;
-                resultado4 = generarTombola(vistaSD.getItemCboxDado1());
+                resultado4 = generarTombola(vistaSD.getItemCboxDado4());
                 for(int i=0;i<dadosPuzzle.size();i++){
                     if(vistaSD.getItemCboxDado4().equals(dadosPuzzle.get(i).criatura.nombre)){
                         this.dadosSeleccionados.add(dadosPuzzle.get(i));
