@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import Modelo.Conexion;
+import Modelo.PuzzleDados;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,7 +37,6 @@ public class ControladorRegistro implements ActionListener {
     this.vistaRegistro=new VistaRegistro();
     this.vistaRegistro.setVisible(true);
     this.vistaRegistro.agregarListener(this);
-    
 
     }
     public void registrar(){
@@ -67,8 +67,9 @@ public class ControladorRegistro implements ActionListener {
                 
                 
                 if (Jugador.existe(cp.arreglo_usuarios_registrados, usuario)==false){
-                    
-                    //cp.arreglo_usuario.add(new Jugador(usuario,pwd1));
+                    Jugador jugador;
+                    jugador=new Jugador(usuario,pwd1,new PuzzleDados(),this.JefeTerreno);
+                    cp.arreglo_usuario.add(jugador);
                     //agregar a la base de datos ...
                     if (cp.arreglo_usuario.size()==1){
                             contMenu.verVista(cp);
