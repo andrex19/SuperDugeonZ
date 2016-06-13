@@ -59,7 +59,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
                 }
             }
     }
-    public String generarTombola(String nombreCriatura){
+    /*public String generarTombola(String nombreCriatura){
         String [] tombola = null;
         String cara = null;
         Random randomCaras = new Random();
@@ -76,7 +76,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
         //}
         return cara;
         
-    }
+    }*/
     @Override
     public void actionPerformed(ActionEvent e) {
         if(vistaSD.getCheckDado1()==e.getSource()){
@@ -125,51 +125,75 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
         if(vistaSD.getLanzarDados()==e.getSource()){
             if(vistaSD.getCheckDado1().isSelected()==true){
                 String resultado1;
-                resultado1 = generarTombola(vistaSD.getItemCboxDado1());
+                //resultado1 = generarTombola(vistaSD.getItemCboxDado1());
                 for(int i=0;i<dadosPuzzle.size();i++){
                     if(vistaSD.getItemCboxDado1().equals(dadosPuzzle.get(i).criatura.nombre)){
                         this.dadosSeleccionados.add(dadosPuzzle.get(i));
+                        break;
                     }
                 }
                 
-                System.out.println("Resultado Dado 1: "+resultado1);
+                //System.out.println("Resultado Dado 1: "+resultado1);
                 
             }
             if(vistaSD.getCheckDado2().isSelected()==true){
                 String resultado2;
-                resultado2 = generarTombola(vistaSD.getItemCboxDado2());
+                //resultado2 = generarTombola(vistaSD.getItemCboxDado2());
                 for(int i=0;i<dadosPuzzle.size();i++){
                     if(vistaSD.getItemCboxDado2().equals(dadosPuzzle.get(i).criatura.nombre)){
                         this.dadosSeleccionados.add(dadosPuzzle.get(i));
+                        break;
                     }
                 }
-                System.out.println("Resultado Dado 2: "+resultado2);
+                //System.out.println("Resultado Dado 2: "+resultado2);
                 
             }
             if(vistaSD.getCheckDado3().isSelected()==true){
                 String resultado3;
-                resultado3 = generarTombola(vistaSD.getItemCboxDado3());
+               // resultado3 = generarTombola(vistaSD.getItemCboxDado3());
                 for(int i=0;i<dadosPuzzle.size();i++){
                     if(vistaSD.getItemCboxDado3().equals(dadosPuzzle.get(i).criatura.nombre)){
                         this.dadosSeleccionados.add(dadosPuzzle.get(i));
+                        break;
                     }
                 }
-                System.out.println("Resultado Dado 3: "+resultado3);
+                //System.out.println("Resultado Dado 3: "+resultado3);
                 
             }
             if(vistaSD.getCheckDado4().isSelected()==true){
                 String resultado4;
-                resultado4 = generarTombola(vistaSD.getItemCboxDado4());
+                //resultado4 = generarTombola(vistaSD.getItemCboxDado4());
                 for(int i=0;i<dadosPuzzle.size();i++){
                     if(vistaSD.getItemCboxDado4().equals(dadosPuzzle.get(i).criatura.nombre)){
                         this.dadosSeleccionados.add(dadosPuzzle.get(i));
+                        break;
                     }
                 }
-                System.out.println("Resultado Dado 4: "+resultado4);
+                //System.out.println("Resultado Dado 4: "+resultado4);
                 
             }
+
+            int[] puntos= this.contBatalla.jugadorActual.puntos;
+            for (int i=0;i<this.dadosSeleccionados.size();i++){
+                String []caras=this.dadosSeleccionados.get(i).caras;
+                this.dadosSeleccionados.get(i).lanzarDado(caras, puntos);
+                System.out.println("dado: " + i);
                 
+            }
+            for (int i=0;i<puntos.length;i++){
+                
+                System.out.print(puntos[i]+ ", ");
+            }
+            System.out.println("");
+            this.contBatalla.dadosSeleccionados=(ArrayList<Dado>) this.dadosSeleccionados.clone();
+            this.vistaSD.dispose();
+            this.contBatalla.vistaBatalla.getBtnLanzar().setEnabled(false);
+            this.contBatalla.verificarPuntos();
         }
+        if (this.vistaSD.getVolver()==e.getSource()){
+            this.vistaSD.dispose();
+        }
+        
     }
     
 }

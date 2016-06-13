@@ -31,7 +31,7 @@ import superdugeonz_2.ControladorPrincipal;
  */
 public class ControladorBatalla extends MouseAdapter implements ActionListener, KeyListener{
     ControladorPrincipal cp;
-    ControladorSeleccionDados controladorSeleccionDados = new ControladorSeleccionDados();
+    ControladorSeleccionDados controladorSeleccionDados;
     VistaBatalla vistaBatalla;
     ImageIcon goku,rojo,verde,azul,kaio;
     Dado dado;
@@ -44,6 +44,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     public int turno;
     public Jugador jugadorActual;
     ArrayList<Jugador> arregloJugadores = new ArrayList<Jugador>();
+    ArrayList<Dado> dadosSeleccionados = new ArrayList<Dado>();
     
     //para atacar!
     Criatura criaturaAtk = null;
@@ -98,6 +99,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         jugadorActual=arregloJugadores.get(ordenTurnos.get(turno));
         System.out.println(jugadorActual.usuario+" usuario actual al principio de batalla ");
         System.out.println("turno: "+turno);
+        verificarPuntos();
 
         
     }
@@ -191,6 +193,38 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             limpiar();
         }
     }
+    public void verificarPuntos(){
+            if(this.jugadorActual.puntos[0]<=0){
+                this.vistaBatalla.getBtnAtacar().setEnabled(false);
+            }
+            else{
+                this.vistaBatalla.getBtnAtacar().setEnabled(true);
+            }
+            if(this.jugadorActual.puntos[1]<=0){
+                this.vistaBatalla.getBtnMover().setEnabled(false);
+            }
+            else{
+                this.vistaBatalla.getBtnMover().setEnabled(true);
+            }
+            if(this.jugadorActual.puntos[2]<=0){
+                this.vistaBatalla.getBtnMagia().setEnabled(false);
+            }
+            else{
+                this.vistaBatalla.getBtnMagia().setEnabled(true);
+            }
+            if(this.jugadorActual.puntos[3]<=0){
+                this.vistaBatalla.getBtnTrampa().setEnabled(false);
+            }
+            else{
+                this.vistaBatalla.getBtnTrampa().setEnabled(true);
+            }
+            if(this.jugadorActual.puntos[4]<=0){
+                this.vistaBatalla.getBtnInvocar().setEnabled(false);
+            }
+            else{
+                this.vistaBatalla.getBtnInvocar().setEnabled(true);
+            }
+    }
     
     
     
@@ -213,6 +247,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                             ponerFiguraDado(carasDado,jugadorActual.usuario,jugadorActual.jefeTerreno.imagen);
                             invocarCriatura(carasDado,dado.criatura);
                             System.out.println(dado.criatura.nombre + "ha sido invocada");
+                            this.jugadorActual.puntos[4]-=1;
+                            verificarPuntos();
                             ultimo_boton=0;
                         }
                         else{
@@ -298,6 +334,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         tablero.infoCasillas[i][j].criatura=criaturaMov;
                                         tablero.infoCasillas[i][j].ocupadoPor=jugadorActual.usuario;
                                         vistaBatalla.botones[i][j].setIcon(azul);
+                                        this.jugadorActual.puntos[1]-=1;
+                                        verificarPuntos();
                                         
                                         
                                         //reiniciando valeres del controlador
@@ -331,17 +369,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         }
          if (vistaBatalla.getBtnLanzar()==e.getSource()){ //lanzar = boton 5
             ultimo_boton=5;
+            this.controladorSeleccionDados = new ControladorSeleccionDados();
             System.out.println("click en boton lanzar");
             this.controladorSeleccionDados.verVista(this);
-            String []caras=jugadorActual.puzle.puzzle[0].caras; 
-            int[] puntos= jugadorActual.puntos;
-            jugadorActual.puzle.puzzle[0].lanzarDado(caras, puntos);
-            System.out.print(jugadorActual.usuario+ " :");
-            for (int i=0;i<puntos.length;i++){
-                
-                System.out.print(puntos[i]+ ", ");
-            }
-            System.out.println("");
+
         }
         /*if (ultimo_boton==5){
                 nose si se ocupara estoooo asi que lo comento1 :ASd :D By Andres! :z el Bellakilo  5Letras!
@@ -395,6 +426,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                     if (tablero.verificarAdyacenteCriatura(posicionInicialI, posicionInicialJ, i, j)){
                                         System.out.println("se puede atacar a la criatura");
                                         criaturaAtk.Atacar(criaturaDef);
+                                        this.jugadorActual.puntos[0]-=1;
+                                        verificarPuntos();
                                         System.out.println("se ha seeccionado la criatura para defender");
                                         System.out.println("puntos de vida despues: " + criaturaDef.puntosDeVida);
                                         criaturaAtk=null;
@@ -438,6 +471,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             jugadorActual=arregloJugadores.get(ordenTurnos.get(turno));
             System.out.println("turno: "+turno);
             System.out.println("turno de: "+ jugadorActual.usuario);
+            this.vistaBatalla.getBtnLanzar().setEnabled(true);
+            verificarPuntos();
+            
             ultimo_boton=0;
         }
     }
