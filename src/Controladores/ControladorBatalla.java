@@ -530,6 +530,19 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         System.out.println("vida del jefe de terreno despues de atacar: " + tablero.infoCasillas[i][j].jefeTerreno.vida);
                                         this.jugadorActual.puntos[0]-=1;
                                         verificarPuntos();
+                                        if (tablero.infoCasillas[i][j].jefeTerreno.vida<=0){
+                                            for (int r=0;r<arregloJugadores.size();r++){
+                                                if (arregloJugadores.get(r).usuario.equals(tablero.infoCasillas[i][j].terreno)){
+                                                    arregloJugadores.remove(r);                                                }
+                                            }
+                                            tablero.infoCasillas[i][j].jefeTerreno=null;
+                                            tablero.infoCasillas[i][j].ocupadoPor="";
+                                            tablero.infoCasillas[i][j].terreno="";
+                                            vistaBatalla.botones[i][j].setIcon(null);
+                                            
+                                            
+                                            
+                                        }
                                     }
                                     else{
                                         System.out.println("el jefe de terreno no esta adyacente");

@@ -24,7 +24,7 @@ public class Criatura {
         this.nombre = "Humano";
         this.puntosDeVida= 200;
         this.nivel= nivel;
-        this.ataque= 80;
+        this.ataque= 3000;
         this.defensa= 20;
         this.movimiento=1;
         this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/1.png"));
