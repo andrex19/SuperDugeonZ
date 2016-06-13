@@ -456,8 +456,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                             tablero.infoCasillas[i][j].criatura=null;
                                             vistaBatalla.botones[i][j].setIcon(null);
                                         }
-                                        System.out.println("se ha seeccionado la criatura para defender");
-                                        System.out.println("puntos de vida despues: " + criaturaDef.puntosDeVida);
+                                        
                                         criaturaAtk=null;
                                         criaturaDef=null;
                                         ultimo_boton=0;
