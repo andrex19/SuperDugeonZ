@@ -107,6 +107,11 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
 
         
     }
+    public void verificarGanador(){
+        if(arregloJugadores.size()<=1){
+            System.out.println("el ganador es: " + arregloJugadores.get(0).usuario);
+        }
+    }
     public void ponerJefesTerreno(ArrayList<Jugador> arregloJugadores){
         if (arregloJugadores.size()==2){
             tablero.infoCasillas[0][7].terreno=arregloJugadores.get(0).usuario;
@@ -539,6 +544,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                             tablero.infoCasillas[i][j].ocupadoPor="";
                                             tablero.infoCasillas[i][j].terreno="";
                                             vistaBatalla.botones[i][j].setIcon(null);
+                                            verificarGanador();
                                             
                                             
                                             
