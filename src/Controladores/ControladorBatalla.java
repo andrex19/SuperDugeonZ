@@ -451,6 +451,11 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         criaturaAtk.Atacar(criaturaDef);
                                         this.jugadorActual.puntos[0]-=1;
                                         verificarPuntos();
+                                        if (criaturaDef.puntosDeVida<=0){
+                                            tablero.infoCasillas[i][j].ocupadoPor="";
+                                            tablero.infoCasillas[i][j].criatura=null;
+                                            vistaBatalla.botones[i][j].setIcon(null);
+                                        }
                                         System.out.println("se ha seeccionado la criatura para defender");
                                         System.out.println("puntos de vida despues: " + criaturaDef.puntosDeVida);
                                         criaturaAtk=null;
