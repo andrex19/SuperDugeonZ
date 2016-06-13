@@ -194,7 +194,11 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         }
     }
     public void verificarPuntos(){
-        
+        this.vistaBatalla.getLblAtacar().setText(Integer.toString(this.jugadorActual.puntos[0]));
+        this.vistaBatalla.getLblMover().setText(Integer.toString(this.jugadorActual.puntos[1]));
+        this.vistaBatalla.getLblMagia().setText(Integer.toString(this.jugadorActual.puntos[2]));
+        this.vistaBatalla.getLblTrampa().setText(Integer.toString(this.jugadorActual.puntos[3]));
+        this.vistaBatalla.getLblInvocar().setText(Integer.toString(this.jugadorActual.puntos[4]));
             if(this.jugadorActual.puntos[0]<=0){
                 this.vistaBatalla.getBtnAtacar().setEnabled(false);
             }

@@ -67,6 +67,7 @@ public class ControladorBatallaTodos implements ActionListener{
                                 Vsb.getPwdField1().setEnabled(false);
                                 Vsb.getRadioJugador1().setEnabled(false);
                                 Vsb.getRadioPNJ1().setEnabled(false);
+                                Vsb.getBtnIngresar1().setEnabled(false);
 
                             }
 
@@ -78,6 +79,7 @@ public class ControladorBatallaTodos implements ActionListener{
                                     Vsb.getPwdField2().setEnabled(false);
                                     Vsb.getRadioJugador2().setEnabled(false);
                                     Vsb.getRadioPNJ2().setEnabled(false);
+                                    Vsb.getBtnIngresar2().setEnabled(false);
                                 }
                             
                             if(Vsb.getBtnIngresar3()==e.getSource()){
@@ -88,6 +90,7 @@ public class ControladorBatallaTodos implements ActionListener{
                                     Vsb.getPwdField3().setEnabled(false);
                                     Vsb.getRadioJugador3().setEnabled(false);
                                     Vsb.getRadioPNJ3().setEnabled(false);
+                                    Vsb.getBtnIngresar3().setEnabled(false);
                                 }
                             
                             if(Vsb.getBtnIngresar4()==e.getSource()){
@@ -97,6 +100,7 @@ public class ControladorBatallaTodos implements ActionListener{
                                     Vsb.getPwdField4().setEnabled(false);
                                     Vsb.getRadioJugador4().setEnabled(false);
                                     Vsb.getRadioPNJ4().setEnabled(false);
+                                    Vsb.getBtnIngresar4().setEnabled(false);
                                 
                             }
                         }
