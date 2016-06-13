@@ -47,14 +47,20 @@ public class VistaMenu extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 625));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnBE.setText("Batalla General");
+        btnBE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBEActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnBE, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 81, -1, -1));
 
         btnBT.setText("Torneo");
-        getContentPane().add(btnBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        getContentPane().add(btnBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 100, -1));
 
         btnIC.setText("Información de criaturas");
         getContentPane().add(btnIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 166, -1, -1));
@@ -62,7 +68,7 @@ public class VistaMenu extends javax.swing.JFrame {
         btnIP.setText("Información de partidas");
         getContentPane().add(btnIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondoMenu.png"))); // NOI18N
+        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/2.jpg"))); // NOI18N
         getContentPane().add(FondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jMenu1.setText("Cuentas");
@@ -113,6 +119,10 @@ public class VistaMenu extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void btnBEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBEActionPerformed
 
     /**
      * @param args the command line arguments

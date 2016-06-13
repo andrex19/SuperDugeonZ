@@ -416,6 +416,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         
                                         //reiniciando valeres del controlador
                                         criaturaMov=null;
+                                        
                                         ultimo_boton=0;
                                     }
                                     else {

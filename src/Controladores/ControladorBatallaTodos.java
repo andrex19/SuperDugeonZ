@@ -262,7 +262,7 @@ public class ControladorBatallaTodos implements ActionListener{
         }
         if (Vsb.getBtnVolver()==e.getSource()){
             Vsb.dispose();
-            this.contMenu.vistaMenu.setVisible(true);
+            this.contMenu.verVista(cp);
         }
         
         
