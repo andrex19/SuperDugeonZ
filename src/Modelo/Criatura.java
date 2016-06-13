@@ -73,5 +73,8 @@ public class Criatura {
             System.out.println(this.nombre+" se quita a sí mismo");
         }
     }
+    public void Atacar(JefeTerreno jefeTerreno){
+        jefeTerreno.vida = jefeTerreno.vida - this.ataque;
+    }
     
 }

@@ -113,6 +113,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             tablero.infoCasillas[7][0].terreno=arregloJugadores.get(1).usuario;
             tablero.infoCasillas[0][7].jefeTerreno=arregloJugadores.get(0).jefeTerreno;
             tablero.infoCasillas[7][0].jefeTerreno=arregloJugadores.get(1).jefeTerreno;
+            tablero.infoCasillas[0][7].ocupadoPor=arregloJugadores.get(0).usuario;
+            tablero.infoCasillas[7][0].ocupadoPor=arregloJugadores.get(1).usuario;
             vistaBatalla.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
             vistaBatalla.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
             this.vistaBatalla.getLblUsuario1().setText(arregloJugadores.get(0).usuario);
@@ -135,6 +137,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             tablero.infoCasillas[0][7].jefeTerreno=arregloJugadores.get(0).jefeTerreno;
             tablero.infoCasillas[7][0].jefeTerreno=arregloJugadores.get(1).jefeTerreno;
             tablero.infoCasillas[14][7].jefeTerreno=arregloJugadores.get(2).jefeTerreno;
+            tablero.infoCasillas[0][7].ocupadoPor=arregloJugadores.get(0).usuario;
+            tablero.infoCasillas[7][0].ocupadoPor=arregloJugadores.get(1).usuario;
+            tablero.infoCasillas[14][7].ocupadoPor=arregloJugadores.get(2).usuario;
             vistaBatalla.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
             vistaBatalla.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
             vistaBatalla.botones[14][7].setIcon(arregloJugadores.get(2).jefeTerreno.imagen);
@@ -162,6 +167,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             tablero.infoCasillas[7][0].jefeTerreno=arregloJugadores.get(1).jefeTerreno;
             tablero.infoCasillas[14][7].jefeTerreno=arregloJugadores.get(2).jefeTerreno;
             tablero.infoCasillas[7][14].jefeTerreno=arregloJugadores.get(3).jefeTerreno;
+            tablero.infoCasillas[0][7].ocupadoPor=arregloJugadores.get(0).usuario;
+            tablero.infoCasillas[7][0].ocupadoPor=arregloJugadores.get(1).usuario;
+            tablero.infoCasillas[14][7].ocupadoPor=arregloJugadores.get(2).usuario;
+            tablero.infoCasillas[7][14].ocupadoPor=arregloJugadores.get(3).usuario;
             vistaBatalla.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
             vistaBatalla.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
             vistaBatalla.botones[14][7].setIcon(arregloJugadores.get(2).jefeTerreno.imagen);
@@ -515,9 +524,17 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                             }
                             else if (tablero.infoCasillas[i][j].jefeTerreno!=null){
                                 if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)==false){
-                                    System.out.println("estoy atacando un jefe de terreno!!");
+                                    if (tablero.verificarAdyacenteCriatura(posicionInicialI, posicionInicialJ, i, j)){
+                                        System.out.println("estoy atacando un jefe de terreno!!");
+                                        criaturaAtk.Atacar(tablero.infoCasillas[i][j].jefeTerreno);
+                                        System.out.println("vida del jefe de terreno despues de atacar: " + tablero.infoCasillas[i][j].jefeTerreno.vida);
+                                        this.jugadorActual.puntos[0]-=1;
+                                        verificarPuntos();
+                                    }
+                                    else{
+                                        System.out.println("el jefe de terreno no esta adyacente");
+                                    }
                                 }
-                                
                             }
                             else { 
                                 System.out.println("no existe una criatura en esta posicion");
