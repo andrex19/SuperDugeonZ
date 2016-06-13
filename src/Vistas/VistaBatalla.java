@@ -12,6 +12,7 @@ import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 
 /**
  *
@@ -55,10 +56,10 @@ public class VistaBatalla extends javax.swing.JFrame {
         btnLanzar = new javax.swing.JButton();
         btnMagia = new javax.swing.JButton();
         btnTrampa = new javax.swing.JButton();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jProgressBar2 = new javax.swing.JProgressBar();
-        jProgressBar3 = new javax.swing.JProgressBar();
-        jProgressBar4 = new javax.swing.JProgressBar();
+        barraUsuario1 = new javax.swing.JProgressBar();
+        barraUsuario2 = new javax.swing.JProgressBar();
+        barraUsuario3 = new javax.swing.JProgressBar();
+        barraUsuario4 = new javax.swing.JProgressBar();
         btnAtacar = new javax.swing.JButton();
         lblUsuario1 = new javax.swing.JLabel();
         lblUsuario2 = new javax.swing.JLabel();
@@ -70,6 +71,7 @@ public class VistaBatalla extends javax.swing.JFrame {
         lblMagia = new javax.swing.JLabel();
         lblMover = new javax.swing.JLabel();
         lblTrampa = new javax.swing.JLabel();
+        lblTurno = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +117,8 @@ public class VistaBatalla extends javax.swing.JFrame {
 
         lblTrampa.setText("jLabel11");
 
+        lblTurno.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,11 +137,11 @@ public class VistaBatalla extends javax.swing.JFrame {
                                 .addComponent(lblUsuario3)))
                         .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(barraUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jProgressBar4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(jProgressBar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(barraUsuario4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(barraUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(barraUsuario2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnInvocar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -162,31 +166,34 @@ public class VistaBatalla extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnTrampa, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTrampa)))
+                        .addComponent(lblTrampa))
+                    .addComponent(lblTurno))
                 .addContainerGap(156, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addComponent(lblTurno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(barraUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUsuario1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(barraUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUsuario2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(barraUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUsuario3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jProgressBar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(barraUsuario4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUsuario4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addGap(39, 39, 39)
                         .addComponent(lblPuntos)
                         .addGap(12, 12, 12)
                         .addComponent(btnLanzar)
@@ -213,9 +220,7 @@ public class VistaBatalla extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnFinalizar)
                         .addGap(39, 39, 39))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(panelTerreno, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(panelTerreno, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
@@ -263,6 +268,10 @@ public class VistaBatalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar barraUsuario1;
+    private javax.swing.JProgressBar barraUsuario2;
+    private javax.swing.JProgressBar barraUsuario3;
+    private javax.swing.JProgressBar barraUsuario4;
     private javax.swing.JButton btnAtacar;
     private javax.swing.JButton btnFinalizar;
     private javax.swing.JButton btnInvocar;
@@ -270,16 +279,13 @@ public class VistaBatalla extends javax.swing.JFrame {
     private javax.swing.JButton btnMagia;
     private javax.swing.JButton btnMover;
     private javax.swing.JButton btnTrampa;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
-    private javax.swing.JProgressBar jProgressBar4;
     private javax.swing.JLabel lblAtacar;
     private javax.swing.JLabel lblInvocar;
     private javax.swing.JLabel lblMagia;
     private javax.swing.JLabel lblMover;
     private javax.swing.JLabel lblPuntos;
     private javax.swing.JLabel lblTrampa;
+    private javax.swing.JLabel lblTurno;
     private javax.swing.JLabel lblUsuario1;
     private javax.swing.JLabel lblUsuario2;
     private javax.swing.JLabel lblUsuario3;
@@ -341,6 +347,11 @@ public class VistaBatalla extends javax.swing.JFrame {
         return this.btnAtacar;
     }
     
+    
+    public JLabel getLblTurno(){
+        return this.lblTurno;
+    }
+    
     //GETS DE LOS LABEL DE USUARIOS
     public JLabel getLblUsuario1(){
         return this.lblUsuario1;
@@ -370,6 +381,20 @@ public class VistaBatalla extends javax.swing.JFrame {
     }
     public JLabel getLblMagia(){
         return this.lblMagia;
+    }
+    
+    //GET DE BARRAS DE LOS JEFES DE TERRENO
+    public JProgressBar getBarraUsuario1(){
+        return this.barraUsuario1;
+    }
+    public JProgressBar getBarraUsuario2(){
+        return this.barraUsuario2;
+    }
+    public JProgressBar getBarraUsuario3(){
+        return this.barraUsuario3;
+    }
+    public JProgressBar getBarraUsuario4(){
+        return this.barraUsuario4;
     }
     
     

@@ -64,150 +64,62 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         radioPNJ4 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegistrar.setText("Registrar");
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 239, 140, -1));
 
         jLabel1.setText("Seleccionar jugadores:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 20, -1, 28));
+        getContentPane().add(pwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 87, -1));
+        getContentPane().add(pwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 87, -1));
+        getContentPane().add(pwd3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 87, -1));
+        getContentPane().add(pwd4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 87, -1));
 
         btnIngresar1.setText("Ingresar");
+        getContentPane().add(btnIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
 
         btnIngresar2.setText("Ingresar");
+        getContentPane().add(btnIngresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, -1));
 
         btnIngresar3.setText("Ingresar");
+        getContentPane().add(btnIngresar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
         btnIngresar4.setText("Ingresar");
+        getContentPane().add(btnIngresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
 
         cboxRegistrados3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+        getContentPane().add(cboxRegistrados3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 140, -1));
 
         btnJugar.setText("Jugar!");
         btnJugar.setEnabled(false);
+        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 239, -1, -1));
 
         btnVolver.setText("Volver");
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 239, -1, -1));
 
         cboxRegistrados2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+        getContentPane().add(cboxRegistrados2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 140, -1));
 
         cboxRegistrados1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+        getContentPane().add(cboxRegistrados1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 140, -1));
 
         cboxRegistrados4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
+        getContentPane().add(cboxRegistrados4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 140, -1));
 
         jLabel2.setText("Jugador");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         jLabel3.setText("PNJ");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnVolver)
-                        .addGap(47, 47, 47)
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(btnJugar)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cboxRegistrados3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(pwd3, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cboxRegistrados4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(pwd4))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(pwd2))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(72, 72, 72)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(radioJugador4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                                        .addComponent(btnIngresar4))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(radioJugador3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnIngresar3))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(radioJugador2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnIngresar2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(radioJugador1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnIngresar1)))
-                                .addGap(194, 194, 194))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
-                                .addComponent(jLabel2)
-                                .addGap(47, 47, 47)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(radioPNJ1)
-                                    .addComponent(jLabel3)
-                                    .addComponent(radioPNJ2)
-                                    .addComponent(radioPNJ3)
-                                    .addComponent(radioPNJ4))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radioJugador1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cboxRegistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnIngresar1)
-                        .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(radioPNJ1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radioJugador2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cboxRegistrados2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pwd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnIngresar2))
-                    .addComponent(radioPNJ2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radioPNJ3)
-                    .addComponent(radioJugador3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cboxRegistrados3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pwd3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnIngresar3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboxRegistrados4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pwd4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIngresar4)
-                    .addComponent(radioJugador4)
-                    .addComponent(radioPNJ4))
-                .addGap(71, 71, 71)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnVolver)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnJugar)
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
+        getContentPane().add(radioJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 59, -1, -1));
+        getContentPane().add(radioPNJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 59, -1, -1));
+        getContentPane().add(radioJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 89, -1, -1));
+        getContentPane().add(radioPNJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 89, -1, -1));
+        getContentPane().add(radioJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 118, -1, -1));
+        getContentPane().add(radioPNJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 118, -1, -1));
+        getContentPane().add(radioJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 147, -1, -1));
+        getContentPane().add(radioPNJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 147, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
