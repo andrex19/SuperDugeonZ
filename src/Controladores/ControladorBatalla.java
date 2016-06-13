@@ -10,7 +10,7 @@ import Modelo.Criatura;
 import Modelo.Dado;
 import Modelo.Jugador;
 import Modelo.Tablero;
-import Vista.VistaBatalla;
+import Vistas.VistaBatalla;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -194,6 +194,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         }
     }
     public void verificarPuntos(){
+        
             if(this.jugadorActual.puntos[0]<=0){
                 this.vistaBatalla.getBtnAtacar().setEnabled(false);
             }
