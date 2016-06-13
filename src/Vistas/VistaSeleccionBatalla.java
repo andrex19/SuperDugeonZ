@@ -66,66 +66,67 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1000, 625));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegistrar.setText("Registrar");
-        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 140, -1));
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, 140, -1));
 
         jLabel1.setText("Seleccionar jugadores:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, 28));
-        getContentPane().add(pwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 87, -1));
-        getContentPane().add(pwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 87, -1));
-        getContentPane().add(pwd3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 87, -1));
-        getContentPane().add(pwd4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 87, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, 28));
+        getContentPane().add(pwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 87, -1));
+        getContentPane().add(pwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 87, -1));
+        getContentPane().add(pwd3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 87, -1));
+        getContentPane().add(pwd4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, 87, -1));
 
         btnIngresar1.setText("Ingresar");
-        getContentPane().add(btnIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
+        getContentPane().add(btnIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, -1, -1));
 
         btnIngresar2.setText("Ingresar");
-        getContentPane().add(btnIngresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, -1, -1));
+        getContentPane().add(btnIngresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, -1, -1));
 
         btnIngresar3.setText("Ingresar");
-        getContentPane().add(btnIngresar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
+        getContentPane().add(btnIngresar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, -1, -1));
 
         btnIngresar4.setText("Ingresar");
-        getContentPane().add(btnIngresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, -1, -1));
+        getContentPane().add(btnIngresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
 
         cboxRegistrados3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
-        getContentPane().add(cboxRegistrados3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 140, -1));
+        getContentPane().add(cboxRegistrados3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 140, -1));
 
         btnJugar.setText("Jugar!");
         btnJugar.setEnabled(false);
-        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, -1, -1));
+        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, -1, -1));
 
         btnVolver.setText("Volver");
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, -1, -1));
 
         cboxRegistrados2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
-        getContentPane().add(cboxRegistrados2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 140, -1));
+        getContentPane().add(cboxRegistrados2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 140, -1));
 
         cboxRegistrados1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
-        getContentPane().add(cboxRegistrados1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 140, -1));
+        getContentPane().add(cboxRegistrados1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 140, -1));
 
         cboxRegistrados4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>" }));
-        getContentPane().add(cboxRegistrados4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 140, -1));
+        getContentPane().add(cboxRegistrados4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 140, -1));
 
         jLabel2.setText("Jugador");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
 
         jLabel3.setText("PNJ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
-        getContentPane().add(radioJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
-        getContentPane().add(radioPNJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
-        getContentPane().add(radioJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
-        getContentPane().add(radioPNJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
-        getContentPane().add(radioJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
-        getContentPane().add(radioPNJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
-        getContentPane().add(radioJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
-        getContentPane().add(radioPNJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, -1));
+        getContentPane().add(radioJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+        getContentPane().add(radioPNJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
+        getContentPane().add(radioJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
+        getContentPane().add(radioPNJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+        getContentPane().add(radioJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, -1, -1));
+        getContentPane().add(radioPNJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+        getContentPane().add(radioJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
+        getContentPane().add(radioPNJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/3.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/2.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
