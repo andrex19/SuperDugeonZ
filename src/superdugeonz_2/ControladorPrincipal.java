@@ -47,6 +47,16 @@ public class ControladorPrincipal implements ActionListener{
         
         jugador0=new Jugador("andres","hola",puzzleDados1,new JefeTerreno(1));
         jugador1=new Jugador("cesar","asd",puzzleDados2,new JefeTerreno(2));
+        jugador0.puntos[0]=1000;
+        jugador0.puntos[1]=1000;
+        jugador0.puntos[2]=1000;
+        jugador0.puntos[3]=1000;
+        jugador0.puntos[4]=1000;
+        jugador1.puntos[0]=1000;
+        jugador1.puntos[1]=1000;
+        jugador1.puntos[2]=1000;
+        jugador1.puntos[3]=1000;
+        jugador1.puntos[4]=1000;
         //construir bien el usuario ! (con un metodo o nose)...
         cp.arreglo_usuarios_registrados.add(jugador0);
         cp.arreglo_usuarios_registrados.add(jugador1);

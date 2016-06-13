@@ -9,6 +9,8 @@ package Modelo;
 public class Casilla{
     public String terreno;
     public Criatura criatura;
+    public JefeTerreno jefeTerreno;
+    //falta agregar magias y trampas!!
     public String ocupadoPor;
     //Trampa trampa;
 
