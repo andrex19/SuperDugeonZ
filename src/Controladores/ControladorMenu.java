@@ -28,7 +28,9 @@ public class ControladorMenu implements ActionListener{
         this.contBatallaTodos = new ControladorBatallaTodos();
 
     }
-
+    public void cerrarSesion(){
+        
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
        
@@ -46,6 +48,26 @@ public class ControladorMenu implements ActionListener{
         if (vistaMenu.getBtnIP()==e.getSource()){
             System.out.println("Click boton Informacion de partidas");            
         }
+        if (vistaMenu.getMenuItemIniciar()==e.getSource()){
+            cp.contLogin.verVista(cp);
+        }
+        if (vistaMenu.getMenuItemRegistrar()==e.getSource()){
+            cp.contRegistro.verVista(cp);
+        }
+        if (vistaMenu.getMenuItemCerrar1()==e.getSource()){
+            System.out.println("cerrar sesion usuario 1");
+        }
+        if (vistaMenu.getMenuItemCerrar2()==e.getSource()){
+            System.out.println("cerrar sesion usuario 2");
+        }
+        if (vistaMenu.getMenuItemCerrar3()==e.getSource()){
+            System.out.println("cerrar sesion usuario 3");
+        }
+        if (vistaMenu.getMenuItemCerrar4()==e.getSource()){
+            System.out.println("cerrar sesion usuario 4");
+        }
+        
+        
                 
         
     }

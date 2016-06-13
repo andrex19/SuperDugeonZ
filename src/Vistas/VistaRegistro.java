@@ -55,8 +55,8 @@ public class VistaRegistro extends javax.swing.JFrame {
         FondoVista = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(985, 614));
-        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cboxPuzzle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>", "Puzzle 1", "Puzzle 2", "Puzzle 3" }));
@@ -215,7 +215,7 @@ public class VistaRegistro extends javax.swing.JFrame {
     public void setImagenJefeTerreno(String string){
         if (this.getItemCboxJefeTerreno().equals("<Seleccionar>")==false){
             
-        ImageIcon imagen = new ImageIcon (getClass().getResource("/Imagenes/" + string + "Gif.gif"));
+        ImageIcon imagen = new ImageIcon (getClass().getResource("/Imagenes/GifJefesTerreno/" + string + "Gif.gif"));
         System.out.println("Jefe de terreno seleccionado: "+ string);
         lblImagenJT.setIcon(imagen);
             

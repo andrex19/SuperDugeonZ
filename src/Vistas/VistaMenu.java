@@ -7,6 +7,7 @@ package Vistas;
 
 import Controladores.ControladorMenu;
 import javax.swing.JButton;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -38,12 +39,13 @@ public class VistaMenu extends javax.swing.JFrame {
         FondoMenu = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        menuItemIniciar = new javax.swing.JMenuItem();
+        menuItemRegistrar = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menuItemCerrar1 = new javax.swing.JMenuItem();
+        menuItemCerrar2 = new javax.swing.JMenuItem();
+        menuItemCerrar3 = new javax.swing.JMenuItem();
+        menuItemCerrar4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,32 +76,40 @@ public class VistaMenu extends javax.swing.JFrame {
 
         jMenu1.setText("Cuentas");
 
-        jMenuItem5.setText("Iniciar sesión");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        menuItemIniciar.setText("Iniciar sesión");
+        menuItemIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                menuItemIniciarActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
+        jMenu1.add(menuItemIniciar);
+
+        menuItemRegistrar.setText("Registrarse");
+        menuItemRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemRegistrarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuItemRegistrar);
 
         jMenu3.setText("Cerrar sesión");
 
-        jMenuItem1.setText("Usuario 1");
-        jMenu3.add(jMenuItem1);
+        menuItemCerrar1.setText("Usuario 1");
+        jMenu3.add(menuItemCerrar1);
 
-        jMenuItem2.setText("Usuario 2");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        menuItemCerrar2.setText("Usuario 2");
+        menuItemCerrar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                menuItemCerrar2ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem2);
+        jMenu3.add(menuItemCerrar2);
 
-        jMenuItem3.setText("Usuario 3");
-        jMenu3.add(jMenuItem3);
+        menuItemCerrar3.setText("Usuario 3");
+        jMenu3.add(menuItemCerrar3);
 
-        jMenuItem4.setText("Usuario 4");
-        jMenu3.add(jMenuItem4);
+        menuItemCerrar4.setText("Usuario 4");
+        jMenu3.add(menuItemCerrar4);
 
         jMenu1.add(jMenu3);
 
@@ -113,17 +123,21 @@ public class VistaMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void menuItemIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemIniciarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_menuItemIniciarActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void menuItemCerrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCerrar2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_menuItemCerrar2ActionPerformed
 
     private void btnBEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBEActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBEActionPerformed
+
+    private void menuItemRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,11 +184,12 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem menuItemCerrar1;
+    private javax.swing.JMenuItem menuItemCerrar2;
+    private javax.swing.JMenuItem menuItemCerrar3;
+    private javax.swing.JMenuItem menuItemCerrar4;
+    private javax.swing.JMenuItem menuItemIniciar;
+    private javax.swing.JMenuItem menuItemRegistrar;
     // End of variables declaration//GEN-END:variables
 
 
@@ -197,5 +212,36 @@ public JButton getBtnIP(){
         this.btnBT.addActionListener(controladorMenu);
         this.btnIC.addActionListener(controladorMenu);
         this.btnIP.addActionListener(controladorMenu);
+        this.menuItemIniciar.addActionListener(controladorMenu);
+        this.menuItemRegistrar.addActionListener(controladorMenu);
+        this.menuItemCerrar1.addActionListener(controladorMenu);
+        this.menuItemCerrar2.addActionListener(controladorMenu);
+        this.menuItemCerrar3.addActionListener(controladorMenu);
+        this.menuItemCerrar4.addActionListener(controladorMenu);
+    }
+    
+// GETTERS DE LOS ITEM DE LA BARRA DE MENU
+    public JMenuItem getMenuItemIniciar(){
+        return this.menuItemIniciar;
+    }
+    public JMenuItem getMenuItemRegistrar(){
+        return this.menuItemRegistrar;
+    }
+    public JMenuItem getMenuItemCerrar1(){
+        return this.menuItemCerrar1;
+    }
+    public JMenuItem getMenuItemCerrar2(){
+        return this.menuItemCerrar2;
+    }
+    public JMenuItem getMenuItemCerrar3(){
+        return this.menuItemCerrar3;
+    }
+    public JMenuItem getMenuItemCerrar4(){
+        return this.menuItemCerrar4;
     }
 }
+
+
+
+
+

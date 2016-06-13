@@ -79,13 +79,17 @@ public class ControladorLogin implements ActionListener {
                             jugador=cp.arreglo_usuarios_registrados.get(i);
                         }
                     }
-                    if (jugador==null){
-                        System.out.println("jugador es nuloooooo");
-                    }                
-    
-        
-                    cp.arreglo_usuario.add(jugador);
-                    System.out.println("Usuario logueado!");
+                    if (cp.arreglo_usuario.contains(jugador)==false){
+                        cp.arreglo_usuario.add(jugador);
+                    }
+                    else{
+                        System.out.println("el usuario ya esta logeado");
+                    }
+                    System.out.println("Usuarios logueados: ");
+                    for (int i = 0;i<cp.arreglo_usuario.size();i++){
+                        System.out.print( cp.arreglo_usuario.get(i).usuario+", ");
+                    }
+                    System.out.println("");
                     if (cp.arreglo_usuario.size()==1){
                         contMenu.verVista(cp);
                         cp.vistaInicio.setVisible(false);

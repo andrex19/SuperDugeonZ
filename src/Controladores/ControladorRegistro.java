@@ -39,6 +39,21 @@ public class ControladorRegistro implements ActionListener {
     this.vistaRegistro.agregarListener(this);
 
     }
+    public void jefeTerreno(){
+        if(vistaRegistro.getItemCboxJefeTerreno().equals("Goku")){
+                this.JefeTerreno = new JefeTerreno(1);
+            }
+            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Vegeta")){
+                this.JefeTerreno = new JefeTerreno(2);
+            }
+            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Zolezzi")){
+                this.JefeTerreno = new JefeTerreno(3);
+            }
+            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Mr.Satan")){
+                this.JefeTerreno = new JefeTerreno(4);
+            }
+        
+    }
     public void registrar(){
         String usuario=vistaRegistro.getUsr();
         String pwd1=vistaRegistro.getPwd1();
@@ -67,6 +82,7 @@ public class ControladorRegistro implements ActionListener {
                 
                 
                 if (Jugador.existe(cp.arreglo_usuarios_registrados, usuario)==false){
+                    jefeTerreno();
                     Jugador jugador;
                     jugador=new Jugador(usuario,pwd1,new PuzzleDados(),this.JefeTerreno);
                     cp.arreglo_usuarios_registrados.add(jugador);
@@ -149,18 +165,7 @@ public class ControladorRegistro implements ActionListener {
             
         if (vistaRegistro.getCboxJefeTerreno()==e.getSource()){ //camibiar las imagenes!!!
             vistaRegistro.setImagenJefeTerreno(vistaRegistro.getItemCboxJefeTerreno());
-            if(vistaRegistro.getItemCboxJefeTerreno().equals("Goku")){
-                this.JefeTerreno = new JefeTerreno(1);
-            }
-            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Vegeta")){
-                this.JefeTerreno = new JefeTerreno(2);
-            }
-            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Zolezzi")){
-                this.JefeTerreno = new JefeTerreno(3);
-            }
-            else if(vistaRegistro.getItemCboxJefeTerreno().equals("Mr.Satan")){
-                this.JefeTerreno = new JefeTerreno(4);
-            }
+            
             
             
         }    
