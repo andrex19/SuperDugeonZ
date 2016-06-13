@@ -6,6 +6,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 
 public class Jugador {
@@ -14,6 +15,7 @@ public class Jugador {
     public PuzzleDados puzle;
     public JefeTerreno jefeTerreno;
     public int[] puntos;
+    public ImageIcon imagenTerreno;
 
     
     public Jugador(String usuario, String contraseña, PuzzleDados puzle, JefeTerreno jefeTerreno){

@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import javax.swing.ImageIcon;
+
 
 public class Criatura {
         //Atributos//
@@ -15,6 +17,7 @@ public class Criatura {
     public int defensa;
     public int movimiento;
     public static int numero;
+    public ImageIcon imagen;
     
     public Criatura(int nivel){
         if (nivel==1){
@@ -24,6 +27,7 @@ public class Criatura {
         this.ataque= 80;
         this.defensa= 20;
         this.movimiento=1;
+        this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/1.png"));
         }
         if (nivel==2){
         this.nombre = "Namekusei";
@@ -32,6 +36,7 @@ public class Criatura {
         this.ataque= 150;
         this.defensa= 50;
         this.movimiento=1;
+        this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/2.png"));
         }
         if (nivel==3){
         this.nombre = "Sayayin";
@@ -40,6 +45,7 @@ public class Criatura {
         this.ataque= 800;
         this.defensa= 200;
         this.movimiento=1;
+        this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/3.png"));
         }
         if (nivel==4){
         this.nombre = "Fusionado";
@@ -48,6 +54,7 @@ public class Criatura {
         this.ataque= 1000;
         this.defensa= 700;
         this.movimiento=1;
+        this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/4.png"));
         }
 
     }   
