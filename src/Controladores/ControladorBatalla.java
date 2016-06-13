@@ -121,7 +121,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.getBarraUsuario4().setVisible(false);
             this.arregloJugadores.get(0).imagenTerreno=naranja;
             this.arregloJugadores.get(1).imagenTerreno=cafe;
-            
+            this.vistaBatalla.getBarraUsuario1().setValue(this.arregloJugadores.get(0).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario2().setValue(this.arregloJugadores.get(1).jefeTerreno.vida);
             
         }
         else if (arregloJugadores.size()==3){
