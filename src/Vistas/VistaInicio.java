@@ -24,23 +24,55 @@ public class VistaInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonIngresar = new javax.swing.JButton();
+        botonEntrar = new javax.swing.JButton();
         botonRegistrar = new javax.swing.JButton();
+        botonRegistrar1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        setMaximumSize(new java.awt.Dimension(1000, 625));
+        setMinimumSize(new java.awt.Dimension(1000, 625));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1000, 625));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        botonIngresar.setText("Ingresar");
-        getContentPane().add(botonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 90, -1));
+        botonEntrar.setFont(new java.awt.Font("Gill Sans Ultra Bold Condensed", 0, 14)); // NOI18N
+        botonEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonEjecutar1.jpg"))); // NOI18N
+        botonEntrar.setBorder(null);
+        botonEntrar.setBorderPainted(false);
+        botonEntrar.setContentAreaFilled(false);
+        botonEntrar.setFocusPainted(false);
+        botonEntrar.setFocusable(false);
+        botonEntrar.setPreferredSize(new java.awt.Dimension(90, 30));
+        botonEntrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonEjecutar3.jpg"))); // NOI18N
+        botonEntrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonEjecutar2.jpg"))); // NOI18N
+        getContentPane().add(botonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 160, 70));
 
-        botonRegistrar.setText("Registrar");
-        getContentPane().add(botonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 90, -1));
+        botonRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonCreditos1.jpg"))); // NOI18N
+        botonRegistrar.setBorderPainted(false);
+        botonRegistrar.setContentAreaFilled(false);
+        botonRegistrar.setFocusPainted(false);
+        botonRegistrar.setFocusable(false);
+        botonRegistrar.setPreferredSize(new java.awt.Dimension(90, 30));
+        botonRegistrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonCreditos3.jpg"))); // NOI18N
+        botonRegistrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonCreditos2.1.jpg"))); // NOI18N
+        getContentPane().add(botonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 320, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pantallaLogin.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, -1));
+        botonRegistrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonSalir1.jpg"))); // NOI18N
+        botonRegistrar1.setBorderPainted(false);
+        botonRegistrar1.setContentAreaFilled(false);
+        botonRegistrar1.setFocusPainted(false);
+        botonRegistrar1.setFocusable(false);
+        botonRegistrar1.setPreferredSize(new java.awt.Dimension(90, 30));
+        botonRegistrar1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonSalir3.jpg"))); // NOI18N
+        botonRegistrar1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonSalir2.jpg"))); // NOI18N
+        getContentPane().add(botonRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 160, 70));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vistaLogin.jpg"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(1000, 625));
+        jLabel1.setMinimumSize(new java.awt.Dimension(1000, 625));
+        jLabel1.setPreferredSize(new java.awt.Dimension(1000, 625));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,11 +111,11 @@ public class VistaInicio extends javax.swing.JFrame {
 
 
     public void agregarListener(ActionListener al){
-        this.botonIngresar.addActionListener(al);
+        this.botonEntrar.addActionListener(al);
         this.botonRegistrar.addActionListener(al);
     }
     public JButton getBotonIngresar(){
-        return this.botonIngresar;
+        return this.botonEntrar;
         
     }
     public JButton getBotonRegistrar(){
@@ -92,8 +124,9 @@ public class VistaInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonIngresar;
+    private javax.swing.JButton botonEntrar;
     private javax.swing.JButton botonRegistrar;
+    private javax.swing.JButton botonRegistrar1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

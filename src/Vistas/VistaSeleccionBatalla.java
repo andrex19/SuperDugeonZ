@@ -6,6 +6,7 @@
 package Vistas;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -199,7 +200,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     
-     public void agregarListener(ActionListener al){
+     public void agregarListener(ActionListener al,MouseListener ml){
 
         this.btnRegistrar.addActionListener(al);
         this.btnIngresar1.addActionListener(al);
@@ -220,6 +221,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         this.radioPNJ2.addActionListener(al);
         this.radioPNJ3.addActionListener(al);
         this.radioPNJ4.addActionListener(al);
+        this.cboxRegistrados1.addMouseListener(ml);
         
     }
     
@@ -232,7 +234,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
     
 //metodos get de las contraseñas
 
-
+     
     
     public String getPwdJugador1ST(){
         return this.pwd1.getText();

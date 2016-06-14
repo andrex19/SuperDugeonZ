@@ -30,6 +30,7 @@ public class ControladorPrincipal implements ActionListener{
     public ControladorLogin contLogin;
     public VistaInicio vistaInicio;
     public ControladorRegistro contRegistro;
+    public ControladorMenu contMenu;
 
 
     
@@ -39,6 +40,7 @@ public class ControladorPrincipal implements ActionListener{
         cp.contLogin = new ControladorLogin(); // instancio el controlador del login
         cp.contRegistro=new ControladorRegistro();
         cp.vistaInicio=new VistaInicio(); // instancio la vista de inicio
+        cp.contMenu=new ControladorMenu();
         cp.vistaInicio.setVisible(true); //pongo visible la vista de inicio
         cp.vistaInicio.agregarListener(cp);
         PuzzleDados puzzleDados1 = new PuzzleDados();
@@ -60,6 +62,8 @@ public class ControladorPrincipal implements ActionListener{
         //construir bien el usuario ! (con un metodo o nose)...
         cp.arreglo_usuarios_registrados.add(jugador0);
         cp.arreglo_usuarios_registrados.add(jugador1);
+        cp.arreglo_usuario.add(jugador0);
+        cp.arreglo_usuario.add(jugador1);
                     
 
        
@@ -72,13 +76,16 @@ public class ControladorPrincipal implements ActionListener{
     if (vistaInicio.getBotonIngresar() == e.getSource()){
             //this.vistaInicio.setVisible(false); // hago que no sea visible la vista de inicio
             // para mostrar la otra vista
-            this.contLogin.verVista(this);//con este metodo del controlador 
+            //this.contLogin.verVista(this);//con este metodo del controlador 
             // pongo visible la vista del login 
+            this.contMenu.verVista(this);
+            this.vistaInicio.dispose();
         }    
     
         if (vistaInicio.getBotonRegistrar() == e.getSource()){
             //this.vistaInicio.setVisible(false);
-            this.contRegistro.verVista(this);
+            //this.contRegistro.verVista(this);
+            
         } 
     }
     public ArrayList<Jugador> getArregloDEUsurios(){

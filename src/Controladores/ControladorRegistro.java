@@ -89,6 +89,7 @@ public class ControladorRegistro implements ActionListener {
                     //agregar a la base de datos ...
 
                     vistaRegistro.dispose();
+                    //cp.contMenu.verVista(cp);
                     System.out.println("usuario registrado");
                 }
                 else{
@@ -160,6 +161,7 @@ public class ControladorRegistro implements ActionListener {
         if (vistaRegistro.getBotonCancelar()==e.getSource()){
             System.out.println("Click boton Cancelar (registro)");
             this.vistaRegistro.dispose(); //cierra la vista login
+            //this.contMenu.verVista(cp);
             //this.cp.vistaInicio.setVisible(true); //muestra la vista Inicio
         }
             

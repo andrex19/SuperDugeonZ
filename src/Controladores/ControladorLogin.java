@@ -90,12 +90,8 @@ public class ControladorLogin implements ActionListener {
                         System.out.print( cp.arreglo_usuario.get(i).usuario+", ");
                     }
                     System.out.println("");
-                    if (cp.arreglo_usuario.size()==1){
-                        contMenu.verVista(cp);
-                        cp.vistaInicio.setVisible(false);
-                        
-                    }
                     this.vistaLogin.dispose();
+                    this.cp.contMenu.verVista(cp);
                     //vistaLogin.bienvenida(usuario);
 
 
