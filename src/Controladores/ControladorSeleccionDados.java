@@ -85,7 +85,6 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             posicion=vistaSD.getCboxDado1().getSelectedIndex();
             System.out.println(posicion);
             System.out.println(dadosPuzzle.get(posicion-1).criatura.nombre);
-            System.out.println(vistaSD.getCboxDado2().getComponentCount());
             String criatura = vistaSD.getItemCboxDado1();
             for(int i=0;i<dadosPuzzle.size();i++){
                 if(dadosPuzzle.get(i).criatura.nombre.equals(criatura)){
