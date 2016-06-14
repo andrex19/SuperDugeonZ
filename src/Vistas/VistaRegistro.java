@@ -60,29 +60,29 @@ public class VistaRegistro extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cboxPuzzle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>", "Puzzle 1", "Puzzle 2", "Puzzle 3" }));
-        getContentPane().add(cboxPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 103, -1));
+        getContentPane().add(cboxPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 410, 110, -1));
 
         btnCancelar.setText("Cancelar");
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
+        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, -1, -1));
 
         btnRegistrarse.setText("Registrarse");
-        getContentPane().add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
+        getContentPane().add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, -1, -1));
 
         lblUsuario.setText("Usuario");
-        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 88, -1));
+        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 88, -1));
 
         lblContaseña.setText("Contraseña");
-        getContentPane().add(lblContaseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 88, -1));
+        getContentPane().add(lblContaseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 88, -1));
 
         lblRContraseña.setText("Repita contraseña");
-        getContentPane().add(lblRContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
+        getContentPane().add(lblRContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, -1, -1));
 
         lblJefeTerreno.setText("Jefe de terreno");
-        getContentPane().add(lblJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 100, -1));
+        getContentPane().add(lblJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 100, -1));
 
         lblPuzzle.setText("Puzzle de dados");
-        getContentPane().add(lblPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 100, 10));
-        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 108, -1));
+        getContentPane().add(lblPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 100, 10));
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 108, -1));
 
         cboxJefeTerreno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>", "Goku", "Vegeta", "Zolezzi", "Mr.Satan" }));
         cboxJefeTerreno.addActionListener(new java.awt.event.ActionListener() {
@@ -90,32 +90,32 @@ public class VistaRegistro extends javax.swing.JFrame {
                 cboxJefeTerrenoActionPerformed(evt);
             }
         });
-        getContentPane().add(cboxJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 103, -1));
+        getContentPane().add(cboxJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 360, 110, -1));
 
         lblMsjUsuario.setForeground(new java.awt.Color(204, 0, 0));
         lblMsjUsuario.setText("*");
-        getContentPane().add(lblMsjUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 85, -1, -1));
+        getContentPane().add(lblMsjUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, -1));
 
         lblMsjPwd1.setForeground(new java.awt.Color(204, 0, 0));
         lblMsjPwd1.setText("*");
-        getContentPane().add(lblMsjPwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 135, -1, -1));
+        getContentPane().add(lblMsjPwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, -1, -1));
 
         lblMsjPwd2.setForeground(new java.awt.Color(204, 0, 0));
         lblMsjPwd2.setText("*");
-        getContentPane().add(lblMsjPwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 194, -1, -1));
+        getContentPane().add(lblMsjPwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, -1, -1));
 
         lblMsjJefeTerreno.setForeground(new java.awt.Color(204, 0, 0));
         lblMsjJefeTerreno.setText("*");
-        getContentPane().add(lblMsjJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 245, -1, -1));
+        getContentPane().add(lblMsjJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
 
         lblMsjPuzzle.setForeground(new java.awt.Color(204, 0, 0));
         lblMsjPuzzle.setText("*");
-        getContentPane().add(lblMsjPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 295, -1, -1));
-        getContentPane().add(txtPwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 108, -1));
-        getContentPane().add(txtPwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 108, -1));
-        getContentPane().add(lblImagenJT, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, -10, 480, 270));
+        getContentPane().add(lblMsjPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, -1, -1));
+        getContentPane().add(txtPwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 108, -1));
+        getContentPane().add(txtPwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 108, -1));
+        getContentPane().add(lblImagenJT, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 480, 270));
 
-        FondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vistaRegistro.jpg"))); // NOI18N
+        FondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Registro.png"))); // NOI18N
         FondoVista.setMaximumSize(new java.awt.Dimension(1000, 625));
         FondoVista.setMinimumSize(new java.awt.Dimension(1000, 625));
         FondoVista.setPreferredSize(new java.awt.Dimension(1000, 625));

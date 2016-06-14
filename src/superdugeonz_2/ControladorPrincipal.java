@@ -73,7 +73,7 @@ public class ControladorPrincipal implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-    if (vistaInicio.getBotonIngresar() == e.getSource()){
+    if (vistaInicio.getBtnEjecutar() == e.getSource()){
             //this.vistaInicio.setVisible(false); // hago que no sea visible la vista de inicio
             // para mostrar la otra vista
             //this.contLogin.verVista(this);//con este metodo del controlador 
@@ -82,9 +82,10 @@ public class ControladorPrincipal implements ActionListener{
             this.vistaInicio.dispose();
         }    
     
-        if (vistaInicio.getBotonRegistrar() == e.getSource()){
+        if (vistaInicio.getBntSalir() == e.getSource()){
             //this.vistaInicio.setVisible(false);
             //this.contRegistro.verVista(this);
+            System.exit(0);
             
         } 
     }
