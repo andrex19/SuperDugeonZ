@@ -21,16 +21,17 @@ public class Criatura {
     
     public Criatura(int nivel){
         if (nivel==1){
-        this.nombre = "Humano";
+        this.nombre = "Humano ";
         this.puntosDeVida= 200;
         this.nivel= nivel;
         this.ataque= 80;
         this.defensa= 20;
         this.movimiento=1;
         this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/1.png"));
+        
         }
         if (nivel==2){
-        this.nombre = "Namekusei";
+        this.nombre = "Namekusei ";
         this.puntosDeVida= 500;
         this.nivel= nivel;
         this.ataque= 150;
@@ -39,7 +40,7 @@ public class Criatura {
         this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/2.png"));
         }
         if (nivel==3){
-        this.nombre = "Sayayin";
+        this.nombre = "Sayayin ";
         this.puntosDeVida= 2000;
         this.nivel= nivel;
         this.ataque= 800;
@@ -48,7 +49,7 @@ public class Criatura {
         this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/3.png"));
         }
         if (nivel==4){
-        this.nombre = "Fusionado";
+        this.nombre = "Fusionado ";
         this.puntosDeVida= 5000;
         this.nivel= nivel;
         this.ataque= 1000;
@@ -56,6 +57,7 @@ public class Criatura {
         this.movimiento=1;
         this.imagen=new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/4.png"));
         }
+        numero+=1;
 
     }   
     public void Atacar(Criatura defensora){

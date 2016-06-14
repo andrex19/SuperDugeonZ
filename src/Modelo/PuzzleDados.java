@@ -8,6 +8,7 @@ package Modelo;
 
 
 import Modelo.Dado;
+import java.util.ArrayList;
 /**
  *
  * @author Lizweert/*
@@ -15,6 +16,7 @@ import Modelo.Dado;
  */
 public class PuzzleDados {
     public Dado[] puzzle=new Dado[15];
+    public ArrayList<Dado> puzzle2= new ArrayList<Dado>();
     
     public PuzzleDados(Dado[] puzzle){
         this.puzzle=puzzle;
@@ -30,6 +32,10 @@ public class PuzzleDados {
             puzzle[i+12]=new Dado(new Criatura(3));
         }
         puzzle[14]=new Dado(new Criatura(4));
+        //ESTO ES PARA PROBAR UNA COSA!
+        for (int i=0;i<15;i++){
+            puzzle2.add(puzzle[i]);
+        }
     }
  
     

@@ -11,7 +11,9 @@ public class Dado {
     public Criatura criatura;
     public String[] caras;
    
-
+    public String toString(){
+        return this.criatura.nombre;
+    }
     public Dado(Criatura criatura) {
         int numero = criatura.nivel;
         this.posicionCarasDado = new int[6][2];

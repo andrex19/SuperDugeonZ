@@ -46,15 +46,15 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
         vistaSD.getCboxDado4().removeAllItems();
         vistaSD.getCboxDado4().addItem("<Seleccionar>");
         for(int i=0;i<dadosPuzzle.size();i++){
-                if (vistaSD.getCboxDado1().equals(dadosPuzzle.get(i).criatura.nombre)==false &&
-                    vistaSD.getCboxDado2().equals(dadosPuzzle.get(i).criatura.nombre)==false &&
-                    vistaSD.getCboxDado3().equals(dadosPuzzle.get(i).criatura.nombre)==false &&
-                    vistaSD.getCboxDado4().equals(dadosPuzzle.get(i).criatura.nombre)==false){
+                if (vistaSD.getCboxDado1().equals(dadosPuzzle.get(i))==false &&
+                    vistaSD.getCboxDado2().equals(dadosPuzzle.get(i))==false &&
+                    vistaSD.getCboxDado3().equals(dadosPuzzle.get(i))==false &&
+                    vistaSD.getCboxDado4().equals(dadosPuzzle.get(i))==false){
                         
-                        vistaSD.getCboxDado1().addItem(dadosPuzzle.get(i).criatura.nombre);
-                        vistaSD.getCboxDado2().addItem(dadosPuzzle.get(i).criatura.nombre);
-                        vistaSD.getCboxDado3().addItem(dadosPuzzle.get(i).criatura.nombre);
-                        vistaSD.getCboxDado4().addItem(dadosPuzzle.get(i).criatura.nombre);
+                        vistaSD.getCboxDado1().addItem(dadosPuzzle.get(i));
+                        vistaSD.getCboxDado2().addItem(dadosPuzzle.get(i));
+                        vistaSD.getCboxDado3().addItem(dadosPuzzle.get(i));
+                        vistaSD.getCboxDado4().addItem(dadosPuzzle.get(i));
                         
                 }
             }
@@ -81,6 +81,11 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
     public void actionPerformed(ActionEvent e) {
         if(vistaSD.getCheckDado1()==e.getSource()){
             System.out.println("Presiona Check 1");
+            int posicion;
+            posicion=vistaSD.getCboxDado1().getSelectedIndex();
+            System.out.println(posicion);
+            System.out.println(dadosPuzzle.get(posicion-1).criatura.nombre);
+            System.out.println(vistaSD.getCboxDado2().getComponentCount());
             String criatura = vistaSD.getItemCboxDado1();
             for(int i=0;i<dadosPuzzle.size();i++){
                 if(dadosPuzzle.get(i).criatura.nombre.equals(criatura)){
