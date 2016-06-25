@@ -10,7 +10,10 @@ import Modelo.Criatura;
 import Modelo.Dado;
 import Modelo.Jugador;
 import Modelo.Tablero;
+import Modelo.Trampa;
+import Modelo.Magia;
 import Vistas.VistaBatalla;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -21,6 +24,7 @@ import java.awt.event.MouseWheelEvent;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.border.LineBorder;
 import superdugeonz_2.ControladorPrincipal;
 
 
@@ -35,6 +39,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     VistaBatalla vistaBatalla;
     ImageIcon goku,rojo,verde,azul,kaio, cafe , morado, naranja;
     Dado dado;
+    Criatura criatura;
+    Magia magia;
     public int[][] carasDado;
     public static int numeroFiguraDado=0;
     public static int rotacion=0;
@@ -45,6 +51,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     public Jugador jugadorActual;
     ArrayList<Jugador> arregloJugadores = new ArrayList<Jugador>();
     ArrayList<Dado> dadosSeleccionados = new ArrayList<Dado>();
+    
     
     //para atacar!
     Criatura criaturaAtk = null;
@@ -198,9 +205,49 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             System.out.println(tablero.infoCasillas[7][14].terreno+ " terreno puesto en poner terreno");*/
         }
     }
-
+    public void activarTrampas(){
+        for (int i=0;i<15;i++){
+            for (int j=0;j<15;j++){
+                if (tablero.infoCasillas[i][j].terreno!=""){
+                    if (tablero.infoCasillas[i][j].trampa!=null){
+                        if(tablero.infoCasillas[i][j].criatura!=null){
+                            if(tablero.infoCasillas[i][j].terreno!=jugadorActual.usuario){
+                               
+                                Trampa trampa=tablero.infoCasillas[i][j].trampa;
+                                Criatura criatura=tablero.infoCasillas[i][j].criatura;
+                                trampa.trampaDaño(criatura);
+                                System.out.println("se ha activado una trampa");
+                                System.out.println("vida de la criatura "+criatura.puntosDeVida);
+                                tablero.infoCasillas[i][j].trampa=null;
+                            }
+                            
+                            
+                            
+                        }
+                    }
+                    
+                }
+            }   
+        }
+        
     
-
+    
+    }  
+    
+    public void activarMagias(ActionEvent e){
+        for (int i=0;i<15;i++){
+            for (int j=0;j<15;j++){
+                if(vistaBatalla.botones[i][j]==e.getSource()){
+                    
+                    
+                }
+                
+                
+            }
+        }
+        
+    }
+            
     public void ponerFiguraDado(int[][] carasDado,String jefe1, ImageIcon imagen){
                       
         for (int[]fila:carasDado){
@@ -225,6 +272,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                 if (tablero.infoCasillas[i][j].terreno.equals("")){
                     vistaBatalla.botones[i][j].setIcon(null);
                 }
+                vistaBatalla.botones[i][j].setBorder(null);
                 
             }
         }
@@ -257,6 +305,30 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         else{
             limpiar();
         }
+    }
+    public void pintarMagia(int[][] terrenoMagia, boolean boleano){
+        
+         if(boleano==true){
+             
+              
+                    for (int[]cara:terrenoMagia){
+                        if ((cara[0]>=0 && cara[0]<15 && cara[1]>=0 && cara[1]<15)){
+                            
+                                 vistaBatalla.botones[cara[0]][cara[1]].setBorder(new LineBorder(Color.WHITE, 1));   
+                            
+                            
+                                  
+                            
+                        }
+                    }
+
+                
+                
+            }
+            else{
+                limpiar();
+            }
+
     }
     public ImageIcon obtenerImagenTerreno(int f,int c){
         ImageIcon imagen=null;//capturar bien la imagen 
@@ -343,12 +415,47 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         
         if (vistaBatalla.getBtnMagia()==e.getSource()){
             ultimo_boton=2;
+            this.magia=new Magia();
+            
             System.out.println("click en boton magia");
-            
+           
         }
-        if (ultimo_boton==2){
+            //activarMagias(e);         
+        
+            if (ultimo_boton==2){
+                for (int i=0;i<15;i++){
+                    for (int j=0;j<15;j++){
+                        if (vistaBatalla.botones[i][j]==e.getSource()){
+                            int[][] terrenoMagia = magia.TerrenoMeteoro(i,j);
+                            if(tablero.infoCasillas[i][j].criatura!=null){
+                                System.out.println("hay una criatura");
+                                for (int[] bloque : terrenoMagia){
+                                
+                                
+                                
+                                
+                                             
+                                    //vistaBatalla.botones[bloque[0]][bloque[1]].setIcon(verde);     
+                                      
+                                
+                                    //limpiar();
+
+                                    
+
+                            
+                            
+                                }
+                            
+                            }
+                        }
+
+
+                    }
+
+            }
+           
             
-        }
+            }
         
         
         if (vistaBatalla.getBtnMover()==e.getSource()){
@@ -412,7 +519,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         vistaBatalla.botones[i][j].setIcon(criaturaMov.imagen);
                                         this.jugadorActual.puntos[1]-=1;
                                         verificarPuntos();
-                                        
+                                        activarTrampas();                             
                                         
                                         //reiniciando valeres del controlador
                                         criaturaMov=null;
@@ -442,6 +549,24 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             System.out.println("click en boton trampa");
         }
         if (ultimo_boton==4){
+            for (int i=0;i<15;i++){
+                    for (int j=0;j<15;j++){
+                        if (this.vistaBatalla.botones[i][j]==e.getSource()){
+                            if (tablero.infoCasillas[i][j].terreno==jugadorActual.usuario){
+                                if (tablero.infoCasillas[i][j].trampa==null){
+                                    tablero.infoCasillas[i][j].trampa=jugadorActual.trampa;
+                                    System.out.println("se ha puesto una trampa en el tablero");
+                                
+                                }
+                                else{
+                                    System.out.println("no se peude poner trampa en el tablero");
+                                    
+                                }
+                                
+                            }                       
+                         }
+                    }
+            }
             
         }
          if (vistaBatalla.getBtnLanzar()==e.getSource()){ //lanzar = boton 5
@@ -647,6 +772,39 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                 }
             }
         }
+        if(ultimo_boton==2){
+            for (int i=0;i<15;i++){
+                    for (int j=0;j<15;j++){
+                        if (vistaBatalla.botones[i][j]==e.getSource()){
+                            pintarMagia(magia.TerrenoMeteoro(i,j), true);
+                            
+                            
+                        /*
+                            int[][] terrenoMagia = magia.TerrenoMeteoro(i,j);
+                            for (int[]cara:terrenoMagia){
+
+                                 if ((cara[0]>=0 && cara[0]<15 && cara[1]>=0 && cara[1]<15)){
+                                     //if (tablero.infoCasillas[i][j].terreno.equals("")){
+                                     
+                                    vistaBatalla.botones[cara[0]][cara[1]].setIcon(rojo);     
+                                 
+                                     //}
+                                     
+                                 }
+                                
+                                    //limpiar();
+
+                                    
+
+                                }
+                        */}
+
+
+                    }
+
+            }
+    
+        }
     }
 
     @Override
@@ -665,6 +823,41 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             }
             
         }
+        if(ultimo_boton==2){
+            for (int i=0;i<15;i++){
+                    for (int j=0;j<15;j++){
+                        if (vistaBatalla.botones[i][j]==e.getSource()){
+                            
+                            pintarMagia(magia.TerrenoMeteoro(i,j), false);
+                            /*
+                            int[][] terrenoMagia = magia.TerrenoMeteoro(i,j);
+                            for (int[]cara:terrenoMagia){
+
+                                 if ((cara[0]>=0 && cara[0]<15 && cara[1]>=0 && cara[1]<15)){  
+                                     
+                                     limpiar();
+                                    //vistaBatalla.botones[cara[0]][cara[1]].setIcon(verde);     
+                                 
+                                     
+                                     
+                                 }
+                                
+                                    //limpiar();
+
+                                    
+
+                                }
+                       */}
+
+
+                    }
+
+            }
+    
+        }
+        
+    }
+    public void pintarTerrenoMagia(MouseEvent e){
         
     }
     

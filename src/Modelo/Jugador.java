@@ -16,6 +16,7 @@ public class Jugador {
     public JefeTerreno jefeTerreno;
     public int[] puntos;
     public ImageIcon imagenTerreno;
+    public Trampa trampa;
 
     
     public Jugador(String usuario, String contraseña, PuzzleDados puzle, JefeTerreno jefeTerreno){
@@ -24,6 +25,7 @@ public class Jugador {
         this.puzle=puzle;
         this.jefeTerreno=jefeTerreno;
         puntos = new int[5];
+        this.trampa=new Trampa();
         //ataque, movimiento, magia, trampa, invocacion.
         //array puntos del Usuario en el orden (atk, mov, mag, tramp,inv)
     }

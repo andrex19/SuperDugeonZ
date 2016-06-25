@@ -11,6 +11,7 @@ public class Casilla{
     public Criatura criatura;
     public JefeTerreno jefeTerreno;
     //falta agregar magias y trampas!!
+    public Trampa trampa;
     public String ocupadoPor;
     //Trampa trampa;
 

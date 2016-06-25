@@ -72,11 +72,14 @@ public class VistaBatalla extends javax.swing.JFrame {
         lblMover = new javax.swing.JLabel();
         lblTrampa = new javax.swing.JLabel();
         lblTurno = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelTerreno.setEnabled(false);
         panelTerreno.setLayout(new java.awt.GridLayout(1, 0));
+        getContentPane().add(panelTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 30, 435, 435));
 
         btnInvocar.setText("Invocar");
         btnInvocar.addActionListener(new java.awt.event.ActionListener() {
@@ -84,145 +87,65 @@ public class VistaBatalla extends javax.swing.JFrame {
                 btnInvocarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnInvocar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 245, 109, -1));
 
         btnFinalizar.setText("Finalizar turno");
+        getContentPane().add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 401, 109, -1));
 
         btnMover.setText("Mover ");
+        getContentPane().add(btnMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 275, 109, -1));
 
         btnLanzar.setText("Lanzar dados");
+        getContentPane().add(btnLanzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 215, 109, -1));
 
         btnMagia.setText("Magia");
+        getContentPane().add(btnMagia, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 365, 109, -1));
 
         btnTrampa.setText("Trampa");
+        getContentPane().add(btnTrampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 335, 109, -1));
+        getContentPane().add(barraUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 72, 98, -1));
+        getContentPane().add(barraUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 93, 98, -1));
+        getContentPane().add(barraUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 113, 98, -1));
+        getContentPane().add(barraUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 135, 98, -1));
 
         btnAtacar.setText("Atacar");
+        getContentPane().add(btnAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 305, 109, -1));
 
         lblUsuario1.setText("jLabel1");
+        getContentPane().add(lblUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 71, -1, -1));
 
         lblUsuario2.setText("jLabel2");
+        getContentPane().add(lblUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 92, -1, -1));
 
         lblUsuario3.setText("jLabel3");
+        getContentPane().add(lblUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 113, -1, -1));
 
         lblUsuario4.setText("jLabel4");
+        getContentPane().add(lblUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 134, -1, -1));
 
         lblPuntos.setText("Puntos");
+        getContentPane().add(lblPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 188, -1, -1));
 
         lblInvocar.setText("jLabel7");
+        getContentPane().add(lblInvocar, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 250, -1, -1));
 
         lblAtacar.setText("jLabel8");
+        getContentPane().add(lblAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 310, -1, -1));
 
         lblMagia.setText("jLabel9");
+        getContentPane().add(lblMagia, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 370, -1, -1));
 
         lblMover.setText("jLabel10");
+        getContentPane().add(lblMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 280, -1, -1));
 
         lblTrampa.setText("jLabel11");
+        getContentPane().add(lblTrampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 340, -1, -1));
 
         lblTurno.setText("jLabel1");
+        getContentPane().add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 30, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelTerreno, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblUsuario1)
-                            .addComponent(lblUsuario4)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblUsuario2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblUsuario3)))
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(barraUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(barraUsuario4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(barraUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(barraUsuario2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnInvocar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblInvocar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblAtacar))
-                    .addComponent(btnFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLanzar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnMagia, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblMagia))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(lblPuntos))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnMover, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblMover))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnTrampa, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTrampa))
-                    .addComponent(lblTurno))
-                .addContainerGap(156, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTurno)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(barraUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUsuario1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(barraUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUsuario2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(barraUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUsuario3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(barraUsuario4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUsuario4))
-                        .addGap(39, 39, 39)
-                        .addComponent(lblPuntos)
-                        .addGap(12, 12, 12)
-                        .addComponent(btnLanzar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnInvocar)
-                            .addComponent(lblInvocar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnMover)
-                            .addComponent(lblMover))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAtacar)
-                            .addComponent(lblAtacar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnTrampa)
-                            .addComponent(lblTrampa))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnMagia)
-                            .addComponent(lblMagia))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnFinalizar)
-                        .addGap(39, 39, 39))
-                    .addComponent(panelTerreno, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lizweert\\Pictures\\GOM 2010-08-30 05-55-37-60.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -279,6 +202,7 @@ public class VistaBatalla extends javax.swing.JFrame {
     private javax.swing.JButton btnMagia;
     private javax.swing.JButton btnMover;
     private javax.swing.JButton btnTrampa;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAtacar;
     private javax.swing.JLabel lblInvocar;
     private javax.swing.JLabel lblMagia;

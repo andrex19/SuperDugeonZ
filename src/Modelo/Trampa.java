@@ -12,11 +12,22 @@ package Modelo;
  * @author Lizweert
  */
 public class Trampa{
+    
     //Atributos//
-    public void trampaDeOsos(String posicionCriatura, String posicionTrampa, int movimientoCriatura ){
-        if(posicionTrampa.equals(posicionCriatura)){
-            movimientoCriatura = 0;
-        }
+    Criatura criatura;
+    /*String jugador;
+    public Trampa(String usuario){
+        this.jugador=usuario;
+    }*/
+    public void trampaDaño (Criatura criatura ){
+       this.criatura=criatura;
+       this.criatura.puntosDeVida=(int)(this.criatura.puntosDeVida - (this.criatura.puntosDeVida*0.4));
+       
+       
+        
     }
+    //public void verificarTrampa()
+    
+    
    // public void 
 }
