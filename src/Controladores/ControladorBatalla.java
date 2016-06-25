@@ -40,7 +40,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     ImageIcon goku,rojo,verde,azul,kaio, cafe , morado, naranja;
     Dado dado;
     Criatura criatura;
-    Magia magia;
+    Magia magia = new Magia();
     public int[][] carasDado;
     public static int numeroFiguraDado=0;
     public static int rotacion=0;
@@ -272,7 +272,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                 if (tablero.infoCasillas[i][j].terreno.equals("")){
                     vistaBatalla.botones[i][j].setIcon(null);
                 }
-                vistaBatalla.botones[i][j].setBorder(null);
+                vistaBatalla.botones[i][j].setBorder(new LineBorder(Color.GRAY, 1));
                 
             }
         }
@@ -308,13 +308,14 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     }
     public void pintarMagia(int[][] terrenoMagia, boolean boleano){
         
+        
          if(boleano==true){
              
               
                     for (int[]cara:terrenoMagia){
                         if ((cara[0]>=0 && cara[0]<15 && cara[1]>=0 && cara[1]<15)){
                             
-                                 vistaBatalla.botones[cara[0]][cara[1]].setBorder(new LineBorder(Color.WHITE, 1));   
+                                 vistaBatalla.botones[cara[0]][cara[1]].setBorder(new LineBorder(Color.ORANGE, 1));   
                             
                             
                                   
@@ -426,13 +427,28 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                 for (int i=0;i<15;i++){
                     for (int j=0;j<15;j++){
                         if (vistaBatalla.botones[i][j]==e.getSource()){
+                            jugadorActual.puntos[2]-=30;
+                            verificarPuntos();
+                            ultimo_boton=0;
+                            limpiar();
                             int[][] terrenoMagia = magia.TerrenoMeteoro(i,j);
-                            if(tablero.infoCasillas[i][j].criatura!=null){
+                            
                                 System.out.println("hay una criatura");
                                 for (int[] bloque : terrenoMagia){
-                                
-                                
-                                
+                                    if ((bloque[0]>=0 && bloque[0]<15 && bloque[1]>=0 && bloque[1]<15)){ 
+                                        if (tablero.infoCasillas[bloque[0]][bloque[1]].ocupadoPor.equals(jugadorActual.usuario)==false){
+                                            if(tablero.infoCasillas[bloque[0]][bloque[1]].criatura!=null){
+                                        
+                                                System.out.println("entre al for"+ bloque[0]+""+bloque[1]);
+                                                Criatura criatura= tablero.infoCasillas[bloque[0]][bloque[1]].criatura;
+                                                System.out.println(criatura.nombre);
+                                                magia.MeteoroFuego(criatura);
+                                                
+                                    
+                                                System.out.println("dano a criatura : " + criatura.nombre + "vida restante: " + criatura.puntosDeVida);
+                                            }
+                                        }
+                                    }
                                 
                                              
                                     //vistaBatalla.botones[bloque[0]][bloque[1]].setIcon(verde);     
@@ -446,7 +462,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                             
                                 }
                             
-                            }
+                            
                         }
 
 

@@ -5,6 +5,7 @@
  */
 package Vistas;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
@@ -13,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -34,7 +36,9 @@ public class VistaBatalla extends javax.swing.JFrame {
                 botones [i][j]= new JButton();
                 botones [i][j].setIcon(null);
                 botones [i][j].setBorderPainted(true);
-                this.panelTerreno.add(botones[i][j]); 
+                this.panelTerreno.add(botones[i][j]);
+                
+                
             }
         
         }

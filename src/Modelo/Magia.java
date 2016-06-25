@@ -13,11 +13,11 @@ import Controladores.ControladorBatalla;
  */
 public class Magia {
     
-    Criatura criatura;
+    
     
     public void MeteoroFuego (Criatura criatura ){
-       this.criatura=criatura;
-       this.criatura.puntosDeVida=(int)(this.criatura.puntosDeVida - (this.criatura.puntosDeVida*0.4));
+        System.out.println(criatura.nombre);
+       criatura.puntosDeVida=(int)(criatura.puntosDeVida - (criatura.puntosDeVida*0.4));
     }
     
     
