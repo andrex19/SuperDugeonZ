@@ -22,6 +22,7 @@ public class PuzzleDados {
         this.puzzle=puzzle;
     }
     public PuzzleDados(){
+        
         for(int i=0;i<8;i++){
             puzzle[i]=new Dado(new Criatura(1));
         }

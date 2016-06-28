@@ -72,7 +72,7 @@ public class Conexion {
     }
     
     /*public Criatura selectCriatura(String nombre) {
-        String id = null;
+        int id = 0;
         String name = null;
         int HP=0;
         int atk=0;
@@ -95,7 +95,7 @@ public class Conexion {
         return c;
     }*/
     
-    public boolean registro(String user, String pass) throws SQLException{
+    /*public boolean registro(String user, String pass) throws SQLException{
         
         if(this.consultar("SELECT NOMBRE_JUGADOR, CONTRASENIA_JUGADOR FROM JUGADOR WHERE NOMBRE_USUARIO='"+user+"'")){
             System.out.println("Paso el SELECT");
@@ -114,7 +114,7 @@ public class Conexion {
             }
         }
         return false;//nunca llegara aca
-    }
+    }*/
     
     public String getNombreUsuario() throws SQLException{
         //SELECT * FROM "usuarios" WHERE "user"='uno' AND "password"='uno'
