@@ -14,8 +14,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import Modelo.Conexion;
+import Modelo.Criatura;
 import Modelo.PuzzleDados;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -53,7 +55,7 @@ public class ControladorRegistro implements ActionListener {
             }
         
     }
-    public void registrar(){
+    public void registrar() throws SQLException{
         String usuario=vistaRegistro.getUsr();
         String pwd1=vistaRegistro.getPwd1();
         String pwd2=vistaRegistro.getPwd2();
@@ -83,8 +85,20 @@ public class ControladorRegistro implements ActionListener {
                 if (Jugador.existe(cp.arreglo_usuarios_registrados, usuario)==false){
                     jefeTerreno();
                     Jugador jugador;
-                    jugador=new Jugador(usuario,pwd1,new PuzzleDados(),this.JefeTerreno);
+                    ArrayList<Criatura> criaturas = new ArrayList<Criatura>();
+                    PuzzleDados mazo;
+                    criaturas = conn.selectCriaturas();
+                    mazo = new PuzzleDados(criaturas);
+                    //sacar la informacion de las criaturas e intarciarlas
+                    //meterlas en un puzzle de dados
+                    
+                    
+                    jugador=new Jugador(usuario,pwd1,mazo,this.JefeTerreno);
                     cp.arreglo_usuarios_registrados.add(jugador);
+                    
+                    
+                    
+                    //meter las cosas a la base de dato
                     this.conn.insertar("INSERT INTO JUGADOR (NOMBRE_JUGADOR,CONTRASENIA_JUGADOR) VALUES ('"+usuario+"','"+pwd1+"')");
                     
                     vistaRegistro.dispose();
@@ -153,7 +167,11 @@ public class ControladorRegistro implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (vistaRegistro.getBotonSiguiente()==e.getSource()){
-                this.registrar();          
+            try {          
+                this.registrar();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
+            }
             System.out.println("Click boton registro");
             
         }

@@ -147,8 +147,6 @@ public class VistaBatalla extends javax.swing.JFrame {
 
         lblTurno.setText("jLabel1");
         getContentPane().add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 30, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lizweert\\Pictures\\GOM 2010-08-30 05-55-37-60.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 530));
 
         pack();

@@ -38,6 +38,12 @@ public class PuzzleDados {
             puzzle2.add(puzzle[i]);
         }
     }
+    public PuzzleDados(ArrayList<Criatura> criaturas){
+        for(int i=0;i<15;i++){
+            puzzle[i] = new Dado(criaturas.get(i));
+        }
+        
+    }
  
     
 }

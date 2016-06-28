@@ -57,6 +57,8 @@ public class ControladorPrincipal implements ActionListener{
         nombre = conn.getNombreUsuario();
         PuzzleDados puzzleDados2 = new PuzzleDados();
         
+        // arreglo_usuarios_registrados= metodo que devuevlve arreglo de ususrios.clone()
+        //ese metodo es de la clase DAO.
 
         
         

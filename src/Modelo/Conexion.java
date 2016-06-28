@@ -70,6 +70,34 @@ public class Conexion {
             return false;
         }
     }
+    public ArrayList<Criatura> selectCriaturas() throws SQLException{
+        if(this.consultar("SELECT * FROM CRIATURA")){
+            ArrayList<Criatura> array = new ArrayList();
+            while(this.rs.next()){
+                array.add(this.getNextCriatura());
+            }
+            return array;
+        }
+        return null;
+    }
+    public Criatura getNextCriatura(){
+        try{
+            int id = rs.getInt("ID_CRIATURA");
+            String nombre = rs.getString("NOMBRE_CRIATURA");
+            int atk = rs.getInt("ATK_CRIATURA");
+            int def = rs.getInt("DEF_CRIATURA");
+            int hp = rs.getInt("HP_CRIATURA");
+            int nivel = rs.getInt("NIVEL_CRIATURA");
+            
+            Criatura c = new Criatura(nombre, atk, def, hp, nivel, id);
+            return c;
+        }
+        catch(SQLException e){
+            System.out.println("Exception en getNextPokemon");
+            System.err.println(e);
+            return null;
+        }
+    }
     
     /*public Criatura selectCriatura(String nombre) {
         int id = 0;
