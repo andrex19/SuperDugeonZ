@@ -95,9 +95,9 @@ public class Conexion {
         return c;
     }*/
     
-    public boolean Registro(String user, String pass) throws SQLException{
+    public boolean registro(String user, String pass) throws SQLException{
         
-        if(this.consultar("SELECT NOMBRE_USUARIO, CONTRASENIA_USUARIO FROM USUARIO WHERE NOMBRE_USUARIO='"+user+"'")){
+        if(this.consultar("SELECT NOMBRE_JUGADOR, CONTRASENIA_JUGADOR FROM JUGADOR WHERE NOMBRE_USUARIO='"+user+"'")){
             System.out.println("Paso el SELECT");
             int counter = 0;
             while(rs.next()){
@@ -116,17 +116,20 @@ public class Conexion {
         return false;//nunca llegara aca
     }
     
-    public String login(String user, String pass) throws SQLException{
+    public String getNombreUsuario() throws SQLException{
         //SELECT * FROM "usuarios" WHERE "user"='uno' AND "password"='uno'
         String usuario = null;
-        if(this.consultar("SELECT * FROM USUARIO WHERE NOMBRE_USUARIO"+user+" AND CONTRASENIA_JUGADOR"+pass+"'")){
+        String contraseña = null;
+        if(this.consultar("SELECT * FROM JUGADOR")){
             System.out.println("Paso el SELECT");
-            int counter = 0;
+            int counter = 1;
             
             while(rs.next()){
-                counter++;
                 try{
-                    usuario = rs.getString("NOMBRE_USUARIO");
+                    usuario = rs.getString("NOMBRE_JUGADOR");
+                    System.out.println(usuario);
+                    contraseña = rs.getString("CONTRASENIA_JUGADOR");
+                    System.out.println(contraseña);
                 }
                 catch(SQLException e){
                     System.err.println("Error en login");
@@ -136,7 +139,7 @@ public class Conexion {
             }
             System.out.println("counter es "+counter);
             if(counter==1){                
-                return usuario;                
+                return usuario+" "+contraseña;
             }
         }
         return null;        

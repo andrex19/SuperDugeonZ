@@ -25,8 +25,7 @@ public class ControladorRegistro implements ActionListener {
     VistaRegistro vistaRegistro;
     JefeTerreno JefeTerreno;
     ControladorMenu contMenu=new ControladorMenu();
-    
-    //Conexion conn;
+    Conexion conn;
     
     
     
@@ -63,9 +62,9 @@ public class ControladorRegistro implements ActionListener {
         //boolean seConecta;
         if (usuario.equals("")==false && pwd1.equals("")==false && pwd2.equals("")==false 
             && jefeTerreno.equals("<Seleccionar>")==false && puzzle.equals("<Seleccionar>")==false){
-            //conn = new Conexion();
-            //conn.conectar();
-            //System.out.println("Base de datos conectada!!");
+            conn = new Conexion();
+            conn.conectar();
+            System.out.println("Base de datos conectada!!");
             
             if (pwd1.equals(pwd2)==true){
                 //seConecta=conn.Registro(usuario, pwd1);
@@ -86,8 +85,8 @@ public class ControladorRegistro implements ActionListener {
                     Jugador jugador;
                     jugador=new Jugador(usuario,pwd1,new PuzzleDados(),this.JefeTerreno);
                     cp.arreglo_usuarios_registrados.add(jugador);
-                    //agregar a la base de datos ...
-
+                    this.conn.insertar("INSERT INTO JUGADOR (NOMBRE_JUGADOR,CONTRASENIA_JUGADOR) VALUES ('"+usuario+"','"+pwd1+"')");
+                    
                     vistaRegistro.dispose();
                     //cp.contMenu.verVista(cp);
                     System.out.println("usuario registrado");

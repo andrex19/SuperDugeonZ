@@ -18,7 +18,11 @@ import Modelo.Criatura;
 import Modelo.Dado;
 import Modelo.JefeTerreno;
 import Modelo.PuzzleDados;
-
+import Modelo.Conexion;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 /**
  *
  * @author Samsung
@@ -33,9 +37,10 @@ public class ControladorPrincipal implements ActionListener{
     public ControladorMenu contMenu;
 
 
+
     
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         ControladorPrincipal cp=new ControladorPrincipal();
         cp.contLogin = new ControladorLogin(); // instancio el controlador del login
         cp.contRegistro=new ControladorRegistro();
@@ -45,7 +50,17 @@ public class ControladorPrincipal implements ActionListener{
         cp.vistaInicio.agregarListener(cp);
         PuzzleDados puzzleDados1 = new PuzzleDados();
         Jugador jugador0,jugador1;
+        Conexion conn = new Conexion();
+        String nombre;
+        String contraseña;
+        conn.conectar();
+        nombre = conn.getNombreUsuario();
         PuzzleDados puzzleDados2 = new PuzzleDados();
+        
+
+        
+        
+        
         
         jugador0=new Jugador("andres","hola",puzzleDados1,new JefeTerreno(1));
         jugador1=new Jugador("cesar","asd",puzzleDados2,new JefeTerreno(2));
@@ -70,7 +85,14 @@ public class ControladorPrincipal implements ActionListener{
 // hago que la vista sea escuchada por el controlador principal
         
     }
-
+    public void cargarUsuario() throws SQLException{
+        Conexion conn = new Conexion();
+        String nombre;
+        String contraseña;
+        conn.conectar();
+        nombre = conn.getNombreUsuario();
+        
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
     if (vistaInicio.getBtnEjecutar() == e.getSource()){
