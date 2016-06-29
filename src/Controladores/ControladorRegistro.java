@@ -66,7 +66,6 @@ public class ControladorRegistro implements ActionListener {
             && jefeTerreno.equals("<Seleccionar>")==false && puzzle.equals("<Seleccionar>")==false){
             conn = new Conexion();
             conn.conectar();
-            System.out.println("Base de datos conectada!!");
             
             if (pwd1.equals(pwd2)==true){
                 //seConecta=conn.Registro(usuario, pwd1);
@@ -100,6 +99,14 @@ public class ControladorRegistro implements ActionListener {
                     
                     //meter las cosas a la base de dato
                     this.conn.insertar("INSERT INTO JUGADOR (NOMBRE_JUGADOR,CONTRASENIA_JUGADOR) VALUES ('"+usuario+"','"+pwd1+"')");
+                    int id = conn.selectIdJugador(usuario);
+                    if(this.conn.insertar("INSERT INTO PUZZLEJUGADOR (ID_JUGADOR) VALUES ("+Integer.toString(id)+")")){
+                        System.out.println("PASÓ EL INSERT");
+                    }
+                    
+                    for(int j = 0; j<15;j++){
+                        this.conn.insertar("UPDATE PUZZLEJUGADOR SET CRIATURA"+(j+1)+" ='"+jugador.puzle.puzzle[j].criatura.nombre+"' WHERE ID_JUGADOR="+Integer.toString(id)+"");
+                    }
                     
                     vistaRegistro.dispose();
                     //cp.contMenu.verVista(cp);

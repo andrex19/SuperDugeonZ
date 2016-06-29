@@ -21,13 +21,15 @@ public class Criatura {
     
     
     public Criatura(String nombre, int Atk, int Def, int HP, int nivel, int nombreImagen){
-        String nameImg = Integer.toString(nombreImagen);
+        String nameImg = "";
+        nameImg = Integer.toString(nombreImagen);
+        System.out.println("NOMBRE IMAGEN: "+nameImg);
         this.nombre = nombre;
         this.ataque = Atk;
         this.defensa = Def;
         this.puntosDeVida = HP;
         this.nivel = nivel;
-        this.imagen = new ImageIcon(this.getClass().getResource("/Imagenes.Criatura/"+nameImg+".png"));
+        this.imagen = new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/"+nameImg+".png"));
     }
     public Criatura(int nivel){
         if (nivel==1){
