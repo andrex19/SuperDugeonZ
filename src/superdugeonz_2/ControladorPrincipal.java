@@ -30,7 +30,7 @@ import java.sql.Statement;
 public class ControladorPrincipal implements ActionListener{
     
     public ArrayList<Jugador> arreglo_usuario = new ArrayList<Jugador>();
-    public static ArrayList<Jugador> arreglo_usuarios_registrados = new ArrayList<Jugador>();
+    public ArrayList<Jugador> arreglo_usuarios_registrados = new ArrayList<Jugador>();
     public ControladorLogin contLogin;
     public VistaInicio vistaInicio;
     public ControladorRegistro contRegistro;
@@ -57,15 +57,15 @@ public class ControladorPrincipal implements ActionListener{
         //nombre = conn.getNombreUsuario();
         PuzzleDados puzzleDados2 = new PuzzleDados();
         
-        arreglo_usuarios_registrados= (ArrayList<Jugador>) conn.getJugadoresRegistrados().clone();
-        System.out.println(arreglo_usuarios_registrados);
+        cp.arreglo_usuarios_registrados= (ArrayList<Jugador>) conn.getJugadoresRegistrados().clone();
+        System.out.println(cp.arreglo_usuarios_registrados.get(0).usuario);
         //ese metodo es de la clase DAO.
 
         
         
         
         
-        jugador0=new Jugador("andres","hola",puzzleDados1,new JefeTerreno(1));
+        /*jugador0=new Jugador("andres","hola",puzzleDados1,new JefeTerreno(1));
         jugador1=new Jugador("cesar","asd",puzzleDados2,new JefeTerreno(2));
         jugador0.puntos[0]=1000;
         jugador0.puntos[1]=1000;
@@ -81,7 +81,7 @@ public class ControladorPrincipal implements ActionListener{
         cp.arreglo_usuarios_registrados.add(jugador0);
         cp.arreglo_usuarios_registrados.add(jugador1);
         cp.arreglo_usuario.add(jugador0);
-        cp.arreglo_usuario.add(jugador1);
+        cp.arreglo_usuario.add(jugador1);*/
                     
 
        
