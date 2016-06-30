@@ -54,10 +54,10 @@ public class Tablero {
         return aux;    
     }
     public boolean verificarAdyacenteCriatura(int ii,int ji,int ig,int jg){
-        System.out.println("1: "+ (ii==ig+1 && ji==jg));
+        /*System.out.println("1: "+ (ii==ig+1 && ji==jg));
             System.out.println("2: "+ (ii==ig-1 && ji==jg));
             System.out.println("3: "+ (ii==ig && ji==jg+1));
-            System.out.println("4: "+ (ii==ig && ji==jg-1));
+            System.out.println("4: "+ (ii==ig && ji==jg-1));*/
         if (ii==ig+1 && ji==jg ||ii==ig-1 && ji==jg ||ii==ig && ji==jg+1 ||ii==ig && ji==jg-1  ){
             
             return true;

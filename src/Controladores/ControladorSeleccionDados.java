@@ -81,13 +81,10 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
     public void actionPerformed(ActionEvent e) {
         if(vistaSD.getCheckDado1()==e.getSource()){
             System.out.println("Presiona Check 1");
-            int posicion;
-            posicion=vistaSD.getCboxDado1().getSelectedIndex();
-            System.out.println(posicion);
-            System.out.println(dadosPuzzle.get(posicion-1).criatura.nombre);
-            String criatura = vistaSD.getItemCboxDado1();
-            vistaSD.getLblDado1().setText(criatura);
-             
+            
+            Dado dado1 = (Dado) vistaSD.getItemCboxDado1();
+            vistaSD.getLblDado1().setText(dado1.toString());
+            
             vistaSD.getCboxDado1().setEnabled(false);
             if(vistaSD.getCheckDado1().isSelected()==false){
                 vistaSD.getCboxDado1().setEnabled(true);
@@ -96,8 +93,9 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             }
         if(vistaSD.getCheckDado2()==e.getSource()){
             System.out.println("Presiona Check 2");
-            String criatura = vistaSD.getItemCboxDado2();
-            vistaSD.getLblDado2().setText(criatura);
+            
+            Dado dado2 = (Dado) vistaSD.getItemCboxDado2();
+            vistaSD.getLblDado2().setText(dado2.toString());
             vistaSD.getCboxDado2().setEnabled(false);
             if(vistaSD.getCheckDado2().isSelected()==false){
                 vistaSD.getCboxDado2().setEnabled(true);
@@ -105,8 +103,9 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
         }
         if(vistaSD.getCheckDado3()==e.getSource()){
             System.out.println("Presiona Check 3");
-            String criatura = vistaSD.getItemCboxDado3();
-            vistaSD.getLblDado3().setText(criatura);
+            Dado dado3 = (Dado) vistaSD.getItemCboxDado3();
+            vistaSD.getLblDado3().setText(dado3.toString());
+            
             vistaSD.getCboxDado3().setEnabled(false);
             if(vistaSD.getCheckDado3().isSelected()==false){
                 vistaSD.getCboxDado3().setEnabled(true);
@@ -115,8 +114,8 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
         }
         if(vistaSD.getCheckDado4()==e.getSource()){
             System.out.println("Presiona Check 4");
-            String criatura = vistaSD.getItemCboxDado4();
-            vistaSD.getLblDado4().setText(criatura);
+            Dado criatura = (Dado) vistaSD.getItemCboxDado4();
+            vistaSD.getLblDado4().setText(criatura.toString());
             vistaSD.getCboxDado4().setEnabled(false);
             if(vistaSD.getCheckDado4().isSelected()==false){
                 vistaSD.getCboxDado4().setEnabled(true);
@@ -126,13 +125,13 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
         if(vistaSD.getLanzarDados()==e.getSource()){
             if(vistaSD.getCheckDado1().isSelected()==true){
                 String resultado1;
-                //resultado1 = generarTombola(vistaSD.getItemCboxDado1());
-                for(int i=0;i<dadosPuzzle.size();i++){
-                    if(vistaSD.getItemCboxDado1().equals(dadosPuzzle.get(i).criatura.nombre)){
-                        this.dadosSeleccionados.add(dadosPuzzle.get(i));
-                        break;
-                    }
-                }
+                //int posicion;
+                //posicion=vistaSD.getCboxDado1().getSelectedIndex();
+                //System.out.println(posicion);
+                //System.out.println(dadosPuzzle.get(posicion-1).criatura.nombre);
+                Dado dado1=(Dado) this.vistaSD.getItemCboxDado1();
+                this.dadosSeleccionados.add(dado1);
+                
                 
                 //System.out.println("Resultado Dado 1: "+resultado1);
                 
@@ -140,36 +139,24 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             if(vistaSD.getCheckDado2().isSelected()==true){
                 String resultado2;
                 //resultado2 = generarTombola(vistaSD.getItemCboxDado2());
-                for(int i=0;i<dadosPuzzle.size();i++){
-                    if(vistaSD.getItemCboxDado2().equals(dadosPuzzle.get(i).criatura.nombre)){
-                        this.dadosSeleccionados.add(dadosPuzzle.get(i));
-                        break;
-                    }
-                }
+                Dado dado2=(Dado) this.vistaSD.getItemCboxDado2();
+                this.dadosSeleccionados.add(dado2);
                 //System.out.println("Resultado Dado 2: "+resultado2);
                 
             }
             if(vistaSD.getCheckDado3().isSelected()==true){
                 String resultado3;
                // resultado3 = generarTombola(vistaSD.getItemCboxDado3());
-                for(int i=0;i<dadosPuzzle.size();i++){
-                    if(vistaSD.getItemCboxDado3().equals(dadosPuzzle.get(i).criatura.nombre)){
-                        this.dadosSeleccionados.add(dadosPuzzle.get(i));
-                        break;
-                    }
-                }
+                Dado dado3=(Dado) this.vistaSD.getItemCboxDado3();
+                this.dadosSeleccionados.add(dado3);
                 //System.out.println("Resultado Dado 3: "+resultado3);
                 
             }
             if(vistaSD.getCheckDado4().isSelected()==true){
                 String resultado4;
                 //resultado4 = generarTombola(vistaSD.getItemCboxDado4());
-                for(int i=0;i<dadosPuzzle.size();i++){
-                    if(vistaSD.getItemCboxDado4().equals(dadosPuzzle.get(i).criatura.nombre)){
-                        this.dadosSeleccionados.add(dadosPuzzle.get(i));
-                        break;
-                    }
-                }
+                Dado dado4=(Dado) this.vistaSD.getItemCboxDado4();
+                this.dadosSeleccionados.add(dado4);
                 //System.out.println("Resultado Dado 4: "+resultado4);
                 
             }
@@ -187,13 +174,14 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             }
             System.out.println("");
             this.contBatalla.dadosSeleccionados=(ArrayList<Dado>) this.dadosSeleccionados.clone();
-            this.vistaSD.dispose();
+            this.vistaSD.getBtnLanzar().setEnabled(false);
             this.contBatalla.vistaBatalla.getBtnLanzar().setEnabled(false);
             this.contBatalla.verificarPuntos();
         }
         if (this.vistaSD.getVolver()==e.getSource()){
             this.vistaSD.dispose();
         }
+        
         
     }
     

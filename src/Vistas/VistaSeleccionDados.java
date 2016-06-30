@@ -48,103 +48,70 @@ public class VistaSeleccionDados extends javax.swing.JFrame {
         checkDado4 = new javax.swing.JCheckBox();
         btnLanzar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        Imagen1 = new javax.swing.JLabel();
+        Imagen2 = new javax.swing.JLabel();
+        Imagen3 = new javax.swing.JLabel();
+        imagen4 = new javax.swing.JLabel();
+        BtnInv1 = new javax.swing.JButton();
+        BtnInv2 = new javax.swing.JButton();
+        BtnInv3 = new javax.swing.JButton();
+        BtnInv4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblDado1.setText("Dado1");
+        getContentPane().add(lblDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 70, 70));
 
         lblDado2.setText("Dado2");
+        getContentPane().add(lblDado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 70, 70));
 
         lblDado3.setText("Dado3");
+        getContentPane().add(lblDado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 70, 70));
 
         lblDado4.setText("Dado4");
+        getContentPane().add(lblDado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 70, 70));
 
         cboxDado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cboxDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 100, -1));
 
         cboxDado2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cboxDado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 100, -1));
 
         cboxDado3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cboxDado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 100, -1));
 
         cboxDado4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cboxDado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 100, -1));
+        getContentPane().add(checkDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
+        getContentPane().add(checkDado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+        getContentPane().add(checkDado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, -1, -1));
+        getContentPane().add(checkDado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 280, -1, -1));
 
         btnLanzar.setText("Lanzar dados!");
+        getContentPane().add(btnLanzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 350, -1, -1));
 
         btnVolver.setText("Volver");
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(cboxDado1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cboxDado2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cboxDado3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(lblDado1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblDado2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(lblDado3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(17, 17, 17)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cboxDado4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(lblDado4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(checkDado1)
-                        .addGap(92, 92, 92)
-                        .addComponent(checkDado2)
-                        .addGap(90, 90, 90)
-                        .addComponent(checkDado3)
-                        .addGap(102, 102, 102)
-                        .addComponent(checkDado4)))
-                .addContainerGap(171, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnVolver)
-                .addGap(77, 77, 77)
-                .addComponent(btnLanzar)
-                .addGap(64, 64, 64))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDado1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDado2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDado3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDado4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboxDado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cboxDado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cboxDado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cboxDado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(checkDado3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(checkDado4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(checkDado1)
-                        .addComponent(checkDado2)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLanzar)
-                    .addComponent(btnVolver))
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
+        Imagen1.setMaximumSize(new java.awt.Dimension(100, 100));
+        Imagen1.setMinimumSize(new java.awt.Dimension(100, 100));
+        getContentPane().add(Imagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 130, 110));
+        getContentPane().add(Imagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 130, 110));
+        getContentPane().add(Imagen3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 130, 110));
+        getContentPane().add(imagen4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, 130, 110));
+
+        BtnInv1.setText("Invocar");
+        getContentPane().add(BtnInv1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        BtnInv2.setText("Invocar");
+        getContentPane().add(BtnInv2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+
+        BtnInv3.setText("Invocar");
+        getContentPane().add(BtnInv3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, -1));
+
+        BtnInv4.setText("Invocar");
+        getContentPane().add(BtnInv4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -175,6 +142,7 @@ public class VistaSeleccionDados extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VistaSeleccionDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -187,6 +155,13 @@ public class VistaSeleccionDados extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnInv1;
+    private javax.swing.JButton BtnInv2;
+    private javax.swing.JButton BtnInv3;
+    private javax.swing.JButton BtnInv4;
+    private javax.swing.JLabel Imagen1;
+    private javax.swing.JLabel Imagen2;
+    private javax.swing.JLabel Imagen3;
     private javax.swing.JButton btnLanzar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JComboBox<String> cboxDado1;
@@ -197,6 +172,7 @@ public class VistaSeleccionDados extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkDado2;
     private javax.swing.JCheckBox checkDado3;
     private javax.swing.JCheckBox checkDado4;
+    private javax.swing.JLabel imagen4;
     private javax.swing.JLabel lblDado1;
     private javax.swing.JLabel lblDado2;
     private javax.swing.JLabel lblDado3;
@@ -214,6 +190,40 @@ public JLabel getLblDado3(){
 public JLabel getLblDado4(){
     return this.lblDado4;
 }
+
+public JLabel getLblImagen1(){
+    return this.Imagen1;
+}
+public JLabel getLblImagen2(){
+    return this.Imagen2;
+}
+public JLabel getLblImagen3(){
+    return this.Imagen3;
+}
+public JLabel getLblImagen4(){
+    return this.imagen4;
+}
+
+public JButton getBtnInv1(){
+    return this.BtnInv1;
+}
+public JButton getBtnInv2(){
+    return this.BtnInv2;
+}
+public JButton getBtnInv3(){
+    return this.BtnInv3;
+}
+public JButton getBtnInv4(){
+    return this.BtnInv4;
+}
+public JButton getBtnLanzar(){
+    return this.btnLanzar;
+}
+
+
+
+
+
 public JComboBox getCboxDado1(){
     return this.cboxDado1;
 }
@@ -226,17 +236,17 @@ public JComboBox getCboxDado3(){
 public JComboBox getCboxDado4(){
     return this.cboxDado4;
 }
-public String getItemCboxDado1(){
-    return this.cboxDado1.getSelectedItem().toString();
+public Object getItemCboxDado1(){
+    return this.cboxDado1.getSelectedItem();
 }
-public String getItemCboxDado2(){
-    return this.cboxDado2.getSelectedItem().toString();
+public Object getItemCboxDado2(){
+    return this.cboxDado2.getSelectedItem();
 }
-public String getItemCboxDado3(){
-    return this.cboxDado3.getSelectedItem().toString();
+public Object getItemCboxDado3(){
+    return this.cboxDado3.getSelectedItem();
 }
-public String getItemCboxDado4(){
-    return this.cboxDado4.getSelectedItem().toString();
+public Object getItemCboxDado4(){
+    return this.cboxDado4.getSelectedItem();
 }
 public JCheckBox getCheckDado1(){
     return this.checkDado1;
@@ -272,6 +282,10 @@ public void agregarListener(ActionListener al,MouseListener ml){
     this.lblDado2.addMouseListener(ml);
     this.lblDado3.addMouseListener(ml);
     this.lblDado4.addMouseListener(ml);
+    this.BtnInv1.addActionListener(al);
+    this.BtnInv2.addActionListener(al);
+    this.BtnInv3.addActionListener(al);
+    this.BtnInv4.addActionListener(al);
 }
 
 

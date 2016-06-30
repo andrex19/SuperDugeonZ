@@ -525,10 +525,11 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                 //System.out.println(tablero.infoCasillas[i][j].criatura.nombre);
                                 //System.out.println(tablero.infoCasillas[i][j].ocupadoPor);
                             }
-                        }
-                        else{
+                            else{
                             System.out.println("no existe una criatura en esta posicion");
+                            }
                         }
+                        
                     }
                 }
             }
