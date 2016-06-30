@@ -109,6 +109,7 @@ public class VistaBatalla extends javax.swing.JFrame {
         btnTrampa.setText("Trampa");
         getContentPane().add(btnTrampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 109, -1));
 
+        barraUsuario1.setString(Integer.toString(barraUsuario1.getValue()));
         barraUsuario1.setStringPainted(true);
         getContentPane().add(barraUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 98, -1));
 
@@ -330,7 +331,37 @@ public class VistaBatalla extends javax.swing.JFrame {
     public JProgressBar getBarraUsuario4(){
         return this.barraUsuario4;
     }
-    
+     public JProgressBar getBarraUsuarios(int posicion){
+        if(posicion==1){
+            return this.barraUsuario1;
+        }
+        if(posicion==2){
+            return this.barraUsuario2;
+        }
+        if(posicion==3){
+            return this.barraUsuario3;
+        }
+        if(posicion==4){
+            return this.barraUsuario4;
+        }
+        else{
+            return null;
+        } 
+    }
+    public void actualizarBarra(int posicion){
+        if (posicion==1){
+            barraUsuario1.setString(Integer.toString(barraUsuario1.getValue()));
+        }
+        if (posicion==2){
+            barraUsuario2.setString(Integer.toString(barraUsuario2.getValue()));
+        }
+        if (posicion==3){
+            barraUsuario3.setString(Integer.toString(barraUsuario3.getValue()));
+        }
+        if (posicion==4){
+            barraUsuario4.setString(Integer.toString(barraUsuario4.getValue()));
+        }
+    }
     
     
     

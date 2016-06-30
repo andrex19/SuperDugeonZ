@@ -112,6 +112,9 @@
     </Component>
     <Component class="javax.swing.JProgressBar" name="barraUsuario1">
       <Properties>
+        <Property name="string" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Integer.toString(barraUsuario1.getValue())" type="code"/>
+        </Property>
         <Property name="stringPainted" type="boolean" value="true"/>
       </Properties>
       <Constraints>
