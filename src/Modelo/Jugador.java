@@ -41,7 +41,7 @@ public class Jugador {
         //Modificar funcion y ver si existe en la base de datos
         // en el caso de que exista retornar true en caso contrario false
         for (int i=0;i<arreglo_usuarios_registrados.size();i++){
-            if(arreglo_usuarios_registrados.get(i).usuario.equals(usuario)){
+            if(arreglo_usuarios_registrados.get(i).usuario.equalsIgnoreCase(usuario)){
                 System.out.println("TRUE");
                 return true;
             }

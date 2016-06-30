@@ -690,7 +690,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         System.out.println("estoy atacando un jefe de terreno!!");
                                         criaturaAtk.Atacar(tablero.infoCasillas[i][j].jefeTerreno);
                                         System.out.println("vida del jefe de terreno despues de atacar: " + tablero.infoCasillas[i][j].jefeTerreno.vida);
-                                        Strin usuario= tablero.
+                                        //Strin usuario= tablero.
                                         this.jugadorActual.puntos[0]-=1;
                                         verificarPuntos();
                                         if (tablero.infoCasillas[i][j].jefeTerreno.vida<=0){

@@ -251,6 +251,7 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
             System.out.println("Presiono Radio Jugador");
             limpiarCbox(1);
             limpiarPassword(1);
+            Vsb.getPwdField1().setEnabled(true);
             Vsb.getRadioPNJ1().setSelected(false);
             if(Vsb.getRadioJugador1().isSelected()){
                 actualizarRegistrados(1);
@@ -266,6 +267,7 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
             limpiarCbox(2);
             limpiarPassword(2);
             Vsb.getRadioPNJ2().setSelected(false);
+            Vsb.getPwdField2().setEnabled(true);
             if(Vsb.getRadioJugador2().isSelected()){
                 actualizarRegistrados(2);
             }
@@ -274,6 +276,7 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
             System.out.println("Presiono Radio Jugador 3");
             limpiarCbox(3);
             limpiarPassword(3);
+            Vsb.getPwdField3().setEnabled(true);
             Vsb.getRadioPNJ3().setSelected(false);
             if(Vsb.getRadioJugador3().isSelected()){
                 actualizarRegistrados(3);
@@ -284,6 +287,7 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
             System.out.println("Presiono Radio Jugador 4");
             limpiarCbox(4);
             limpiarPassword(4);
+            Vsb.getPwdField4().setEnabled(true);
             Vsb.getRadioPNJ4().setSelected(false);
             if(Vsb.getRadioJugador4().isSelected()){
                 actualizarRegistrados(4);
@@ -293,6 +297,7 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
             System.out.println("Presiono Radio PNJ 1");
             limpiarCbox(1);
             limpiarPassword(1);
+            Vsb.getPwdField1().setEnabled(false);
             Vsb.getRadioJugador1().setSelected(false);
         
         }
@@ -300,17 +305,20 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
             System.out.println("Presiono Radio PNJ 2");
             limpiarCbox(2);
             limpiarPassword(2);
+            Vsb.getPwdField2().setEnabled(false);
             Vsb.getRadioJugador2().setSelected(false);
         }
         if(Vsb.getRadioPNJ3()==e.getSource()){
             System.out.println("Presiono Radio PNJ 3");
             limpiarCbox(3);
             limpiarPassword(3);
+            Vsb.getPwdField3().setEnabled(false);
             Vsb.getRadioJugador3().setSelected(false);
         }
         if(Vsb.getRadioPNJ4()==e.getSource()){
             limpiarCbox(4);
             limpiarPassword(4);
+            Vsb.getPwdField4().setEnabled(false);
             System.out.println("Presiono Radio PNJ 4");
             Vsb.getRadioJugador4().setSelected(false);
         }
