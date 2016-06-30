@@ -30,7 +30,7 @@ import java.sql.Statement;
 public class ControladorPrincipal implements ActionListener{
     
     public ArrayList<Jugador> arreglo_usuario = new ArrayList<Jugador>();
-    public ArrayList<Jugador> arreglo_usuarios_registrados = new ArrayList<Jugador>();
+    public static ArrayList<Jugador> arreglo_usuarios_registrados = new ArrayList<Jugador>();
     public ControladorLogin contLogin;
     public VistaInicio vistaInicio;
     public ControladorRegistro contRegistro;
@@ -54,10 +54,10 @@ public class ControladorPrincipal implements ActionListener{
         String nombre;
         String contraseña;
         conn.conectar();
-        nombre = conn.getNombreUsuario();
+        //nombre = conn.getNombreUsuario();
         PuzzleDados puzzleDados2 = new PuzzleDados();
         
-        // arreglo_usuarios_registrados= metodo que devuevlve arreglo de ususrios.clone()
+        arreglo_usuarios_registrados= (ArrayList<Jugador>) conn.getJugadoresRegistrados().clone();
         //ese metodo es de la clase DAO.
 
         

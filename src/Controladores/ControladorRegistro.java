@@ -93,6 +93,7 @@ public class ControladorRegistro implements ActionListener {
                     
                     
                     jugador=new Jugador(usuario,pwd1,mazo,this.JefeTerreno);
+                    System.out.println(jugador.jefeTerreno.nombre);
                     cp.arreglo_usuarios_registrados.add(jugador);
                     
                     
@@ -104,10 +105,22 @@ public class ControladorRegistro implements ActionListener {
                         System.out.println("PASÓ EL INSERT");
                     }
                     
+                    
                     for(int j = 0; j<15;j++){
                         this.conn.insertar("UPDATE PUZZLEJUGADOR SET CRIATURA"+(j+1)+" ='"+jugador.puzle.puzzle[j].criatura.nombre+"' WHERE ID_JUGADOR="+Integer.toString(id)+"");
                     }
-                    
+                    if(jugador.jefeTerreno.nombre.equals("Goku")){
+                        this.conn.insertar("INSERT INTO JEFEJUGADOR (ID_JUGADOR, ID_JEFE) VALUES ("+id+", "+1+")");
+                    }
+                    if(jugador.jefeTerreno.nombre.equals("Vegeta")){
+                        this.conn.insertar("INSERT INTO JEFEJUGADOR (ID_JUGADOR, ID_JEFE) VALUES ("+id+", "+2+")");
+                    }
+                    if(jugador.jefeTerreno.nombre.equals("Zolezzi")){
+                        this.conn.insertar("INSERT INTO JEFEJUGADOR (ID_JUGADOR, ID_JEFE) VALUES ("+id+", "+3+")");
+                    }
+                    if(jugador.jefeTerreno.nombre.equals("Mr.Satan")){
+                        this.conn.insertar("INSERT INTO JEFEJUGADOR (ID_JUGADOR, ID_JEFE) VALUES ("+id+", "+4+")");
+                    }
                     vistaRegistro.dispose();
                     //cp.contMenu.verVista(cp);
                     System.out.println("usuario registrado");

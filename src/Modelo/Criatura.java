@@ -19,6 +19,7 @@ public class Criatura {
     public static int numero;
     public ImageIcon imagen;
     
+    public Criatura(){}
     
     public Criatura(String nombre, int Atk, int Def, int HP, int nivel, int nombreImagen){
         String nameImg = "";
