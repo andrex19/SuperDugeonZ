@@ -65,7 +65,7 @@ public class ControladorPrincipal implements ActionListener{
         
         
         
-        /*jugador0=new Jugador("andres","hola",puzzleDados1,new JefeTerreno(1));
+        jugador0=new Jugador("andres","hola",puzzleDados1,new JefeTerreno(1));
         jugador1=new Jugador("cesar","asd",puzzleDados2,new JefeTerreno(2));
         jugador0.puntos[0]=1000;
         jugador0.puntos[1]=1000;
@@ -81,7 +81,7 @@ public class ControladorPrincipal implements ActionListener{
         cp.arreglo_usuarios_registrados.add(jugador0);
         cp.arreglo_usuarios_registrados.add(jugador1);
         cp.arreglo_usuario.add(jugador0);
-        cp.arreglo_usuario.add(jugador1);*/
+        cp.arreglo_usuario.add(jugador1);
                     
 
        
