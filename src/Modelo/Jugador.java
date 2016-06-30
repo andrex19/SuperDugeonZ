@@ -17,7 +17,11 @@ public class Jugador {
     public int[] puntos;
     public ImageIcon imagenTerreno;
     public Trampa trampa;
-
+    
+    
+    public String toString(){
+        return this.usuario;
+    }
     
     public Jugador(String usuario, String contraseña, PuzzleDados puzle, JefeTerreno jefeTerreno){
         this.usuario=usuario;
