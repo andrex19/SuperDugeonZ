@@ -53,6 +53,7 @@ public class VistaBatalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         panelTerreno = new javax.swing.JPanel();
         btnInvocar = new javax.swing.JButton();
         btnFinalizar = new javax.swing.JButton();
@@ -76,14 +77,14 @@ public class VistaBatalla extends javax.swing.JFrame {
         lblMover = new javax.swing.JLabel();
         lblTrampa = new javax.swing.JLabel();
         lblTurno = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 1000));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelTerreno.setEnabled(false);
-        panelTerreno.setLayout(new java.awt.GridLayout(1, 0));
-        getContentPane().add(panelTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 30, 435, 435));
+        panelTerreno.setLayout(new java.awt.GridLayout());
+        getContentPane().add(panelTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 480, 480));
 
         btnInvocar.setText("Invocar");
         btnInvocar.addActionListener(new java.awt.event.ActionListener() {
@@ -91,63 +92,62 @@ public class VistaBatalla extends javax.swing.JFrame {
                 btnInvocarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnInvocar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 245, 109, -1));
+        getContentPane().add(btnInvocar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 109, -1));
 
         btnFinalizar.setText("Finalizar turno");
-        getContentPane().add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 401, 109, -1));
+        getContentPane().add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 109, -1));
 
         btnMover.setText("Mover ");
-        getContentPane().add(btnMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 275, 109, -1));
+        getContentPane().add(btnMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 109, -1));
 
         btnLanzar.setText("Lanzar dados");
-        getContentPane().add(btnLanzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 215, 109, -1));
+        getContentPane().add(btnLanzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 109, -1));
 
         btnMagia.setText("Magia");
-        getContentPane().add(btnMagia, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 365, 109, -1));
+        getContentPane().add(btnMagia, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 109, -1));
 
         btnTrampa.setText("Trampa");
-        getContentPane().add(btnTrampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 335, 109, -1));
-        getContentPane().add(barraUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 72, 98, -1));
-        getContentPane().add(barraUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 93, 98, -1));
-        getContentPane().add(barraUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 113, 98, -1));
-        getContentPane().add(barraUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 135, 98, -1));
+        getContentPane().add(btnTrampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 109, -1));
+        getContentPane().add(barraUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 98, -1));
+        getContentPane().add(barraUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 98, -1));
+        getContentPane().add(barraUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 98, -1));
+        getContentPane().add(barraUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 98, -1));
 
         btnAtacar.setText("Atacar");
-        getContentPane().add(btnAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 305, 109, -1));
+        getContentPane().add(btnAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 109, -1));
 
         lblUsuario1.setText("jLabel1");
-        getContentPane().add(lblUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 71, -1, -1));
+        getContentPane().add(lblUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
 
         lblUsuario2.setText("jLabel2");
-        getContentPane().add(lblUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 92, -1, -1));
+        getContentPane().add(lblUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
 
         lblUsuario3.setText("jLabel3");
-        getContentPane().add(lblUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 113, -1, -1));
+        getContentPane().add(lblUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
 
         lblUsuario4.setText("jLabel4");
-        getContentPane().add(lblUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 134, -1, -1));
+        getContentPane().add(lblUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
         lblPuntos.setText("Puntos");
-        getContentPane().add(lblPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 188, -1, -1));
+        getContentPane().add(lblPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 210, -1, -1));
 
         lblInvocar.setText("jLabel7");
-        getContentPane().add(lblInvocar, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 250, -1, -1));
+        getContentPane().add(lblInvocar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, -1, -1));
 
         lblAtacar.setText("jLabel8");
-        getContentPane().add(lblAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 310, -1, -1));
+        getContentPane().add(lblAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, -1, -1));
 
         lblMagia.setText("jLabel9");
-        getContentPane().add(lblMagia, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 370, -1, -1));
+        getContentPane().add(lblMagia, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, -1, -1));
 
         lblMover.setText("jLabel10");
-        getContentPane().add(lblMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 280, -1, -1));
+        getContentPane().add(lblMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 300, -1, -1));
 
         lblTrampa.setText("jLabel11");
-        getContentPane().add(lblTrampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 340, -1, -1));
+        getContentPane().add(lblTrampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, -1, -1));
 
         lblTurno.setText("jLabel1");
-        getContentPane().add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 30, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 530));
+        getContentPane().add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
