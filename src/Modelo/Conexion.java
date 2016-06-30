@@ -70,6 +70,149 @@ public class Conexion {
             return false;
         }
     }
+    
+      public void close(){
+        try {
+            if(conn!=null){
+                conn.close();
+            }
+            if(rs!=null){
+                rs.close();
+            }
+            if(stm!=null){
+                stm.close();
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+      
+    //METODOS PARA INSTANCIAR!
+    
+    public ArrayList<Jugador> getJugadoresRegistrados(){
+        Conexion con1 = new Conexion();
+        con1.conectar();
+        if(con1.consultar("SELECT * FROM JUGADOR")){
+            ArrayList<Jugador> array = new ArrayList();
+            Jugador player;
+            int id = 0;
+            String nombre = null;
+            String pass = null;
+            PuzzleDados puzzle = new PuzzleDados();
+            JefeTerreno boss = new JefeTerreno();
+            int i = 0;
+            try {
+                while(con1.rs.next()){
+                    id = con1.rs.getInt("ID_JUGADOR");
+                    nombre = con1.rs.getString("NOMBRE_JUGADOR");
+                    pass = con1.rs.getString("CONTRASENIA_JUGADOR");
+                    puzzle = con1.getPuzzleJugador(id);
+                    boss = con1.getJefeJugador(id);
+                    player = new Jugador(nombre,pass,puzzle,boss);
+                    array.add(player);
+                    i++;
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            con1.close();
+            return array;
+        }
+        con1.close();
+        return null;
+    }
+    
+    public PuzzleDados getPuzzleJugador(int id) throws SQLException{
+        PuzzleDados puzzleJugador = new PuzzleDados(this.getCriaturasJugador(id));
+        return puzzleJugador;
+        
+    }
+    
+    public ArrayList<Criatura> getCriaturasJugador(int id) throws SQLException{
+        ArrayList<Criatura> criaturasJugador = new ArrayList();
+        ArrayList<String> nombreCriature = this.getNombreCriaturas(id);
+        Criatura criaturaAux = new Criatura();
+        for(int i = 0; i<15;i++){
+            criaturaAux=this.selectCriatura(nombreCriature.get(i));
+            System.out.println(criaturaAux.nombre);
+            criaturasJugador.add(criaturaAux);
+        }
+        return criaturasJugador;
+    }
+      public Criatura selectCriatura(String nombre) throws SQLException {
+        int id = 0;
+        String name = null;
+        int HP=0;
+        int atk=0;
+        int def=0;
+        int lvl=0;
+        Conexion con3 = new Conexion();
+        con3.conectar();
+        con3.stm = con3.conn.createStatement();
+        
+        try{
+            con3.rs = con3.stm.executeQuery("SELECT * FROM CRIATURA WHERE NOMBRE_CRIATURA='"+nombre+"'");
+            con3.rs.next();
+            id = con3.rs.getInt("ID_CRIATURA");
+            name= con3.rs.getString(2);
+            HP = con3.rs.getInt(3);
+            atk = con3.rs.getInt(4);
+            def = con3.rs.getInt(5);
+            lvl = con3.rs.getInt(6);
+            
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+        Criatura c = new Criatura(name,atk,def,HP,lvl,id);
+        con3.close();
+        return c;
+    }
+    
+     public ArrayList<String> getNombreCriaturas(int id) throws SQLException{
+        ArrayList<String> nombreCriaturas = new ArrayList();
+        String nombreCriatura ="";
+        Conexion con2 = new Conexion();
+        con2.conectar();
+        con2.stm = con2.conn.createStatement();
+        try{
+            con2.rs = con2.stm.executeQuery("SELECT * FROM PUZZLEJUGADOR WHERE ID_JUGADOR="+id+"");
+            con2.rs.next();
+            for(int i=0;i<15;i++){
+                nombreCriatura = con2.rs.getString("CRIATURA"+(i+1));
+                nombreCriaturas.add(nombreCriatura);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        con2.close();
+        return nombreCriaturas;
+        
+    }
+     
+    public JefeTerreno getJefeJugador (int id) throws SQLException{
+        JefeTerreno bossJugador = new JefeTerreno();
+        Conexion con4 = new Conexion();
+        con4.conectar();
+        con4.stm = con4.conn.createStatement();
+        
+        try{
+            con4.rs = con4.stm.executeQuery("SELECT ID_JEFE FROM JEFEJUGADOR WHERE ID_JUGADOR="+id+"");
+            con4.rs.next();
+            int idBoss = con4.rs.getInt("ID_JEFE");
+            bossJugador = new JefeTerreno(idBoss);
+            
+            
+        } catch (SQLException ex) {
+            System.out.println("hola");
+            System.out.println(ex);
+        }
+        con4.close();
+        return bossJugador;
+    }
+    
+    //ESTE METODO ES PARA REGISTRO!
     public ArrayList<Criatura> selectCriaturas() throws SQLException{
         if(this.consultar("SELECT * FROM CRIATURA")){
             ArrayList<Criatura> array = new ArrayList();
@@ -116,97 +259,14 @@ public class Conexion {
         return id;
         
     }
+    //AQUI TERMINA EL REGISTRO
     
-    public Criatura selectCriatura(String nombre) {
-        int id = 0;
-        String name = null;
-        int HP=0;
-        int atk=0;
-        int def=0;
-        int lvl=0;
-        
-        
-        try{
-            rs = stm.executeQuery("SELECT * FROM CRIATURA WHERE NOMBRE_CRIATURA='"+nombre+"'");
-            rs.next();
-            id = rs.getInt("ID_CRIATURA");
-            System.out.println(id);
-            name= rs.getString(2);
-            HP = rs.getInt(3);
-            atk = rs.getInt(4);
-            def = rs.getInt(5);
-            lvl = rs.getInt(6);
-            
-        }catch (SQLException e){
-            System.out.println("hola2");
-            System.out.println(e);
-        }
-        Criatura c = new Criatura(name,atk,def,HP,lvl,id);
-        return c;
-    }
-    public ArrayList<String> getNombreCriaturas(int id){
-        ArrayList<String> nombreCriaturas = new ArrayList();
-        String nombreCriatura ="";
-        try{
-            rs = stm.executeQuery("SELECT * FROM PUZZLEJUGADOR WHERE ID_JUGADOR="+id+"");
-            rs.next();
-            for(int i=0;i<15;i++){
-                nombreCriatura = rs.getString("CRIATURA"+(i+1));
-                nombreCriaturas.add(nombreCriatura);
-            }
-            
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-        
-        return nombreCriaturas;
-        
-    }
-    public ArrayList<Criatura> getCriaturasJugador(int id){
-        ArrayList<Criatura> criaturasJugador = new ArrayList();
-        ArrayList<String> nombreCriature = this.getNombreCriaturas(id);
-        Criatura criaturaAux = new Criatura();
-        for(int i = 0; i<15;i++){
-            criaturaAux=this.selectCriatura(nombreCriature.get(i));
-            System.out.println(criaturaAux.nombre);
-            criaturasJugador.add(criaturaAux);
-        }
-        return criaturasJugador;
-    }
+  
+   
     
-    public PuzzleDados getPuzzleJugador(int id){
-        PuzzleDados puzzleJugador = new PuzzleDados(this.getCriaturasJugador(id));
-        return puzzleJugador;
-        
-    }
-    public ArrayList<Jugador> getJugadoresRegistrados(){
-        if(this.consultar("SELECT * FROM JUGADOR")){
-            ArrayList<Jugador> array = new ArrayList();
-            Jugador player;
-            int id = 0;
-            String nombre = null;
-            String pass = null;
-            PuzzleDados puzzle = new PuzzleDados();
-            JefeTerreno boss = new JefeTerreno();
-            int i = 0;
-            try {
-                while(this.rs.next()){
-                    id = rs.getInt("ID_JUGADOR");
-                    nombre = rs.getString("NOMBRE_JUGADOR");
-                    pass = rs.getString("CONTRASENIA_JUGADOR");
-                    puzzle = this.getPuzzleJugador(id);
-                    boss = this.getJefeJugador(id);
-                    player = new Jugador(nombre,pass,puzzle,boss);
-                    array.add(player);
-                    i++;
-                }
-            } catch (SQLException ex) {
-                System.out.println(ex);
-            }
-            return array;
-        }
-        return null;
-    }
+    
+    
+    
     public String getNombreUsuario() throws SQLException{
         //SELECT * FROM "usuarios" WHERE "user"='uno' AND "password"='uno'
         String usuario = null;
@@ -233,38 +293,9 @@ public class Conexion {
         }
         return null;        
     }
-    public JefeTerreno getJefeJugador (int id){
-        JefeTerreno bossJugador = new JefeTerreno();
-        
-        try{
-            rs = stm.executeQuery("SELECT ID_JEFE FROM JEFEJUGADOR WHERE ID_JUGADOR="+id+"");
-            rs.next();
-            int idBoss = rs.getInt("ID_JEFE");
-            bossJugador = new JefeTerreno(idBoss);
-            
-            
-        } catch (SQLException ex) {
-            System.out.println("hola");
-            System.out.println(ex);
-        }
-        return bossJugador;
-    }
-    public void close(){
-        try {
-            if(conn!=null){
-                conn.close();
-            }
-            if(rs!=null){
-                rs.close();
-            }
-            if(stm!=null){
-                stm.close();
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
+  
+    
     
     
     
