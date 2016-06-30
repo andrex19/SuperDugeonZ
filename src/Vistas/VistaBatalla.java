@@ -83,7 +83,7 @@ public class VistaBatalla extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelTerreno.setEnabled(false);
-        panelTerreno.setLayout(new java.awt.GridLayout());
+        panelTerreno.setLayout(new java.awt.GridLayout(1, 0));
         getContentPane().add(panelTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 480, 480));
 
         btnInvocar.setText("Invocar");
@@ -108,10 +108,18 @@ public class VistaBatalla extends javax.swing.JFrame {
 
         btnTrampa.setText("Trampa");
         getContentPane().add(btnTrampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 109, -1));
+
+        barraUsuario1.setStringPainted(true);
         getContentPane().add(barraUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 98, -1));
+
+        barraUsuario2.setStringPainted(true);
         getContentPane().add(barraUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 98, -1));
+
+        barraUsuario3.setStringPainted(true);
         getContentPane().add(barraUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 98, -1));
-        getContentPane().add(barraUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 98, -1));
+
+        barraUsuario4.setStringPainted(true);
+        getContentPane().add(barraUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 98, -1));
 
         btnAtacar.setText("Atacar");
         getContentPane().add(btnAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 109, -1));
@@ -126,7 +134,7 @@ public class VistaBatalla extends javax.swing.JFrame {
         getContentPane().add(lblUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
 
         lblUsuario4.setText("jLabel4");
-        getContentPane().add(lblUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
+        getContentPane().add(lblUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, -1, -1));
 
         lblPuntos.setText("Puntos");
         getContentPane().add(lblPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 210, -1, -1));

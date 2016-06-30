@@ -137,8 +137,12 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.getBarraUsuario4().setVisible(false);
             this.arregloJugadores.get(0).imagenTerreno=naranja;
             this.arregloJugadores.get(1).imagenTerreno=cafe;
+            this.vistaBatalla.getBarraUsuario1().setMaximum(this.arregloJugadores.get(0).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario2().setMaximum(this.arregloJugadores.get(1).jefeTerreno.vida);
             this.vistaBatalla.getBarraUsuario1().setValue(this.arregloJugadores.get(0).jefeTerreno.vida);
             this.vistaBatalla.getBarraUsuario2().setValue(this.arregloJugadores.get(1).jefeTerreno.vida);
+            
+            
             
             
         }
@@ -163,9 +167,14 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.arregloJugadores.get(0).imagenTerreno=naranja;
             this.arregloJugadores.get(1).imagenTerreno=cafe;
             this.arregloJugadores.get(2).imagenTerreno=morado;
+            this.vistaBatalla.getBarraUsuario1().setMaximum(this.arregloJugadores.get(0).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario2().setMaximum(this.arregloJugadores.get(1).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario3().setMaximum(this.arregloJugadores.get(2).jefeTerreno.vida);
             this.vistaBatalla.getBarraUsuario1().setValue(this.arregloJugadores.get(0).jefeTerreno.vida);
             this.vistaBatalla.getBarraUsuario2().setValue(this.arregloJugadores.get(1).jefeTerreno.vida);
-            this.vistaBatalla.getBarraUsuario1().setValue(this.arregloJugadores.get(2).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario3().setValue(this.arregloJugadores.get(2).jefeTerreno.vida);
+            
+            
             
             
             
@@ -195,10 +204,16 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.arregloJugadores.get(1).imagenTerreno=cafe;
             this.arregloJugadores.get(0).imagenTerreno=morado;
             this.arregloJugadores.get(1).imagenTerreno=azul;
+            this.vistaBatalla.getBarraUsuario1().setMaximum(this.arregloJugadores.get(0).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario2().setMaximum(this.arregloJugadores.get(1).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario3().setMaximum(this.arregloJugadores.get(2).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario4().setMaximum(this.arregloJugadores.get(3).jefeTerreno.vida);
             this.vistaBatalla.getBarraUsuario1().setValue(this.arregloJugadores.get(0).jefeTerreno.vida);
             this.vistaBatalla.getBarraUsuario2().setValue(this.arregloJugadores.get(1).jefeTerreno.vida);
-            this.vistaBatalla.getBarraUsuario1().setValue(this.arregloJugadores.get(2).jefeTerreno.vida);
-            this.vistaBatalla.getBarraUsuario2().setValue(this.arregloJugadores.get(3).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario3().setValue(this.arregloJugadores.get(2).jefeTerreno.vida);
+            this.vistaBatalla.getBarraUsuario4().setValue(this.arregloJugadores.get(3).jefeTerreno.vida);
+            
+            
             /*System.out.println(tablero.infoCasillas[0][7].terreno+ " terreno puesto en poner terreno");
             System.out.println(tablero.infoCasillas[7][0].terreno+ " terreno puesto en poner terreno");
             System.out.println(tablero.infoCasillas[14][7].terreno+ " terreno puesto en poner terreno");
@@ -675,6 +690,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         System.out.println("estoy atacando un jefe de terreno!!");
                                         criaturaAtk.Atacar(tablero.infoCasillas[i][j].jefeTerreno);
                                         System.out.println("vida del jefe de terreno despues de atacar: " + tablero.infoCasillas[i][j].jefeTerreno.vida);
+                                        Strin usuario= tablero.
                                         this.jugadorActual.puntos[0]-=1;
                                         verificarPuntos();
                                         if (tablero.infoCasillas[i][j].jefeTerreno.vida<=0){
