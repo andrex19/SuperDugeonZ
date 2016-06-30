@@ -58,7 +58,7 @@ public class ControladorPrincipal implements ActionListener{
         PuzzleDados puzzleDados2 = new PuzzleDados();
         
         arreglo_usuarios_registrados= (ArrayList<Jugador>) conn.getJugadoresRegistrados().clone();
-        System.out.println(arreglo_usuarios_registrados.get(0).jefeTerreno.nombre);
+        System.out.println(arreglo_usuarios_registrados);
         //ese metodo es de la clase DAO.
 
         
