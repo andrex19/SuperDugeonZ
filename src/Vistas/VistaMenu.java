@@ -88,7 +88,7 @@ public class VistaMenu extends javax.swing.JFrame {
         btnIP.setPreferredSize(new java.awt.Dimension(200, 30));
         getContentPane().add(btnIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
-        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/4.jpg"))); // NOI18N
+        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/4.png"))); // NOI18N
         getContentPane().add(FondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jMenuBar1.setBorderPainted(false);
