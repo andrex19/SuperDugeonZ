@@ -42,10 +42,14 @@ public class VistaLogin extends javax.swing.JFrame {
         labelContraseña = new javax.swing.JLabel();
         labelMensajeUsuario = new javax.swing.JLabel();
         labelMensajeContraseña = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1000, 625));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         botonIngresar.setText("Ingresar");
         botonIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -53,59 +57,29 @@ public class VistaLogin extends javax.swing.JFrame {
                 botonIngresarActionPerformed(evt);
             }
         });
+        getContentPane().add(botonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, -1, -1));
 
         botonCancelar.setText("Cancelar");
+        getContentPane().add(botonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
+        getContentPane().add(casillaContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 73, -1));
+        getContentPane().add(casillaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 73, -1));
 
         labelUsuario.setText("Usuario");
+        getContentPane().add(labelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
 
         labelContraseña.setText("Contraseña");
+        getContentPane().add(labelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
 
         labelMensajeUsuario.setForeground(new java.awt.Color(204, 0, 0));
         labelMensajeUsuario.setText("*");
+        getContentPane().add(labelMensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, -1, -1));
 
         labelMensajeContraseña.setForeground(new java.awt.Color(204, 0, 0));
         labelMensajeContraseña.setText("*");
+        getContentPane().add(labelMensajeContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonCancelar)
-                    .addComponent(labelUsuario)
-                    .addComponent(labelContraseña))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(casillaContraseña)
-                    .addComponent(botonIngresar)
-                    .addComponent(casillaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelMensajeUsuario)
-                    .addComponent(labelMensajeContraseña))
-                .addContainerGap(152, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(casillaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelUsuario)
-                    .addComponent(labelMensajeUsuario))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(casillaContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContraseña)
-                    .addComponent(labelMensajeContraseña))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonIngresar)
-                    .addComponent(botonCancelar))
-                .addContainerGap(129, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vistaLogin.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 625));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,6 +129,7 @@ public class VistaLogin extends javax.swing.JFrame {
     private javax.swing.JPasswordField casillaContraseña;
     private javax.swing.JTextField casillaUsuario;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelContraseña;
     private javax.swing.JLabel labelMensajeContraseña;
     private javax.swing.JLabel labelMensajeUsuario;

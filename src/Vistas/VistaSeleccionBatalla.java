@@ -127,7 +127,7 @@ public class VistaSeleccionBatalla extends javax.swing.JFrame {
         getContentPane().add(radioJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
         getContentPane().add(radioPNJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/2.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/2.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

@@ -102,7 +102,7 @@ public class VistaRegistro extends javax.swing.JFrame {
         getContentPane().add(txtPwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 108, -1));
         getContentPane().add(lblImagenJT, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 480, 270));
 
-        FondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Registro.png"))); // NOI18N
+        FondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/3.png"))); // NOI18N
         getContentPane().add(FondoVista, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

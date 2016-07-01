@@ -196,7 +196,7 @@
     <Component class="javax.swing.JLabel" name="FondoVista">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/Registro.png"/>
+          <Image iconType="3" name="/Imagenes/Fondos/3.png"/>
         </Property>
       </Properties>
       <Constraints>

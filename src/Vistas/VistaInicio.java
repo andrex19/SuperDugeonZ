@@ -45,7 +45,7 @@ public class VistaInicio extends javax.swing.JFrame {
         btnEjecutar.setPreferredSize(new java.awt.Dimension(90, 30));
         btnEjecutar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonEjecutar3.jpg"))); // NOI18N
         btnEjecutar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonEjecutar2.jpg"))); // NOI18N
-        getContentPane().add(btnEjecutar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 160, 70));
+        getContentPane().add(btnEjecutar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 160, 70));
 
         btnCreditos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonCreditos1.jpg"))); // NOI18N
         btnCreditos.setBorderPainted(false);
@@ -55,7 +55,7 @@ public class VistaInicio extends javax.swing.JFrame {
         btnCreditos.setPreferredSize(new java.awt.Dimension(90, 30));
         btnCreditos.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonCreditos3.jpg"))); // NOI18N
         btnCreditos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonCreditos2.1.jpg"))); // NOI18N
-        getContentPane().add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 320, 60));
+        getContentPane().add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 320, 60));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonSalir1.jpg"))); // NOI18N
         btnSalir.setBorderPainted(false);
@@ -65,9 +65,9 @@ public class VistaInicio extends javax.swing.JFrame {
         btnSalir.setPreferredSize(new java.awt.Dimension(90, 30));
         btnSalir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonSalir3.jpg"))); // NOI18N
         btnSalir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Botones/botonSalir2.jpg"))); // NOI18N
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 160, 70));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 180, 160, 70));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vistaLogin.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/1.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
 
         pack();

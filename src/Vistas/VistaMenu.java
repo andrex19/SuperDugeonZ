@@ -37,6 +37,7 @@ public class VistaMenu extends javax.swing.JFrame {
         btnBT = new javax.swing.JButton();
         btnIC = new javax.swing.JButton();
         btnIP = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         FondoMenu = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCuentas = new javax.swing.JMenu();
@@ -56,24 +57,38 @@ public class VistaMenu extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBE.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
         btnBE.setText("Batalla General");
+        btnBE.setToolTipText("");
+        btnBE.setPreferredSize(new java.awt.Dimension(200, 30));
         btnBE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBEActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBE, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 110, -1));
+        getContentPane().add(btnBE, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
+        btnBT.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
         btnBT.setText("Torneo");
-        getContentPane().add(btnBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 110, -1));
+        btnBT.setPreferredSize(new java.awt.Dimension(200, 30));
+        getContentPane().add(btnBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
+        btnIC.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 11)); // NOI18N
         btnIC.setText("Información de criaturas");
-        getContentPane().add(btnIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 166, -1, -1));
+        btnIC.setPreferredSize(new java.awt.Dimension(200, 30));
+        getContentPane().add(btnIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
+        btnIP.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
         btnIP.setText("Información de partidas");
-        getContentPane().add(btnIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 150, -1));
+        btnIP.setPreferredSize(new java.awt.Dimension(200, 30));
+        getContentPane().add(btnIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
-        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/4.jpg"))); // NOI18N
+        jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
+        jButton1.setText("Batalla en equipos");
+        jButton1.setPreferredSize(new java.awt.Dimension(200, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
+
+        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/4.png"))); // NOI18N
         getContentPane().add(FondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jMenuBar1.setBorderPainted(false);
@@ -195,6 +210,7 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnBT;
     private javax.swing.JButton btnIC;
     private javax.swing.JButton btnIP;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
