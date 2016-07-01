@@ -24,6 +24,7 @@ public class VistaSeleccionDados extends javax.swing.JFrame {
     public VistaSeleccionDados() {
         initComponents();
         this.limpiarBotones();
+        setLocationRelativeTo(null);
     }
 
     /**

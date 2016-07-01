@@ -24,6 +24,7 @@ import java.awt.event.MouseWheelEvent;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
 import superdugeonz_2.ControladorPrincipal;
 
@@ -116,6 +117,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     }
     public void verificarGanador(){
         if(arregloJugadores.size()<=1){
+            this.vistaBatalla.dispose();
+            JOptionPane.showMessageDialog(null,"El ganador es "+ jugadorActual.toString() );
+            this.cp.contMenu.verVista(cp);
             System.out.println("el ganador es: " + arregloJugadores.get(0).usuario);
         }
     }
@@ -432,10 +436,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (vistaBatalla.getBtnInvocar()==e.getSource()){ //invocar = boton 1
+        /*if (vistaBatalla.getBtnInvocar()==e.getSource()){ //invocar = boton 1
             System.out.println("click en boton invocar criatura");          
             ultimo_boton=1; //habilitar la funcionliadad para invocar 
-        }
+        }*/
         if (ultimo_boton==1){
             
             this.invocarActionPerformed(dado , e );
