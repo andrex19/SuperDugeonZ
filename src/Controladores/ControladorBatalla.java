@@ -39,6 +39,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     ControladorSeleccionDados controladorSeleccionDados;
     VistaBatalla vistaBatalla;
     ImageIcon goku,rojo,verde,azul,kaio, cafe , morado, naranja;
+    ImageIcon[] imagenesTerreno;
+    String[] terrenoDe;
     Dado dado;
     Criatura criatura;
     Magia magia = new Magia();
@@ -65,9 +67,13 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     
 
     public ControladorBatalla() {
+        this.terrenoDe = new String[4];
+        this.imagenesTerreno = new ImageIcon[4];
         //this.controladorElegirDados=new ControladorElegirDados();
         this.tablero = new Tablero();
         this.ordenTurnos = new ArrayList<Integer>();
+        
+        
         this.goku = new ImageIcon(this.getClass().getResource("/Imagenes/goku.png"));
         this.kaio = new ImageIcon(this.getClass().getResource("/Imagenes/Kaio-Sama.PNG"));
         this.rojo = new ImageIcon(this.getClass().getResource("/Imagenes/rojo.png"));
@@ -76,7 +82,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         this.cafe = new ImageIcon(this.getClass().getResource("/Imagenes/Terrenos/TerrenoCafe.png"));
         this.morado = new ImageIcon(this.getClass().getResource("/Imagenes/Terrenos/TerrenoMorado.png"));
         this.naranja = new ImageIcon(this.getClass().getResource("/Imagenes/Terrenos/TerrenoNaranja.png"));
-
+        this.imagenesTerreno[0]=naranja;
+        this.imagenesTerreno[1]=cafe;
+        this.imagenesTerreno[2]=morado;
+        this.imagenesTerreno[3]=azul;
         }
     public void generarTurnos(){
         Random random= new Random();
@@ -85,11 +94,13 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         System.out.println(this.arregloJugadores.size());
         while (aux.size()<this.arregloJugadores.size()){
             aleatorio=random.nextInt(this.arregloJugadores.size());
+    
             if (aux.contains(aleatorio)==false){
                 System.out.println("agregar este aleatorio: " + aleatorio);
                 aux.add(aleatorio);
             }
         }
+        turno=0;
         //System.out.println(aux);
         this.ordenTurnos=(ArrayList<Integer>) aux.clone();
         //System.out.println(this.ordenTurnos);  
@@ -180,6 +191,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.getBarraUsuario2().setValue(this.arregloJugadores.get(1).jefeTerreno.vida);
             this.vistaBatalla.actualizarBarra(1);
             this.vistaBatalla.actualizarBarra(2);
+            terrenoDe[0]=arregloJugadores.get(0).usuario;
+            terrenoDe[1]=arregloJugadores.get(1).usuario;
             
             
             
@@ -217,6 +230,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.actualizarBarra(2);
             this.vistaBatalla.actualizarBarra(3);
             this.actualizarToolTip();
+            terrenoDe[0]=arregloJugadores.get(0).usuario;
+            terrenoDe[1]=arregloJugadores.get(1).usuario;
+            terrenoDe[2]=arregloJugadores.get(2).usuario;
+            
             
             
             
@@ -262,6 +279,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.actualizarBarra(3);
             this.vistaBatalla.actualizarBarra(4);
             this.actualizarToolTip();
+            terrenoDe[0]=arregloJugadores.get(0).usuario;
+            terrenoDe[1]=arregloJugadores.get(1).usuario;
+            terrenoDe[2]=arregloJugadores.get(2).usuario;
+            terrenoDe[3]=arregloJugadores.get(3).usuario;
             
             
             /*System.out.println(tablero.infoCasillas[0][7].terreno+ " terreno puesto en poner terreno");
@@ -399,11 +420,16 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     public ImageIcon obtenerImagenTerreno(int f,int c){
         ImageIcon imagen=null;//capturar bien la imagen 
         //ya que no es la imagen del jefe de terreno la que hay que poner! si no que la de terreno propio
-        for (int d=0;d<arregloJugadores.size();d++){
-            if (arregloJugadores.get(d).usuario.equals(
-                 tablero.infoCasillas[f][c].terreno)){
-                imagen=arregloJugadores.get(d).imagenTerreno;
+        for (int d=0;d<terrenoDe.length;d++){
+            
+            System.out.println(terrenoDe[d]);
+            if(terrenoDe[d]!=null){
+                if (terrenoDe[d].equals(tablero.infoCasillas[f][c].terreno)){
+                imagen=imagenesTerreno[d];
+                
             }
+            }
+            
         }
         return imagen;
     }
@@ -780,7 +806,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                             this.eliminarCriaturas(tablero.infoCasillas[i][j].terreno);
                                             for (int r=0;r<arregloJugadores.size();r++){
                                                 if (arregloJugadores.get(r).usuario.equals(tablero.infoCasillas[i][j].terreno)){
-                                                    arregloJugadores.remove(r);                                                }
+                                                    arregloJugadores.remove(r);
+                                                    generarTurnos();
+                                                }
                                             }
                                             tablero.infoCasillas[i][j].jefeTerreno=null;
                                             tablero.infoCasillas[i][j].ocupadoPor="";
@@ -818,7 +846,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
         if (vistaBatalla.getBtnFinalizar()==e.getSource()){
             System.out.println("click en boton finalizar turno");
             turno+=1;
-            if (turno==arregloJugadores.size()){
+            if (turno>=arregloJugadores.size()){
                 turno=0;
                 generarTurnos();
                 System.out.print("orden de turno en esta fase: ");
@@ -826,6 +854,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
 
             }
             //System.out.println(ordenTurnos.get(turno));
+            
             jugadorActual=arregloJugadores.get(ordenTurnos.get(turno));
             System.out.println("turno: "+turno);
             System.out.println("turno de: "+ jugadorActual.usuario);
