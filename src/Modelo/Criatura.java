@@ -80,6 +80,9 @@ public class Criatura {
 
             Daño =  this.ataque - defensora.defensa;
             defensora.puntosDeVida = defensora.puntosDeVida - Daño;
+            if (defensora.puntosDeVida<0){
+                defensora.puntosDeVida=0;
+            }
             System.out.println(this.nombre+" ha atacado a "+defensora.nombre);
           }
 
