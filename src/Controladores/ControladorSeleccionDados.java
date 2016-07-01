@@ -106,11 +106,14 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
     public void actionPerformed(ActionEvent e) {
         if(vistaSD.getCheckDado1()==e.getSource()){
             System.out.println("Presiona Check 1");
+            if (vistaSD.getItemCboxDado1().equals("<Seleccionar>")==false){
+                Dado dado1 = (Dado) vistaSD.getItemCboxDado1();
+                vistaSD.getLblDado1().setIcon(dado1.criatura.imagen);
+                vistaSD.getCboxDado1().setEnabled(false);
+            }
             
-            Dado dado1 = (Dado) vistaSD.getItemCboxDado1();
-            vistaSD.getLblDado1().setIcon(dado1.criatura.imagen);
             
-            vistaSD.getCboxDado1().setEnabled(false);
+            
             if(vistaSD.getCheckDado1().isSelected()==false){
                 vistaSD.getCboxDado1().setEnabled(true);
             }
@@ -118,20 +121,23 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             }
         if(vistaSD.getCheckDado2()==e.getSource()){
             System.out.println("Presiona Check 2");
-            
+            if (vistaSD.getItemCboxDado1().equals("<Seleccionar>")==false){
             Dado dado2 = (Dado) vistaSD.getItemCboxDado2();
             vistaSD.getLblDado2().setIcon(dado2.criatura.imagen);
             vistaSD.getCboxDado2().setEnabled(false);
+            }
             if(vistaSD.getCheckDado2().isSelected()==false){
                 vistaSD.getCboxDado2().setEnabled(true);
             }
         }
         if(vistaSD.getCheckDado3()==e.getSource()){
             System.out.println("Presiona Check 3");
+            if (vistaSD.getItemCboxDado1().equals("<Seleccionar>")==false){
             Dado dado3 = (Dado) vistaSD.getItemCboxDado3();
             vistaSD.getLblDado3().setIcon(dado3.criatura.imagen);
             
             vistaSD.getCboxDado3().setEnabled(false);
+            }
             if(vistaSD.getCheckDado3().isSelected()==false){
                 vistaSD.getCboxDado3().setEnabled(true);
             }
@@ -139,9 +145,11 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
         }
         if(vistaSD.getCheckDado4()==e.getSource()){
             System.out.println("Presiona Check 4");
+            if (vistaSD.getItemCboxDado1().equals("<Seleccionar>")==false){
             Dado criatura = (Dado) vistaSD.getItemCboxDado4();
             vistaSD.getLblDado4().setIcon(criatura.criatura.imagen);
             vistaSD.getCboxDado4().setEnabled(false);
+            }
             if(vistaSD.getCheckDado4().isSelected()==false){
                 vistaSD.getCboxDado4().setEnabled(true);
             }
