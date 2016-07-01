@@ -53,7 +53,6 @@ public class VistaRegistro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(985, 614));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCancelar.setText("Cancelar");
@@ -100,7 +99,7 @@ public class VistaRegistro extends javax.swing.JFrame {
         getContentPane().add(lblMsjJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
         getContentPane().add(txtPwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 108, -1));
         getContentPane().add(txtPwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 108, -1));
-        getContentPane().add(lblImagenJT, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 480, 270));
+        getContentPane().add(lblImagenJT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 520, 380));
 
         FondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/3.png"))); // NOI18N
         getContentPane().add(FondoVista, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

@@ -145,13 +145,14 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
 
                 }
                 else if(tablero.infoCasillas[i][j].criatura!=null){
-                vistaBatalla.botones[i][j].setToolTipText("<html>Terreno: "+ tablero.infoCasillas[i][j].terreno + "<br>"+
+                vistaBatalla.botones[i][j].setToolTipText("<html>"+
                                                           "Criatura: "+ tablero.infoCasillas[i][j].criatura.nombre + "<br>"+ 
+                                                          "Pertenece a: "+ tablero.infoCasillas[i][j].ocupadoPor + "<br>"+
                                                           "Nivel: " + tablero.infoCasillas[i][j].criatura.nivel+ "<br>"+
                                                           "Vida: " + tablero.infoCasillas[i][j].criatura.puntosDeVida+ "<br>"+
                                                           "Ataque: " + tablero.infoCasillas[i][j].criatura.ataque+ "<br>"+
                                                           "Defensa: " + tablero.infoCasillas[i][j].criatura.defensa+ "<br>"+
-                                                          "Costo movimiento: " + tablero.infoCasillas[i][j].criatura.movimiento+ "<br>"+
+                                                          /*"Costo movimiento: " + tablero.infoCasillas[i][j].criatura.movimiento+ "<br>"+*/
 
                                                           "</html>");
 
@@ -756,11 +757,19 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         this.jugadorActual.puntos[0]-=1;
                                         verificarPuntos();
                                         ImageIcon imagenTerreno;
-                                        imagenTerreno=obtenerImagenTerreno(i,j);
+                                        
                                         if (criaturaDef.puntosDeVida<=0){
+                                            imagenTerreno=obtenerImagenTerreno(i,j);
                                             tablero.infoCasillas[i][j].ocupadoPor="";
                                             tablero.infoCasillas[i][j].criatura=null;
                                             vistaBatalla.botones[i][j].setIcon(imagenTerreno);
+                                        }
+                                        
+                                        if(criaturaAtk.puntosDeVida<=0){
+                                            imagenTerreno=obtenerImagenTerreno(posicionInicialI, posicionInicialJ);
+                                            this.tablero.infoCasillas[posicionInicialI] [posicionInicialJ].ocupadoPor="";
+                                            this.tablero.infoCasillas[posicionInicialI] [posicionInicialJ].criatura=null;
+                                            vistaBatalla.botones[posicionInicialI] [posicionInicialJ].setIcon(imagenTerreno);
                                         }
                                         System.out.println("se ha seeccionado la criatura para defender");
                                         System.out.println("puntos de vida despues: " + criaturaDef.puntosDeVida);
@@ -792,11 +801,14 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         int usuarioPosicion=0;
                                         System.out.println(arregloJugadores.size());
                                         for (int h=0;h<this.terrenoDe.length;h++){
-                                            
-                                            if(terrenoDe[h].equals(usuario)){
+                                            if (terrenoDe[h]!=null){
+                                                if(terrenoDe[h].equals(usuario)){
                                                 usuarioPosicion=h+1;
+                                                }
                                             }
                                         }
+                                            
+                                            
                                         System.out.println("usuario al que ataque: " + usuarioPosicion);                                        
                                         this.vistaBatalla.getBarraUsuarios(usuarioPosicion).setValue(tablero.infoCasillas[i][j].jefeTerreno.vida);
                                         this.vistaBatalla.actualizarBarra(usuarioPosicion);

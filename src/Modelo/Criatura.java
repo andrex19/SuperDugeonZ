@@ -87,7 +87,7 @@ public class Criatura {
           }
 
         else if (this.ataque<defensora.defensa){
-            Daño = this.ataque - this.defensa;
+            Daño = defensora.defensa-this.ataque  ;
             this.puntosDeVida = this.puntosDeVida - Daño;
             System.out.println(this.nombre+" se quita a sí mismo");
         }
