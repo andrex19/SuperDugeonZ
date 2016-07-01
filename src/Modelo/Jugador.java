@@ -19,6 +19,7 @@ public class Jugador {
     public Trampa trampa;
     
     
+    @Override
     public String toString(){
         return this.usuario;
     }
