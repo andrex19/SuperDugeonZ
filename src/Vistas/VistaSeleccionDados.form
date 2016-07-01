@@ -26,9 +26,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblDado1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Dado1"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="70" y="160" width="70" height="70"/>
@@ -36,9 +33,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDado2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Dado2"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="250" y="160" width="70" height="70"/>
@@ -46,9 +40,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDado3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Dado3"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="410" y="160" width="70" height="70"/>
@@ -56,9 +47,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDado4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Dado4"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="590" y="160" width="70" height="70"/>

@@ -61,17 +61,9 @@ public class VistaSeleccionDados extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblDado1.setText("Dado1");
         getContentPane().add(lblDado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 70, 70));
-
-        lblDado2.setText("Dado2");
         getContentPane().add(lblDado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 70, 70));
-
-        lblDado3.setText("Dado3");
         getContentPane().add(lblDado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 70, 70));
-
-        lblDado4.setText("Dado4");
         getContentPane().add(lblDado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 70, 70));
 
         cboxDado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
