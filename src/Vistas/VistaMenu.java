@@ -36,8 +36,8 @@ public class VistaMenu extends javax.swing.JFrame {
         btnBE = new javax.swing.JButton();
         btnBT = new javax.swing.JButton();
         btnIC = new javax.swing.JButton();
-        btnIP = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        btnIP1 = new javax.swing.JButton();
         FondoMenu = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCuentas = new javax.swing.JMenu();
@@ -78,17 +78,17 @@ public class VistaMenu extends javax.swing.JFrame {
         btnIC.setPreferredSize(new java.awt.Dimension(200, 30));
         getContentPane().add(btnIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
-        btnIP.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
-        btnIP.setText("Información de partidas");
-        btnIP.setPreferredSize(new java.awt.Dimension(200, 30));
-        getContentPane().add(btnIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
-
         jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
         jButton1.setText("Batalla en equipos");
         jButton1.setPreferredSize(new java.awt.Dimension(200, 30));
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
-        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/4.png"))); // NOI18N
+        btnIP1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
+        btnIP1.setText("Información de partidas");
+        btnIP1.setPreferredSize(new java.awt.Dimension(200, 30));
+        getContentPane().add(btnIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+
+        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/4.jpg"))); // NOI18N
         getContentPane().add(FondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jMenuBar1.setBorderPainted(false);
@@ -209,7 +209,7 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnBE;
     private javax.swing.JButton btnBT;
     private javax.swing.JButton btnIC;
-    private javax.swing.JButton btnIP;
+    private javax.swing.JButton btnIP1;
     private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
