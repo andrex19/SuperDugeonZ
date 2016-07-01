@@ -334,6 +334,11 @@ public class Dado {
             System.out.println("Obtuvo 3 punto de Trampa");
             return "Trampa3";
         }
+        else if("AtkX4".equals(caraDado)){
+            puntos[0]=puntos[0]+4;
+            System.out.println("Obtuvo 4 puntos de Ataque");
+            return "Atak4";
+        }
         else{
             return "error";
         }
