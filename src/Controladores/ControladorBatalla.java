@@ -45,7 +45,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
     public static int numeroFiguraDado=0;
     public static int rotacion=0;
     public ArrayList <Integer> ordenTurnos;
-    private int ultimo_boton;
+    public int ultimo_boton;
     public Tablero tablero;
     public int turno;
     public Jugador jugadorActual;
@@ -207,8 +207,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.getLblUsuario4().setText(arregloJugadores.get(3).usuario);
             this.arregloJugadores.get(0).imagenTerreno=naranja;
             this.arregloJugadores.get(1).imagenTerreno=cafe;
-            this.arregloJugadores.get(0).imagenTerreno=morado;
-            this.arregloJugadores.get(1).imagenTerreno=azul;
+            this.arregloJugadores.get(2).imagenTerreno=morado;
+            this.arregloJugadores.get(3).imagenTerreno=azul;
             this.vistaBatalla.getBarraUsuario1().setMaximum(this.arregloJugadores.get(0).jefeTerreno.vida);
             this.vistaBatalla.getBarraUsuario2().setMaximum(this.arregloJugadores.get(1).jefeTerreno.vida);
             this.vistaBatalla.getBarraUsuario3().setMaximum(this.arregloJugadores.get(2).jefeTerreno.vida);
@@ -403,22 +403,13 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                 this.vistaBatalla.getBtnInvocar().setEnabled(true);
             }
     }
-    
-    
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (vistaBatalla.getBtnInvocar()==e.getSource()){ //invocar = boton 1
-            System.out.println("click en boton invocar criatura");          
-            ultimo_boton=1; //habilitar la funcionliadad para invocar 
-        }
-        if (ultimo_boton==1){
-            for (int i=0;i<15;i++){
+    public void invocarActionPerformed(Dado dado,ActionEvent e){
+        for (int i=0;i<15;i++){
                 for (int j=0;j<15;j++){
                    if (vistaBatalla.botones[i][j]==e.getSource()){
                         //System.out.println(" haz presionado el boton !("+i+","+j+")" );
                         System.out.println("jugador Actual " + jugadorActual.usuario);
-                        dado=jugadorActual.puzle.puzzle[1];
+                        
                         //HAY QUE ELEGIR EL DADO QUE SE NECESITA INVOCARR!!! (ASI COMO ESTA... INVOCA UNA CRIATURA DE UN DADO EN ESPECIFICO)
                         carasDado=dado.generarTerreno(i,j,numeroFiguraDado,rotacion);
                         if (tablero.verificarTerreno(carasDado,jugadorActual.usuario,tablero)){
@@ -436,6 +427,18 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                    }
                 }
             }
+    }
+    
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (vistaBatalla.getBtnInvocar()==e.getSource()){ //invocar = boton 1
+            System.out.println("click en boton invocar criatura");          
+            ultimo_boton=1; //habilitar la funcionliadad para invocar 
+        }
+        if (ultimo_boton==1){
+            
+            this.invocarActionPerformed(dado , e );
         }
         
         if (vistaBatalla.getBtnMagia()==e.getSource()){

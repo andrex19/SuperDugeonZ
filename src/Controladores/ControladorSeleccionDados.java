@@ -78,6 +78,30 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
         return cara;
         
     }*/
+    public boolean verificarNivel(Dado dado, int puntos){
+        if (dado.criatura.nivel==1){
+            if (puntos>0){
+                return true;
+            }
+        }
+        if (dado.criatura.nivel==2){
+            if (puntos>2){
+                return true;
+            }
+        }
+        if (dado.criatura.nivel==3){
+            if (puntos>3){
+                return true;
+            }
+        }
+        if (dado.criatura.nivel==4){
+            if (puntos>4){
+                return true;
+            }
+        }
+        
+        return false;
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(vistaSD.getCheckDado1()==e.getSource()){
@@ -166,26 +190,54 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             for (int i=0;i<4;i++){
                 System.out.println("");
                 if (this.dadosSeleccionados[i]!=null){
-                    String []caras=this.dadosSeleccionados[i].caras;
-                    String resultado = this.dadosSeleccionados[i].lanzarDado(caras, puntos);
+                    Dado dado=this.dadosSeleccionados[i];
+                    String []caras=dado.caras;
+                    String resultado = dado.lanzarDado(caras, puntos);
                     System.out.println("este es el resultado"+ resultado);
                     if (i==0){
                         System.out.println("/Imagenes/CarasDado/"+resultado+".png");
-                        this.vistaSD.getLblImagen1().setIcon(new ImageIcon("/Imagenes/CarasDado/"+resultado+".png"));
-                        this.vistaSD.getLblDado1().setVisible(true);
-                        System.out.println("entre al primer if");
+                        this.vistaSD.getLblImagen1().setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CarasDado/"+resultado+".png")));
+                        if (resultado.equals("Inv") ){
+                            if (verificarNivel(dado,puntos[4])){
+                                this.vistaSD.getBtnInv1().setVisible(true);
+                            }
+                            
+                        }
+                        //System.out.println("entre al primer if");
                     }
                     if (i==1){
-                        this.vistaSD.getLblImagen2().setIcon(new ImageIcon("/Imagenes/CarasDado/"+resultado+".png"));
                         System.out.println("entre al segundo if");
+                        System.out.println("/Imagenes/CarasDado/"+resultado+".png");
+                        this.vistaSD.getLblImagen2().setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CarasDado/"+resultado+".png")));
+                        if (resultado.equals("Inv") ){
+                            if (verificarNivel(dado,puntos[4])){
+                                this.vistaSD.getBtnInv2().setVisible(true);
+                            }
+                            
+                        }
+                        
                     }
                     if (i==2){
-                        this.vistaSD.getLblImagen3().setIcon(new ImageIcon("/Imagenes/CarasDado/"+resultado+".png"));
-                        System.out.println("entre al tercer if");
+                        System.out.println("/Imagenes/CarasDado/"+resultado+".png");
+                        this.vistaSD.getLblImagen3().setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CarasDado/"+resultado+".png")));
+                        //System.out.println("entre al tercer if");
+                        if (resultado.equals("Inv") ){
+                            if (verificarNivel(dado,puntos[4])){
+                                this.vistaSD.getBtnInv3().setVisible(true);
+                            }
+                            
+                        }
                     }
                     if (i==3){
-                        this.vistaSD.getLblImagen4().setIcon(new ImageIcon("/Imagenes/CarasDado/"+resultado+".png"));
-                        System.out.println("entre al cuarto if");
+                        System.out.println("/Imagenes/CarasDado/"+resultado+".png");
+                        this.vistaSD.getLblImagen4().setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CarasDado/"+resultado+".png")));
+                        //System.out.println("entre al cuarto if");
+                        if (resultado.equals("Inv") ){
+                            if (verificarNivel(dado,puntos[4])){
+                                this.vistaSD.getBtnInv4().setVisible(true);
+                            }
+                            
+                        }
                     }
                     System.out.println("dado: " + i); 
                 }
@@ -201,6 +253,26 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
             this.vistaSD.getBtnLanzar().setEnabled(false);
             this.contBatalla.vistaBatalla.getBtnLanzar().setEnabled(false);
             this.contBatalla.verificarPuntos();
+        }
+        if (this.vistaSD.getBtnInv1()==e.getSource()){
+            this.contBatalla.dado=this.dadosSeleccionados[0];
+            this.contBatalla.ultimo_boton=1;
+            this.vistaSD.dispose();
+        }
+        if (this.vistaSD.getBtnInv2()==e.getSource()){
+            this.contBatalla.dado=this.dadosSeleccionados[1];
+            this.contBatalla.ultimo_boton=1;
+            this.vistaSD.dispose();
+        }
+        if (this.vistaSD.getBtnInv3()==e.getSource()){
+            this.contBatalla.dado=this.dadosSeleccionados[2];
+            this.contBatalla.ultimo_boton=1;
+            this.vistaSD.dispose();
+        }
+        if (this.vistaSD.getBtnInv4()==e.getSource()){
+            this.contBatalla.dado=this.dadosSeleccionados[3];
+            this.contBatalla.ultimo_boton=1;
+            this.vistaSD.dispose();
         }
         if (this.vistaSD.getVolver()==e.getSource()){
             this.vistaSD.dispose();

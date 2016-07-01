@@ -272,7 +272,7 @@ public class Dado {
         if("Atk".equals(caraDado)){
             puntos[0] = puntos[0] + 1;
             System.out.println("Obtuvo 1 punto de Ataque");
-            return "Atk1";
+            return "Atak1";
         }
         else if("Mov".equals(caraDado)){
             puntos[1] = puntos[1] + 1;         
@@ -335,7 +335,7 @@ public class Dado {
             return "Trampa3";
         }
         else{
-            return "";
+            return "error";
         }
         
     }

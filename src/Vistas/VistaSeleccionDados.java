@@ -23,6 +23,7 @@ public class VistaSeleccionDados extends javax.swing.JFrame {
      */
     public VistaSeleccionDados() {
         initComponents();
+        this.limpiarBotones();
     }
 
     /**
@@ -286,7 +287,14 @@ public void agregarListener(ActionListener al,MouseListener ml){
     this.BtnInv2.addActionListener(al);
     this.BtnInv3.addActionListener(al);
     this.BtnInv4.addActionListener(al);
+    
 }
+public void limpiarBotones(){
+         BtnInv1.setVisible(false);
+         BtnInv2.setVisible(false);
+         BtnInv3.setVisible(false);
+         BtnInv4.setVisible(false);
+      } 
 
 
 
