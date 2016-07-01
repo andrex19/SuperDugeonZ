@@ -57,26 +57,28 @@ public class VistaLogin extends javax.swing.JFrame {
                 botonIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(botonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, -1, -1));
+        getContentPane().add(botonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, -1, -1));
 
         botonCancelar.setText("Cancelar");
-        getContentPane().add(botonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
-        getContentPane().add(casillaContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 73, -1));
-        getContentPane().add(casillaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 73, -1));
+        getContentPane().add(botonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, -1, -1));
+        getContentPane().add(casillaContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 73, -1));
+        getContentPane().add(casillaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 73, -1));
 
+        labelUsuario.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
         labelUsuario.setText("Usuario");
-        getContentPane().add(labelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
+        getContentPane().add(labelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, -1, -1));
 
+        labelContraseña.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
         labelContraseña.setText("Contraseña");
-        getContentPane().add(labelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
+        getContentPane().add(labelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, -1, -1));
 
         labelMensajeUsuario.setForeground(new java.awt.Color(204, 0, 0));
         labelMensajeUsuario.setText("*");
-        getContentPane().add(labelMensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, -1, -1));
+        getContentPane().add(labelMensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, -1, -1));
 
         labelMensajeContraseña.setForeground(new java.awt.Color(204, 0, 0));
         labelMensajeContraseña.setText("*");
-        getContentPane().add(labelMensajeContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, -1, -1));
+        getContentPane().add(labelMensajeContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vistaLogin.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 625));
