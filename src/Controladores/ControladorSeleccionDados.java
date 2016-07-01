@@ -15,6 +15,7 @@ import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -24,7 +25,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
     ControladorBatalla contBatalla;
     VistaSeleccionDados vistaSD;
     ArrayList<Dado> dadosPuzzle = new ArrayList<Dado>();
-    ArrayList<Dado> dadosSeleccionados = new ArrayList<Dado>();
+    Dado[] dadosSeleccionados = new Dado[4];
     
     public void verVista(ControladorBatalla contBatalla) {
         this.contBatalla = contBatalla;
@@ -130,7 +131,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
                 //System.out.println(posicion);
                 //System.out.println(dadosPuzzle.get(posicion-1).criatura.nombre);
                 Dado dado1=(Dado) this.vistaSD.getItemCboxDado1();
-                this.dadosSeleccionados.add(dado1);
+                this.dadosSeleccionados[0]=dado1;
                 
                 
                 //System.out.println("Resultado Dado 1: "+resultado1);
@@ -140,7 +141,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
                 String resultado2;
                 //resultado2 = generarTombola(vistaSD.getItemCboxDado2());
                 Dado dado2=(Dado) this.vistaSD.getItemCboxDado2();
-                this.dadosSeleccionados.add(dado2);
+                this.dadosSeleccionados[1]=dado2;
                 //System.out.println("Resultado Dado 2: "+resultado2);
                 
             }
@@ -148,7 +149,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
                 String resultado3;
                // resultado3 = generarTombola(vistaSD.getItemCboxDado3());
                 Dado dado3=(Dado) this.vistaSD.getItemCboxDado3();
-                this.dadosSeleccionados.add(dado3);
+                this.dadosSeleccionados[2]=dado3;
                 //System.out.println("Resultado Dado 3: "+resultado3);
                 
             }
@@ -156,16 +157,39 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
                 String resultado4;
                 //resultado4 = generarTombola(vistaSD.getItemCboxDado4());
                 Dado dado4=(Dado) this.vistaSD.getItemCboxDado4();
-                this.dadosSeleccionados.add(dado4);
+                this.dadosSeleccionados[3]=dado4;
                 //System.out.println("Resultado Dado 4: "+resultado4);
                 
             }
 
             int[] puntos= this.contBatalla.jugadorActual.puntos;
-            for (int i=0;i<this.dadosSeleccionados.size();i++){
-                String []caras=this.dadosSeleccionados.get(i).caras;
-                this.dadosSeleccionados.get(i).lanzarDado(caras, puntos);
-                System.out.println("dado: " + i);
+            for (int i=0;i<4;i++){
+                System.out.println("");
+                if (this.dadosSeleccionados[i]!=null){
+                    String []caras=this.dadosSeleccionados[i].caras;
+                    String resultado = this.dadosSeleccionados[i].lanzarDado(caras, puntos);
+                    System.out.println("este es el resultado"+ resultado);
+                    if (i==0){
+                        System.out.println("/Imagenes/CarasDado/"+resultado+".png");
+                        this.vistaSD.getLblImagen1().setIcon(new ImageIcon("/Imagenes/CarasDado/"+resultado+".png"));
+                        this.vistaSD.getLblDado1().setVisible(true);
+                        System.out.println("entre al primer if");
+                    }
+                    if (i==1){
+                        this.vistaSD.getLblImagen2().setIcon(new ImageIcon("/Imagenes/CarasDado/"+resultado+".png"));
+                        System.out.println("entre al segundo if");
+                    }
+                    if (i==2){
+                        this.vistaSD.getLblImagen3().setIcon(new ImageIcon("/Imagenes/CarasDado/"+resultado+".png"));
+                        System.out.println("entre al tercer if");
+                    }
+                    if (i==3){
+                        this.vistaSD.getLblImagen4().setIcon(new ImageIcon("/Imagenes/CarasDado/"+resultado+".png"));
+                        System.out.println("entre al cuarto if");
+                    }
+                    System.out.println("dado: " + i); 
+                }
+                
                 
             }
             for (int i=0;i<puntos.length;i++){
@@ -173,7 +197,7 @@ public class ControladorSeleccionDados extends MouseAdapter implements ActionLis
                 System.out.print(puntos[i]+ ", ");
             }
             System.out.println("");
-            this.contBatalla.dadosSeleccionados=(ArrayList<Dado>) this.dadosSeleccionados.clone();
+            //this.contBatalla.dadosSeleccionados=(ArrayList<Dado>) this.dadosSeleccionados.clone();
             this.vistaSD.getBtnLanzar().setEnabled(false);
             this.contBatalla.vistaBatalla.getBtnLanzar().setEnabled(false);
             this.contBatalla.verificarPuntos();
