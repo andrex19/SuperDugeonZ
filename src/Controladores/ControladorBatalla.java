@@ -400,12 +400,12 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             else{
                 this.vistaBatalla.getBtnTrampa().setEnabled(true);
             }
-            if(this.jugadorActual.puntos[4]<=0){
+            /*if(this.jugadorActual.puntos[4]<=0){
                 this.vistaBatalla.getBtnInvocar().setEnabled(false);
             }
             else{
                 this.vistaBatalla.getBtnInvocar().setEnabled(true);
-            }
+            }*/
     }
     public void invocarActionPerformed(Dado dado,ActionEvent e){
         for (int i=0;i<15;i++){
