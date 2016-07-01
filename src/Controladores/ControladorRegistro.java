@@ -60,10 +60,10 @@ public class ControladorRegistro implements ActionListener {
         String pwd1=vistaRegistro.getPwd1();
         String pwd2=vistaRegistro.getPwd2();
         String jefeTerreno=vistaRegistro.getItemCboxJefeTerreno();
-        String puzzle=vistaRegistro.getItemCboxPuzzle();
+        
         //boolean seConecta;
         if (usuario.equals("")==false && pwd1.equals("")==false && pwd2.equals("")==false 
-            && jefeTerreno.equals("<Seleccionar>")==false && puzzle.equals("<Seleccionar>")==false){
+            && jefeTerreno.equals("<Seleccionar>")==false){
             conn = new Conexion();
             conn.conectar();
             
@@ -78,7 +78,7 @@ public class ControladorRegistro implements ActionListener {
                 vistaRegistro.setMsjPwd1("");
                 vistaRegistro.setMsjPwd2("");
                 vistaRegistro.setMsjJefeTerreno("");
-                vistaRegistro.setMsjPuzzle("");
+                
                 
                 
                 if (Jugador.existe(cp.arreglo_usuarios_registrados, usuario)==false){
@@ -130,7 +130,7 @@ public class ControladorRegistro implements ActionListener {
                     vistaRegistro.setMsjPwd1("");
                     vistaRegistro.setMsjPwd2("");
                     vistaRegistro.setMsjJefeTerreno("");
-                    vistaRegistro.setMsjPuzzle("");
+                    
                 
                 }
                 
@@ -141,7 +141,7 @@ public class ControladorRegistro implements ActionListener {
                 vistaRegistro.setMsjPwd1("");
                 vistaRegistro.setMsjPwd2("Contraseña no coincide");
                 vistaRegistro.setMsjJefeTerreno("");
-                vistaRegistro.setMsjPuzzle("");
+                
                 
                 
             }
@@ -171,12 +171,7 @@ public class ControladorRegistro implements ActionListener {
             else{
                 vistaRegistro.setMsjJefeTerreno("");
             }
-            if (puzzle.equals("<Seleccionar>")==true){
-                vistaRegistro.setMsjPuzzle("Seleccione puzzle");
-            }
-            else{
-                vistaRegistro.setMsjPuzzle("");
-            }
+            
             
         }
 
@@ -208,18 +203,7 @@ public class ControladorRegistro implements ActionListener {
             
             
         }    
-        if (vistaRegistro.getCboxPuzzle()==e.getSource()){
-            if (vistaRegistro.getItemCboxPuzzle().equals("Puzzle 1")){
-                System.out.println("Puzzle seleccionado: Puzzle 1");     
-            }
-            else if (vistaRegistro.getItemCboxPuzzle().equals("Puzzle 2")){
-                System.out.println("Puzzle seleccionado: Puzzle 2");     
-            }
-            else if (vistaRegistro.getItemCboxPuzzle().equals("Puzzle 3")){
-                System.out.println("Puzzle seleccionado: Puzzle 3");     
-            }
         
-        }
         
     }
    

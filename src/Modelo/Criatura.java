@@ -32,6 +32,7 @@ public class Criatura {
         this.nivel = nivel;
         this.imagen = new ImageIcon(this.getClass().getResource("/Imagenes/Criaturas/"+nameImg+".png"));
     }
+    
     public Criatura(int nivel){
         if (nivel==1){
         this.nombre = "Humano ";

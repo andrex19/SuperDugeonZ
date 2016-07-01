@@ -34,21 +34,18 @@ public class VistaRegistro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cboxPuzzle = new javax.swing.JComboBox<>();
         btnCancelar = new javax.swing.JButton();
         btnRegistrarse = new javax.swing.JButton();
         lblUsuario = new javax.swing.JLabel();
         lblContaseña = new javax.swing.JLabel();
         lblRContraseña = new javax.swing.JLabel();
         lblJefeTerreno = new javax.swing.JLabel();
-        lblPuzzle = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         cboxJefeTerreno = new javax.swing.JComboBox<>();
         lblMsjUsuario = new javax.swing.JLabel();
         lblMsjPwd1 = new javax.swing.JLabel();
         lblMsjPwd2 = new javax.swing.JLabel();
         lblMsjJefeTerreno = new javax.swing.JLabel();
-        lblMsjPuzzle = new javax.swing.JLabel();
         txtPwd1 = new javax.swing.JPasswordField();
         txtPwd2 = new javax.swing.JPasswordField();
         lblImagenJT = new javax.swing.JLabel();
@@ -58,9 +55,6 @@ public class VistaRegistro extends javax.swing.JFrame {
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(985, 614));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        cboxPuzzle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>", "Puzzle 1", "Puzzle 2", "Puzzle 3" }));
-        getContentPane().add(cboxPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 410, 110, -1));
 
         btnCancelar.setText("Cancelar");
         getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, -1, -1));
@@ -79,9 +73,6 @@ public class VistaRegistro extends javax.swing.JFrame {
 
         lblJefeTerreno.setText("Jefe de terreno");
         getContentPane().add(lblJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 100, -1));
-
-        lblPuzzle.setText("Puzzle de dados");
-        getContentPane().add(lblPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 100, 10));
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 108, -1));
 
         cboxJefeTerreno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>", "Goku", "Vegeta", "Zolezzi", "Mr.Satan" }));
@@ -107,18 +98,11 @@ public class VistaRegistro extends javax.swing.JFrame {
         lblMsjJefeTerreno.setForeground(new java.awt.Color(204, 0, 0));
         lblMsjJefeTerreno.setText("*");
         getContentPane().add(lblMsjJefeTerreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
-
-        lblMsjPuzzle.setForeground(new java.awt.Color(204, 0, 0));
-        lblMsjPuzzle.setText("*");
-        getContentPane().add(lblMsjPuzzle, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, -1, -1));
         getContentPane().add(txtPwd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 108, -1));
         getContentPane().add(txtPwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 108, -1));
         getContentPane().add(lblImagenJT, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 480, 270));
 
         FondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Registro.png"))); // NOI18N
-        FondoVista.setMaximumSize(new java.awt.Dimension(1000, 625));
-        FondoVista.setMinimumSize(new java.awt.Dimension(1000, 625));
-        FondoVista.setPreferredSize(new java.awt.Dimension(1000, 625));
         getContentPane().add(FondoVista, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -168,16 +152,13 @@ public class VistaRegistro extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JComboBox<String> cboxJefeTerreno;
-    private javax.swing.JComboBox<String> cboxPuzzle;
     private javax.swing.JLabel lblContaseña;
     private javax.swing.JLabel lblImagenJT;
     private javax.swing.JLabel lblJefeTerreno;
     private javax.swing.JLabel lblMsjJefeTerreno;
-    private javax.swing.JLabel lblMsjPuzzle;
     private javax.swing.JLabel lblMsjPwd1;
     private javax.swing.JLabel lblMsjPwd2;
     private javax.swing.JLabel lblMsjUsuario;
-    private javax.swing.JLabel lblPuzzle;
     private javax.swing.JLabel lblRContraseña;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPasswordField txtPwd1;
@@ -203,17 +184,13 @@ public class VistaRegistro extends javax.swing.JFrame {
     public JComboBox getCboxJefeTerreno(){
        return this.cboxJefeTerreno;
     }
-    public JComboBox getCboxPuzzle(){
-       return this.cboxPuzzle;
-    }
+    
     
     //para obtener lo que esta escrito en los combobox
     public String getItemCboxJefeTerreno(){
        return this.cboxJefeTerreno.getSelectedItem().toString();
     }
-    public String getItemCboxPuzzle(){
-       return cboxPuzzle.getSelectedItem().toString();
-    }
+    
     //para cambiar la imagen de los jefes de terreno
     public void setImagenJefeTerreno(String string){
         if (this.getItemCboxJefeTerreno().equals("<Seleccionar>")==false){
@@ -242,16 +219,14 @@ public class VistaRegistro extends javax.swing.JFrame {
     public void setMsjJefeTerreno(String string){
         lblMsjJefeTerreno.setText(string);
     }
-    public void setMsjPuzzle(String string){
-        lblMsjPuzzle.setText(string);
-    }
+    
     
     
     public void agregarListener(ActionListener al){
         this.btnRegistrarse.addActionListener(al);
         this.btnCancelar.addActionListener(al);
         this.cboxJefeTerreno.addActionListener(al);
-        this.cboxPuzzle.addActionListener(al);
+        
     }    
 }
 

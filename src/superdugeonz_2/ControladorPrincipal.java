@@ -70,7 +70,7 @@ public class ControladorPrincipal implements ActionListener{
         
         
         
-        
+        /* con estos usuarios se hacian pruebas para la batalla
         jugador0=new Jugador("andres","hola",puzzleDados1,new JefeTerreno(1));
         jugador1=new Jugador("cesar","asd",puzzleDados2,new JefeTerreno(2));
         jugador0.puntos[0]=1000;
@@ -88,7 +88,7 @@ public class ControladorPrincipal implements ActionListener{
         cp.arreglo_usuarios_registrados.add(jugador1);
         cp.arreglo_usuario.add(jugador0);
         cp.arreglo_usuario.add(jugador1);
-                    
+        */            
 
        
 // hago que la vista sea escuchada por el controlador principal
