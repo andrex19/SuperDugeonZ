@@ -156,9 +156,9 @@ public class Conexion {
             con3.rs.next();
             id = con3.rs.getInt("ID_CRIATURA");
             name= con3.rs.getString(2);
-            HP = con3.rs.getInt(3);
-            atk = con3.rs.getInt(4);
-            def = con3.rs.getInt(5);
+            HP = con3.rs.getInt(5);
+            atk = con3.rs.getInt(3);
+            def = con3.rs.getInt(4);
             lvl = con3.rs.getInt(6);
             
         }catch (SQLException e){

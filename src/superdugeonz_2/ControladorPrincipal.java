@@ -64,6 +64,16 @@ public class ControladorPrincipal implements ActionListener{
             System.out.print(cp.arreglo_usuarios_registrados.get(i)+", " );
         }
         System.out.println("");
+        //HACK PARA PROBAR LA BATALLAAAA (Borrar despues!!!!!)
+        for (int i=0;i<cp.arreglo_usuarios_registrados.size();i++){
+            Jugador jugador=cp.arreglo_usuarios_registrados.get(i);
+            jugador.puntos[0]=1000;
+            jugador.puntos[1]=1000;
+            jugador.puntos[2]=1000;
+            jugador.puntos[3]=1000;
+            jugador.puntos[4]=1000;
+            
+        }
         
         //ese metodo es de la clase DAO.
 

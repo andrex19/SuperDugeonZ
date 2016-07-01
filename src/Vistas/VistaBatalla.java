@@ -40,6 +40,7 @@ public class VistaBatalla extends javax.swing.JFrame {
                 this.panelTerreno.add(botones[i][j]);
                 
                 
+                
             }
         
         }

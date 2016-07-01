@@ -123,6 +123,36 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             System.out.println("el ganador es: " + arregloJugadores.get(0).usuario);
         }
     }
+    public void actualizarToolTip(){
+        for (int i=0;i<15;i++){
+            for (int j=0;j<15;j++){
+                if(tablero.infoCasillas[i][j].jefeTerreno!=null){
+                    vistaBatalla.botones[i][j].setToolTipText("<html>Jugador: "+ tablero.infoCasillas[i][j].terreno + "<br>"+
+                                                          "Jefe de Terreno: "+ tablero.infoCasillas[i][j].jefeTerreno.nombre + "<br>"+ 
+                                                          "Vida: " + tablero.infoCasillas[i][j].jefeTerreno.vida+ "</html>");
+
+
+                }
+                else if(tablero.infoCasillas[i][j].criatura!=null){
+                vistaBatalla.botones[i][j].setToolTipText("<html>Terreno: "+ tablero.infoCasillas[i][j].terreno + "<br>"+
+                                                          "Criatura: "+ tablero.infoCasillas[i][j].criatura.nombre + "<br>"+ 
+                                                          "Nivel: " + tablero.infoCasillas[i][j].criatura.nivel+ "<br>"+
+                                                          "Vida: " + tablero.infoCasillas[i][j].criatura.puntosDeVida+ "<br>"+
+                                                          "Ataque: " + tablero.infoCasillas[i][j].criatura.ataque+ "<br>"+
+                                                          "Defensa: " + tablero.infoCasillas[i][j].criatura.defensa+ "<br>"+
+                                                          "Costo movimiento: " + tablero.infoCasillas[i][j].criatura.movimiento+ "<br>"+
+
+                                                          "</html>");
+
+                }
+                else{
+                    vistaBatalla.botones[i][j].setToolTipText("");
+                }
+            }
+        }
+    }
+    
+    
     public void ponerJefesTerreno(ArrayList<Jugador> arregloJugadores){
         if (arregloJugadores.size()==2){
             tablero.infoCasillas[0][7].terreno=arregloJugadores.get(0).usuario;
@@ -132,6 +162,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             tablero.infoCasillas[0][7].ocupadoPor=arregloJugadores.get(0).usuario;
             tablero.infoCasillas[7][0].ocupadoPor=arregloJugadores.get(1).usuario;
             vistaBatalla.botones[0][7].setIcon(arregloJugadores.get(0).jefeTerreno.imagen);
+            vistaBatalla.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
+            this.actualizarToolTip();
+                    
             vistaBatalla.botones[7][0].setIcon(arregloJugadores.get(1).jefeTerreno.imagen);
             this.vistaBatalla.getLblUsuario1().setText(arregloJugadores.get(0).usuario);
             this.vistaBatalla.getLblUsuario2().setText(arregloJugadores.get(1).usuario);
@@ -147,6 +180,8 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.getBarraUsuario2().setValue(this.arregloJugadores.get(1).jefeTerreno.vida);
             this.vistaBatalla.actualizarBarra(1);
             this.vistaBatalla.actualizarBarra(2);
+            
+            
             
             
             
@@ -181,6 +216,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.actualizarBarra(1);
             this.vistaBatalla.actualizarBarra(2);
             this.vistaBatalla.actualizarBarra(3);
+            this.actualizarToolTip();
             
             
             
@@ -225,6 +261,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
             this.vistaBatalla.actualizarBarra(2);
             this.vistaBatalla.actualizarBarra(3);
             this.vistaBatalla.actualizarBarra(4);
+            this.actualizarToolTip();
             
             
             /*System.out.println(tablero.infoCasillas[0][7].terreno+ " terreno puesto en poner terreno");
@@ -422,6 +459,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                             System.out.println(dado.criatura.nombre + "ha sido invocada");
                             this.jugadorActual.puntos[4]-=1;
                             verificarPuntos();
+                            this.actualizarToolTip();
                             ultimo_boton=0;
                         }
                         else{
@@ -474,6 +512,11 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                                 Criatura criatura= tablero.infoCasillas[bloque[0]][bloque[1]].criatura;
                                                 System.out.println(criatura.nombre);
                                                 magia.MeteoroFuego(criatura);
+                                                this.actualizarToolTip();
+                                                if(jugadorActual.puntos[2]<15){
+                                                    ultimo_boton=0;
+                                                    
+                                                }
                                                 
                                     
                                                 System.out.println("dano a criatura : " + criatura.nombre + "vida restante: " + criatura.puntosDeVida);
@@ -567,12 +610,16 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         vistaBatalla.botones[i][j].setIcon(criaturaMov.imagen);
                                         this.jugadorActual.puntos[1]-=1;
                                         verificarPuntos();
-                                        activarTrampas();                             
+                                        activarTrampas();
+                                        this.actualizarToolTip();
                                         
                                         //reiniciando valeres del controlador
                                         criaturaMov=null;
                                         
-                                        ultimo_boton=0;
+                                        if(jugadorActual.puntos[1]<=0){
+                                                    ultimo_boton=0;
+                                                    
+                                        }
                                     }
                                     else {
                                         System.out.println(" la criatura no se puede mover ");
@@ -603,6 +650,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                             if (tablero.infoCasillas[i][j].terreno==jugadorActual.usuario){
                                 if (tablero.infoCasillas[i][j].trampa==null){
                                     tablero.infoCasillas[i][j].trampa=jugadorActual.trampa;
+                                    if(jugadorActual.puntos[3]<10){
+                                                    ultimo_boton=0;
+                                        }
                                     System.out.println("se ha puesto una trampa en el tablero");
                                 
                                 }
@@ -688,9 +738,12 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         }
                                         System.out.println("se ha seeccionado la criatura para defender");
                                         System.out.println("puntos de vida despues: " + criaturaDef.puntosDeVida);
-                                        criaturaAtk=null;
+                                        //criaturaAtk=null;
                                         criaturaDef=null;
-                                        ultimo_boton=0;
+                                        this.actualizarToolTip();
+                                        if(jugadorActual.puntos[0]<=0){
+                                                    ultimo_boton=0;
+                                        }
                                     }
                                     else {
                                         System.out.println(" criatura fuera del rango posible de ataque...");
@@ -733,6 +786,10 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                             tablero.infoCasillas[i][j].ocupadoPor="";
                                             tablero.infoCasillas[i][j].terreno="";
                                             vistaBatalla.botones[i][j].setIcon(null);
+                                            this.actualizarToolTip();
+                                            if(jugadorActual.puntos[0]<=0){
+                                                    ultimo_boton=0;
+                                            }
                                             
                                             verificarGanador();
                                             
