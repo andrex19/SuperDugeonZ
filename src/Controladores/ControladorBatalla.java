@@ -791,9 +791,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         System.out.println("usuario atacado" +usuario);
                                         int usuarioPosicion=0;
                                         System.out.println(arregloJugadores.size());
-                                        for (int h=0;h<this.arregloJugadores.size();h++){
+                                        for (int h=0;h<this.terrenoDe.length;h++){
                                             
-                                            if(arregloJugadores.get(h).usuario.equals(usuario)){
+                                            if(terrenoDe[h].equals(usuario)){
                                                 usuarioPosicion=h+1;
                                             }
                                         }
