@@ -306,6 +306,14 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                 System.out.println("se ha activado una trampa");
                                 System.out.println("vida de la criatura "+criatura.puntosDeVida);
                                 tablero.infoCasillas[i][j].trampa=null;
+                                if (criatura.puntosDeVida<=0){ 
+                                                    tablero.infoCasillas[i][j].criatura=null;
+                                                    tablero.infoCasillas[i][j].ocupadoPor="";
+                                                    ImageIcon imagenPosicionInicial=null;//capturar bien la imagen 
+                                                    imagenPosicionInicial=obtenerImagenTerreno(i,j);
+                                                    vistaBatalla.botones[i][j].setIcon(imagenPosicionInicial);
+                                                }
+                                
                             }
                             
                             
@@ -537,8 +545,16 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                                         
                                                 System.out.println("entre al for"+ bloque[0]+""+bloque[1]);
                                                 Criatura criatura= tablero.infoCasillas[bloque[0]][bloque[1]].criatura;
+                                                
                                                 System.out.println(criatura.nombre);
                                                 magia.MeteoroFuego(criatura);
+                                                if (criatura.puntosDeVida<=0){ //probar magia!! (ya esta probada y funciona bien)
+                                                    tablero.infoCasillas[bloque[0]][bloque[1]].criatura=null;
+                                                    tablero.infoCasillas[bloque[0]][bloque[1]].ocupadoPor="";
+                                                    ImageIcon imagenPosicionInicial=null;//capturar bien la imagen 
+                                                    imagenPosicionInicial=obtenerImagenTerreno(bloque[0],bloque[1]);
+                                                    vistaBatalla.botones[bloque[0]][bloque[1]].setIcon(imagenPosicionInicial);
+                                                }
                                                 this.actualizarToolTip();
                                                 if(jugadorActual.puntos[2]<15){
                                                     ultimo_boton=0;
@@ -680,7 +696,9 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                             if (tablero.infoCasillas[i][j].terreno==jugadorActual.usuario){
                                 if (tablero.infoCasillas[i][j].trampa==null){
                                     tablero.infoCasillas[i][j].trampa=jugadorActual.trampa;
+                                    jugadorActual.puntos[3]-=1;
                                     if(jugadorActual.puntos[3]<10){
+                                        
                                                     ultimo_boton=0;
                                         }
                                     System.out.println("se ha puesto una trampa en el tablero");
