@@ -56,3 +56,23 @@ Presiona Ingresar 2, Sun Jul 03 15:11:03 CLT 2016
 Presiona Jugar, Sun Jul 03 15:11:03 CLT 2016
 Click boton Información de criaturas, Sun Jul 03 15:25:49 CLT 2016
 Click boton Información de criaturas, Sun Jul 03 15:35:58 CLT 2016
+Click boton Batalla en General, Sun Jul 03 18:52:05 CLT 2016
+Presiono Radio Jugador 1, Sun Jul 03 18:52:07 CLT 2016
+clikie algo del cbox 1, Sun Jul 03 18:52:07 CLT 2016
+Presiona Ingresar 1, Sun Jul 03 18:52:07 CLT 2016
+Presiono Radio Jugador 2, Sun Jul 03 18:52:07 CLT 2016
+clikie algo del cbox 2, Sun Jul 03 18:52:07 CLT 2016
+clikie algo del cbox 2, Sun Jul 03 18:52:07 CLT 2016
+Presiona Ingresar 2, Sun Jul 03 18:52:07 CLT 2016
+Presiona Jugar, Sun Jul 03 18:52:07 CLT 2016
+Click boton Batalla en General, Sun Jul 03 18:54:54 CLT 2016
+Presiono Radio Jugador 1, Sun Jul 03 18:54:55 CLT 2016
+clikie algo del cbox 1, Sun Jul 03 18:54:55 CLT 2016
+Presiona Ingresar 1, Sun Jul 03 18:54:55 CLT 2016
+Presiono Radio Jugador 2, Sun Jul 03 18:54:55 CLT 2016
+clikie algo del cbox 2, Sun Jul 03 18:54:55 CLT 2016
+Presiona Ingresar 2, Sun Jul 03 18:54:55 CLT 2016
+Presiona Jugar, Sun Jul 03 18:54:55 CLT 2016
+Click boton Ingresar (login), Sun Jul 03 18:55:56 CLT 2016
+Click boton Batalla en General, Sun Jul 03 18:55:56 CLT 2016
+Presiono Radio Jugador 1, Sun Jul 03 18:56:09 CLT 2016

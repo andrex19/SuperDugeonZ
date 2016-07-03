@@ -607,7 +607,7 @@ public class ControladorBatalla extends MouseAdapter implements ActionListener, 
                             if (tablero.infoCasillas[i][j].criatura!=null){
                                 System.out.println("existe una criatura en esta posicion");
                                 if(tablero.infoCasillas[i][j].ocupadoPor.equals(jugadorActual.usuario)){
-                                    System.out.println("esta criatura me pertencese!!");
+                                    System.out.println("esta criatura me pertenece!!");
                                     criaturaMov=tablero.infoCasillas[i][j].criatura;
                                     posicionInicialI=i;
                                     posicionInicialJ=j;
