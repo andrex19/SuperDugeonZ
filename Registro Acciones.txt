@@ -45,3 +45,14 @@ Click boton Información de criaturas, Sun Jul 03 14:55:38 CLT 2016
 Click boton Información de criaturas, Sun Jul 03 14:58:01 CLT 2016
 Click boton Información de criaturas, Sun Jul 03 15:06:39 CLT 2016
 Click boton Información de criaturas, Sun Jul 03 15:08:31 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 15:11:02 CLT 2016
+Click boton Batalla en General, Sun Jul 03 15:11:02 CLT 2016
+Presiono Radio Jugador 1, Sun Jul 03 15:11:03 CLT 2016
+clikie algo del cbox 1, Sun Jul 03 15:11:03 CLT 2016
+Presiona Ingresar 1, Sun Jul 03 15:11:03 CLT 2016
+Presiono Radio Jugador 2, Sun Jul 03 15:11:03 CLT 2016
+clikie algo del cbox 2, Sun Jul 03 15:11:03 CLT 2016
+Presiona Ingresar 2, Sun Jul 03 15:11:03 CLT 2016
+Presiona Jugar, Sun Jul 03 15:11:03 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 15:25:49 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 15:35:58 CLT 2016
