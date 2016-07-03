@@ -1,0 +1,47 @@
+Click boton Cancelar (registro), Fri Jul 01 05:17:37 CLT 2016
+Click boton Cancelar (registro), Fri Jul 01 05:18:54 CLT 2016
+Click boton Batalla en General, Fri Jul 01 05:18:55 CLT 2016
+Presiono Radio Jugador 1, Fri Jul 01 05:18:56 CLT 2016
+clikie algo del cbox 1, Fri Jul 01 05:18:56 CLT 2016
+Presiona Ingresar 1, Fri Jul 01 05:18:56 CLT 2016
+Presiono Radio Jugador 2, Fri Jul 01 05:18:56 CLT 2016
+clikie algo del cbox 2, Fri Jul 01 05:18:56 CLT 2016
+Presiona Ingresar 2, Fri Jul 01 05:18:56 CLT 2016
+Presiona Jugar, Fri Jul 01 05:18:56 CLT 2016
+Prueba de Grabación de Archivo_4, Fri Jul 01 05:22:32 CLT 2016
+Click boton Batalla en General, Fri Jul 01 05:35:49 CLT 2016
+Presiono Radio Jugador 1, Fri Jul 01 05:35:50 CLT 2016
+clikie algo del cbox 1, Fri Jul 01 05:35:50 CLT 2016
+Presiono Radio Jugador 2, Fri Jul 01 05:35:50 CLT 2016
+clikie algo del cbox 2, Fri Jul 01 05:35:50 CLT 2016
+Presiona Ingresar 2, Fri Jul 01 05:35:50 CLT 2016
+Presiona Ingresar 1, Fri Jul 01 05:35:50 CLT 2016
+Presiona Ingresar 2, Fri Jul 01 05:35:50 CLT 2016
+Presiona Jugar, Fri Jul 01 05:35:50 CLT 2016
+Prueba de Grabación de Archivo_4, Fri Jul 01 05:36:43 CLT 2016
+Prueba de Grabación de Archivo_4, Fri Jul 01 05:36:43 CLT 2016
+Click boton Batalla en General, Sun Jul 03 13:12:55 CLT 2016
+Presiono Radio Jugador 1, Sun Jul 03 13:12:57 CLT 2016
+Click boton Batalla en General, Sun Jul 03 13:13:26 CLT 2016
+Presiono Radio Jugador 1, Sun Jul 03 13:13:28 CLT 2016
+clikie algo del cbox 1, Sun Jul 03 13:13:28 CLT 2016
+Presiona Ingresar 1, Sun Jul 03 13:13:28 CLT 2016
+Presiono Radio Jugador 2, Sun Jul 03 13:13:28 CLT 2016
+clikie algo del cbox 2, Sun Jul 03 13:13:28 CLT 2016
+Presiona Ingresar 2, Sun Jul 03 13:13:28 CLT 2016
+Presiona Jugar, Sun Jul 03 13:13:28 CLT 2016
+Click boton Información de partidas, Sun Jul 03 14:03:06 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:03:42 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:05:58 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:09:07 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:13:39 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:14:22 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:14:48 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:23:08 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:36:27 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:51:52 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:53:01 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:55:38 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 14:58:01 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 15:06:39 CLT 2016
+Click boton Información de criaturas, Sun Jul 03 15:08:31 CLT 2016

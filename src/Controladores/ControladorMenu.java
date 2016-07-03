@@ -10,6 +10,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import superdugeonz_2.ControladorPrincipal;
 import Controladores.ControladorBatallaTodos;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,6 +26,8 @@ public class ControladorMenu implements ActionListener{
     public ControladorPrincipal cp;
     public VistaMenu vistaMenu;    
     public ControladorBatallaTodos contBatallaTodos;
+    public ControladorInfoCriaturas contInfoCriaturas;
+    Date date = new Date();
     
     public void verVista(ControladorPrincipal cp) {
         this.cp=cp;
@@ -26,6 +35,7 @@ public class ControladorMenu implements ActionListener{
         this.vistaMenu.setVisible(true);
         this.vistaMenu.agregarListener(this);
         this.contBatallaTodos = new ControladorBatallaTodos();
+        this.contInfoCriaturas = new ControladorInfoCriaturas();
         actualizarVista();
 
     }
@@ -81,20 +91,37 @@ public class ControladorMenu implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+	try{
+        File TextFile = new File("Registro Acciones.txt"); 
+        FileWriter TextOut = new FileWriter(TextFile, true);
        
         if (vistaMenu.getBtnBE()==e.getSource()){
-            System.out.println("Click boton Batalla en General");   
+            System.out.println("Click boton Batalla en General");  
+            TextOut.write("Click boton Batalla en General" +", "+ date+ "\r\n");
+            TextOut.close();
             contBatallaTodos.verVista(cp);
             this.vistaMenu.dispose();
         }
         if (vistaMenu.getBtnBT()==e.getSource()){
-            System.out.println("Click boton Torneo");            
+            System.out.println("Click boton Torneo");
+            TextOut.write("Click boton Torneo" +", "+ date+ "\r\n");
+            TextOut.close();
         }
         if (vistaMenu.getBtnIC()==e.getSource()){
-            System.out.println("Click boton Información de criaturas");            
+            try {
+                contInfoCriaturas.verVista(this.cp);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorMenu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.out.println("Click boton Información de criaturas");  
+            TextOut.write("Click boton Información de criaturas" +", "+ date+ "\r\n");
+            TextOut.close();
         }
         if (vistaMenu.getBtnIP()==e.getSource()){
-            System.out.println("Click boton Informacion de partidas");            
+            System.out.println("Click boton Informacion de partidas");
+            TextOut.write("Click boton Información de partidas" +", "+ date+ "\r\n");
+            TextOut.close();            
         }
         if (vistaMenu.getMenuItemIniciar()==e.getSource()){
             cp.contLogin.verVista(cp);
@@ -106,18 +133,26 @@ public class ControladorMenu implements ActionListener{
         }
         if (vistaMenu.getMenuItemCerrar1()==e.getSource()){
             System.out.println("cerrar sesion usuario 1");
+            TextOut.write("cerrar sesion usuario 1" +", "+ date+ "\r\n");
+            TextOut.close();  
             cerrarSesion(0);
         }
         if (vistaMenu.getMenuItemCerrar2()==e.getSource()){
             System.out.println("cerrar sesion usuario 2");
+            TextOut.write("cerrar sesion usuario 2" +", "+ date+ "\r\n");
+            TextOut.close();  
             cerrarSesion(1);
         }
         if (vistaMenu.getMenuItemCerrar3()==e.getSource()){
             System.out.println("cerrar sesion usuario 3");
+            TextOut.write("cerrar sesion usuario 3" +", "+ date+ "\r\n");
+            TextOut.close();  
             cerrarSesion(2);
         }
         if (vistaMenu.getMenuItemCerrar4()==e.getSource()){
             System.out.println("cerrar sesion usuario 4");
+            TextOut.write("cerrar sesion usuario 4" +", "+ date+ "\r\n");
+            TextOut.close();  
             cerrarSesion(3);
         }
         if (vistaMenu.getMenuItemSalir()==e.getSource()){
@@ -128,5 +163,9 @@ public class ControladorMenu implements ActionListener{
                 
         
     }
-    
+    catch(IOException io){
+            System.out.println("Error al Escribir"+ io);
+        }
+    }
 }
+

@@ -17,6 +17,10 @@ import superdugeonz_2.ControladorPrincipal;
 import Modelo.Jugador;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
 
 /**
  *
@@ -33,6 +37,7 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
     ControladorRegistro contRegistro=new ControladorRegistro();
     ControladorMenu contMenu;
     boolean auxGeneral=true;
+    Date date = new Date();
     
     public void verVista(ControladorPrincipal cp) {
         this.cp = cp;
@@ -102,9 +107,14 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         
     }
     public void rellenarLogeados(ActionEvent e,boolean aux){
+        try{
+        File TextFile = new File("Registro Acciones.txt"); 
+        FileWriter TextOut = new FileWriter(TextFile, true);
         if (Vsb.getCboxRegistrados1()==e.getSource()&& aux ==true){
             
             System.out.println("clikie algo del cbox 1" );
+            TextOut.write("clikie algo del cbox 1" +", "+ date+ "\r\n");
+            TextOut.close();
             System.out.println(jugadoresLogeados.size());
             for (int i=0;i<=jugadoresLogeados.size()-1;i++){
                 System.out.println(jugadoresLogeados.get(i).usuario.equals(Vsb.getItemCboxRegistrados1()));
@@ -117,6 +127,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if (Vsb.getCboxRegistrados2()==e.getSource()&& aux ==true){
             System.out.println("clikie algo del cbox 2");
+            TextOut.write("clikie algo del cbox 2" +", "+ date+ "\r\n");
+            TextOut.close();
             for (int i=0;i<=jugadoresLogeados.size()-1;i++){
                 if (jugadoresLogeados.get(i).usuario.equals(Vsb.getItemCboxRegistrados2())){
                     Vsb.getPwdField2().setText(jugadoresLogeados.get(i).contraseña);
@@ -126,6 +138,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if (Vsb.getCboxRegistrados3()==e.getSource()&& aux ==true){
             System.out.println("clikie algo del cbox 3");
+            TextOut.write("clikie algo del cbox 3" +", "+ date+ "\r\n");
+            TextOut.close();
             if(cp.arreglo_usuario.size()>0){
                 for (int i=0;i<=jugadoresLogeados.size()-1;i++){
                 if (jugadoresLogeados.get(i).usuario.equals(Vsb.getItemCboxRegistrados3())){
@@ -139,12 +153,18 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if (Vsb.getCboxRegistrados4()==e.getSource()&& aux ==true){
             System.out.println("clikie algo del cbox 4");
+            TextOut.write("clikie algo del cbox 4" +", "+ date+ "\r\n");
+            TextOut.close();
             for (int i=0;i<=jugadoresLogeados.size()-1;i++){
                 if (jugadoresLogeados.get(i).usuario.equals(Vsb.getItemCboxRegistrados4())){
                     Vsb.getPwdField4().setText(jugadoresLogeados.get(i).contraseña);
                     
                 }
             }
+        }
+        }   
+     	catch(IOException io){
+            System.out.println("Error al Escribir"+ io);
         }
     }
     private void loguearBatalla(String usuario, String contraseña, ActionEvent e) {
@@ -241,6 +261,9 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
     @Override
 
     public void actionPerformed(ActionEvent e) {
+        try{
+        File TextFile = new File("Registro Acciones.txt"); 
+        FileWriter TextOut = new FileWriter(TextFile, true);
         this.jugadoresRegistrados=(ArrayList<Jugador>) cp.arreglo_usuarios_registrados.clone();
         rellenarLogeados(e,auxGeneral);
         
@@ -248,7 +271,9 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         
       
         if (Vsb.getRadioJugador1()==e.getSource()){
-            System.out.println("Presiono Radio Jugador");
+            System.out.println("Presiono Radio Jugador 1");
+            TextOut.write("Presiono Radio Jugador 1" +", "+ date+ "\r\n");
+            TextOut.close();
             limpiarCbox(1);
             limpiarPassword(1);
             Vsb.getPwdField1().setEnabled(true);
@@ -264,6 +289,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         if (Vsb.getRadioJugador2()==e.getSource()){
                 
             System.out.println("Presiono Radio Jugador 2");
+            TextOut.write("Presiono Radio Jugador 2" +", "+ date+ "\r\n");
+            TextOut.close();
             limpiarCbox(2);
             limpiarPassword(2);
             Vsb.getRadioPNJ2().setSelected(false);
@@ -274,6 +301,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if (Vsb.getRadioJugador3()==e.getSource()){
             System.out.println("Presiono Radio Jugador 3");
+            TextOut.write("Presiono Radio Jugador 3" +", "+ date+ "\r\n");
+            TextOut.close();
             limpiarCbox(3);
             limpiarPassword(3);
             Vsb.getPwdField3().setEnabled(true);
@@ -285,6 +314,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         
         if (Vsb.getRadioJugador4()==e.getSource()){
             System.out.println("Presiono Radio Jugador 4");
+            TextOut.write("Presiono Radio Jugador 4" +", "+ date+ "\r\n");
+            TextOut.close();
             limpiarCbox(4);
             limpiarPassword(4);
             Vsb.getPwdField4().setEnabled(true);
@@ -295,6 +326,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if(Vsb.getRadioPNJ1()==e.getSource()){
             System.out.println("Presiono Radio PNJ 1");
+            TextOut.write("Presiono Radio PNJ 1" +", "+ date+ "\r\n");
+            TextOut.close();
             limpiarCbox(1);
             limpiarPassword(1);
             Vsb.getPwdField1().setEnabled(false);
@@ -303,6 +336,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if(Vsb.getRadioPNJ2()==e.getSource()){
             System.out.println("Presiono Radio PNJ 2");
+            TextOut.write("Presiono Radio PNJ 2" +", "+ date+ "\r\n");
+            TextOut.close();
             limpiarCbox(2);
             limpiarPassword(2);
             Vsb.getPwdField2().setEnabled(false);
@@ -310,6 +345,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if(Vsb.getRadioPNJ3()==e.getSource()){
             System.out.println("Presiono Radio PNJ 3");
+            TextOut.write("Presiono Radio PNJ 3" +", "+ date+ "\r\n");
+            TextOut.close();
             limpiarCbox(3);
             limpiarPassword(3);
             Vsb.getPwdField3().setEnabled(false);
@@ -320,10 +357,14 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
             limpiarPassword(4);
             Vsb.getPwdField4().setEnabled(false);
             System.out.println("Presiono Radio PNJ 4");
+            TextOut.write("Presiono Radio PNJ 4" +", "+ date+ "\r\n");
+            TextOut.close();
             Vsb.getRadioJugador4().setSelected(false);
         }
         if(Vsb.getBtnIngresar1()==e.getSource()){
             System.out.println("Presiona Ingresar 1");
+            TextOut.write("Presiona Ingresar 1" +", "+ date+ "\r\n");
+            TextOut.close();
             String usuario = Vsb.getItemCboxRegistrados1();
             String pwd = Vsb.getPwdJugador1ST();
             if(usuario.equals("<Seleccionar>")==false && pwd.equals("")==false){
@@ -333,6 +374,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if(Vsb.getBtnIngresar2()==e.getSource()){
             System.out.println("Presiona Ingresar 2");
+            TextOut.write("Presiona Ingresar 2" +", "+ date+ "\r\n");
+            TextOut.close();
             String usuario = Vsb.getItemCboxRegistrados2();
             String pwd = Vsb.getPwdJugador2ST();
             if(usuario.equals("<Seleccionar>")==false && pwd.equals("")==false){
@@ -342,6 +385,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if(Vsb.getBtnIngresar3()==e.getSource()){
             System.out.println("Presiona Ingresar 3");
+            TextOut.write("Presiona Ingresar 3" +", "+ date+ "\r\n");
+            TextOut.close();
             String usuario = Vsb.getItemCboxRegistrados3();
             String pwd = Vsb.getPwdJugador3ST();
             if(usuario.equals("<Seleccionar>")==false && pwd.equals("")==false){
@@ -351,6 +396,8 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         }
         if(Vsb.getBtnIngresar4()==e.getSource()){
             System.out.println("Presiona Ingresar 4");
+            TextOut.write("Presiona Ingresar 4" +", "+ date+ "\r\n");
+            TextOut.close();
             String usuario = Vsb.getItemCboxRegistrados4();
             String pwd = Vsb.getPwdJugador4ST();
             if(usuario.equals("<Seleccionar>")==false && pwd.equals("")==false){
@@ -361,7 +408,9 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         
         if(Vsb.getBtnJugar()==e.getSource()){
             System.out.println("Presiona Jugar");
-            System.out.println( "lago de jugadores ready: " + jugadoresReady.size());
+            TextOut.write("Presiona Jugar" +", "+ date+ "\r\n");
+            TextOut.close();
+            System.out.println( "largo de jugadores ready: " + jugadoresReady.size());
             Vsb.dispose();
             contBatalla.verVista(cp,jugadoresReady);
             
@@ -379,6 +428,10 @@ public class ControladorBatallaTodos extends MouseAdapter implements ActionListe
         //PARA QUE SE HABILITE EL BOTON DE JUGAR!
         if(jugadoresReady.size()>=2){
             Vsb.getBtnJugar().setEnabled(true);
+        }
+        }   
+     	catch(IOException io){
+            System.out.println("Error al Escribir"+ io);
         }
     }
     

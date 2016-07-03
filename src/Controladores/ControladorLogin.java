@@ -17,7 +17,11 @@ import Modelo.Criatura;
 import Modelo.Dado;
 import Modelo.JefeTerreno;
 import Modelo.PuzzleDados;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,12 +36,18 @@ public class ControladorLogin implements ActionListener {
     Jugador user;
     VistaMenu vistaMenu;
     ControladorMenu contMenu=new ControladorMenu();
+    Date date = new Date();
      
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        try{
+        File TextFile = new File("Registro Acciones.txt"); 
+        FileWriter TextOut = new FileWriter(TextFile, true);
         if (vistaLogin.getBotonIngresar()==e.getSource()){
             System.out.println("Click boton Ingresar (login)");
+            TextOut.write("Click boton Ingresar (login)" +", "+ date+ "\r\n");
+            TextOut.close();
             this.loguear();
             
             
@@ -45,10 +55,16 @@ public class ControladorLogin implements ActionListener {
         }
         if (vistaLogin.getBotonCancelar()==e.getSource()){
             System.out.println("Click boton Cancelar (login)");
+            TextOut.write("Click boton Cancelar (login)" +", "+ date+ "\r\n");
+            TextOut.close();
             this.vistaLogin.dispose(); //cierra la vista login
             //this.cp.vistaInicio.setVisible(true); //muestra la vista Inicio
         }
     }
+        catch(IOException io){
+            System.out.println("Error al Escribir"+ io);
+        }
+}
 
     public void verVista(ControladorPrincipal cp) {
         this.cp=cp;
@@ -60,6 +76,9 @@ public class ControladorLogin implements ActionListener {
     
     
     private void loguear() {
+        try{
+        File TextFile = new File("Registro Acciones.txt"); 
+        FileWriter TextOut = new FileWriter(TextFile, true);
         String usuario = this.vistaLogin.getUsr();
         String contraseña = this.vistaLogin.getPwd();
         
@@ -98,6 +117,8 @@ public class ControladorLogin implements ActionListener {
                 }else{
                     //vistaLogin.passError(usuario);
                     System.out.println("Contraseña incorrecta para" + usuario);
+                    TextOut.write("Contraseña incorrecta para" + usuario +", "+ date+ "\r\n");
+                    TextOut.close();
                     vistaLogin.setMensajeUsuario("");
                     vistaLogin.setMensajeContraseña("Contraseña incorrecta");
 
@@ -105,6 +126,8 @@ public class ControladorLogin implements ActionListener {
             }else{
                 //vistaLogin.userError(usuario);
                 System.out.println("Usuario " + usuario + " inexistente ");
+                TextOut.write("Usuario " + usuario + " inexistente " +", "+ date+ "\r\n");
+                TextOut.close();
                 vistaLogin.setMensajeUsuario("Usuario inexistente");
                 vistaLogin.setMensajeContraseña("");
 
@@ -129,5 +152,8 @@ public class ControladorLogin implements ActionListener {
         }
             
     }
-    
+        catch(IOException io){
+            System.out.println("Error al Escribir"+ io);
+        }
+    }
 }

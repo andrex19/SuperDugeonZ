@@ -16,8 +16,12 @@ import javax.swing.JOptionPane;
 import Modelo.Conexion;
 import Modelo.Criatura;
 import Modelo.PuzzleDados;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,6 +32,7 @@ public class ControladorRegistro implements ActionListener {
     JefeTerreno JefeTerreno;
     ControladorMenu contMenu=new ControladorMenu();
     Conexion conn;
+    Date date = new Date();
     
     
     
@@ -180,7 +185,12 @@ public class ControladorRegistro implements ActionListener {
     }
 
     @Override
+    
     public void actionPerformed(ActionEvent e) {
+        
+	try{
+        File TextFile = new File("Registro Acciones.txt"); 
+        FileWriter TextOut = new FileWriter(TextFile, true);
         if (vistaRegistro.getBotonSiguiente()==e.getSource()){
             try {          
                 this.registrar();
@@ -188,10 +198,14 @@ public class ControladorRegistro implements ActionListener {
                 Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
             }
             System.out.println("Click boton registro");
+            TextOut.write("Click boton registro" +", "+ date+ "\r\n");
+            TextOut.close();
             
         }
         if (vistaRegistro.getBotonCancelar()==e.getSource()){
             System.out.println("Click boton Cancelar (registro)");
+            TextOut.write("Click boton Cancelar (registro)" +", "+ date+ "\r\n");
+            TextOut.close();
             this.vistaRegistro.dispose(); //cierra la vista login
             //this.contMenu.verVista(cp);
             //this.cp.vistaInicio.setVisible(true); //muestra la vista Inicio
@@ -205,7 +219,11 @@ public class ControladorRegistro implements ActionListener {
         }    
         
         
+    }   
+     	catch(IOException io){
+            System.out.println("Error al Escribir"+ io);
+        }
     }
-   
     
 }
+
